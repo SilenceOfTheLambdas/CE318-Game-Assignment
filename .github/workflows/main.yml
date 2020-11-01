@@ -1,8 +1,10 @@
-- name: Unity - Builder
+on:
+  workflow_dispatch:
+    name: Unity - Builder
   # You may pin to the exact commit or the version.
   # uses: webbertakken/unity-builder@471bf0bdf0c1db4edb6a4ed3be31511663574519
-  uses: webbertakken/unity-builder@v2.0-alpha-1
-  with:
+    uses: webbertakken/unity-builder@v2.0-alpha-1
+    with:
     # Version of unity to use for building the project.
     unityVersion: # optional, default is 
     # Specific docker image that should be used for building the project
@@ -48,6 +50,6 @@
     # The android keyaliasPass
     androidKeyaliasPass: # optional, default is 
     # Custom parameters to configure the build.
-
     customParameters: # optional, default is 
+    # Allows the branch of the build to be dirty, and still generate the build.
     allowDirtyBuild: # optional, default is 
