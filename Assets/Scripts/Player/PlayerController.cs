@@ -13,12 +13,13 @@ public class PlayerController : MonoBehaviour
         Crouching,
         Running
     }
-    public MovementStates movementState = MovementStates.Idle;
+    public static MovementStates MovementState = MovementStates.Idle;
     
-    [Header("Movement")]
-    public float moveSpeed = 12f;
-    private float _defaultMoveSpeed;
-    public float runSpeed = 8f;
+    [Range(1, 20)] [Header("Movement")]
+    public float moveSpeed = 8f;
+    public float defaultMoveSpeed;
+    [Range(1, 20)]
+    public float runSpeed = 12f;
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     public float jumpHeight = 3f;
@@ -31,29 +32,41 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundMask;
     public Transform topCheck;
     public LayerMask topMask;
-    
+    public Camera camera;
+    [Header("Weapons")]
+    public GameObject gun;
+    public GameObject bulletPrefab;
+    public Transform bulletHolder;
+
     private Vector3 _velocity;
-    private bool _isGrounded;
+    public static bool IsGrounded;
     private Vector3 _defaultCharacterCenter;
     private float _defaultCharacterHeight;
     
+    public float movementCounter = 0;
+    public float idleCounter = 0;
+
+    private Vector3 _cameraOrigin;
+    private static readonly int IsRunning = Animator.StringToHash("isRunning");
+
     // Update is called once per frame
 
     private void Start()
     {
+        _cameraOrigin = camera.transform.localPosition;
         _defaultCharacterHeight = controller.height;
         _defaultCharacterCenter = controller.center;
-        _defaultMoveSpeed = moveSpeed;
+        defaultMoveSpeed = moveSpeed;
     }
 
     void Update()
     {
-        _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         Move();
-        if (_isGrounded)
+        if (IsGrounded)
         {
             Crouch();
-            if (movementState != MovementStates.Crouching)
+            if (MovementState != MovementStates.Crouching)
                 Jump();
             if (_velocity.y < 0)
                 _velocity.y = -2f;
@@ -78,11 +91,26 @@ public class PlayerController : MonoBehaviour
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
 
-        if ((x != 0 || z != 0) && movementState != MovementStates.Crouching)
+        if (IsGrounded)
         {
-            movementState = MovementStates.Walking;
+            if (Input.GetButtonUp("Sprint"))
+            {
+                MovementState = MovementStates.Walking;
+                moveSpeed = defaultMoveSpeed;
+            }
+
+            if ((x != 0 || z != 0) && MovementState != MovementStates.Crouching && MovementState != MovementStates.Running)
+            {
+                MovementState = MovementStates.Walking;
+                moveSpeed = defaultMoveSpeed;
+            }
+            if ((x != 0 || z != 0) && Input.GetButtonDown("Sprint") && MovementState != MovementStates.Crouching)
+            {
+                MovementState = MovementStates.Running;
+                moveSpeed = runSpeed;
+            }   
         }
-        
+
         var transform1 = transform;
         var move = transform1.right * x + transform1.forward * z;
 
@@ -96,9 +124,9 @@ public class PlayerController : MonoBehaviour
             controller.height = crouchHeight;
             controller.center = new Vector3(0f, -0.5f, 0f);
             moveSpeed = crouchMovementSpeed;
-            movementState = MovementStates.Crouching;
+            MovementState = MovementStates.Crouching;
             
-            transform.localScale = new Vector3(transform.localScale.x, crouchHeight / 2, transform.localScale.z);
+            camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, crouchHeight / 2, camera.transform.localPosition.z);
         }
         
         if (Input.GetButtonUp("Crouch")) {
@@ -108,8 +136,9 @@ public class PlayerController : MonoBehaviour
                 controller.height = 2;
                 controller.center = _defaultCharacterCenter;
                 moveSpeed = 12f;
-                transform.localScale = new Vector3(transform.localScale.x, 1, transform.localScale.z);
-                movementState = MovementStates.Idle;
+                camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, 
+                    _cameraOrigin.y, camera.transform.localPosition.z);
+                MovementState = MovementStates.Idle;
             }
         }
     }

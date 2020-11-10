@@ -7,6 +7,7 @@
       <Path>Library/PackageCache/com.unity.analytics@3.2.3</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.2.15</Path>
       <Path>Library/PackageCache/com.unity.package-manager-ui@2.0.13</Path>
+      <Path>Library/PackageCache/com.unity.postprocessing@3.0.1</Path>
       <Path>Library/PackageCache/com.unity.purchasing@2.0.3</Path>
       <Path>Library/PackageCache/com.unity.textmeshpro@1.4.1</Path>
       <Path>Packages</Path>
@@ -14,6 +15,7 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.git</Path>
+      <Path>.github</Path>
       <Path>.idea</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
