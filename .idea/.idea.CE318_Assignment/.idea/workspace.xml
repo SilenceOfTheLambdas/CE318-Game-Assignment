@@ -20,63 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521969b7-13be-45d9-807f-97c1107a2361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Enemy.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Enemy.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Enemy_death_prototype.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Enemy_death_prototype.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/firing rifle.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/firing rifle.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/hit reaction.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/hit reaction.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/reloading.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/reloading.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/rifle aiming idle.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/rifle aiming idle.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/rifle jump.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/rifle jump.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/rifle run.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/rifle run.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/run backwards.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/run backwards.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe (2).fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe (2).fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe left.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe left.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe right.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe right.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/strafe.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/toss grenade.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/toss grenade.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/turn left.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/turn left.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/turning right 45 degrees.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/turning right 45 degrees.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/walking backwards.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/walking backwards.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/walking.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/walking.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/xbot.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/xbot.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_game_crossair.afdesign" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_game_crossair.afdesign.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/bullet_impact_prototypwe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Textures/bullet_impact_prototypwe.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Controllers/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot/1911-.45-ACP-Close-Single.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot/1911-.45-ACP-Close-Single.mp3.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/CE318_game_crossair.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/CE318_game_crossair.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,9 +53,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
       </list>
     </option>
   </component>
@@ -160,7 +109,7 @@
       <workItem from="1604864292436" duration="3123000" />
       <workItem from="1604933180306" duration="9137000" />
       <workItem from="1605007495778" duration="6417000" />
-      <workItem from="1605106914843" duration="7952000" />
+      <workItem from="1605106914843" duration="8563000" />
     </task>
     <servers />
   </component>

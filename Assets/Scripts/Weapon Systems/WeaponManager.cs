@@ -60,5 +60,7 @@ public class WeaponManager : MonoBehaviour
         var shot = Instantiate(ammunitionManager.gameObject, bulletHolder.position,
             ammunitionManager.gameObject.transform.localRotation);
         shot.GetComponent<Rigidbody>().AddForce(bulletHolder.transform.forward * ammunitionManager.speed);
+        
+        GetComponent<AudioSource>().Play();
     }
 }
