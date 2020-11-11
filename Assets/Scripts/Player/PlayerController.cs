@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         Crouching,
         Running
     }
+    [SerializeField]
     public static MovementStates MovementState = MovementStates.Idle;
     
     [Range(1, 20)] [Header("Movement")]
@@ -96,19 +97,20 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonUp("Sprint"))
             {
                 MovementState = MovementStates.Walking;
+                GetComponent<Animator>().SetBool("isWalking", true);
                 moveSpeed = defaultMoveSpeed;
             }
-
             if ((x != 0 || z != 0) && MovementState != MovementStates.Crouching && MovementState != MovementStates.Running)
             {
                 MovementState = MovementStates.Walking;
+                GetComponent<Animator>().SetBool("isWalking", true);
                 moveSpeed = defaultMoveSpeed;
             }
             if ((x != 0 || z != 0) && Input.GetButtonDown("Sprint") && MovementState != MovementStates.Crouching)
             {
                 MovementState = MovementStates.Running;
                 moveSpeed = runSpeed;
-            }   
+            }
         }
 
         var transform1 = transform;
@@ -122,11 +124,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Crouch"))
         {
             controller.height = crouchHeight;
-            controller.center = new Vector3(0f, -0.5f, 0f);
             moveSpeed = crouchMovementSpeed;
             MovementState = MovementStates.Crouching;
             
-            camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, crouchHeight / 2, camera.transform.localPosition.z);
+            camera.transform.localPosition = new Vector3(camera.transform.localPosition.x, -0.3f, camera.transform.localPosition.z);
         }
         
         if (Input.GetButtonUp("Crouch")) {

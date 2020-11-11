@@ -30,6 +30,7 @@ public class WeaponManager : MonoBehaviour
     private Animator _animator;
     private static readonly int IsPressingFire = Animator.StringToHash("isPressingFire");
     private float nextFire;
+    public GameObject hitEffect;
 
 
     // Start is called before the first frame update
@@ -57,7 +58,7 @@ public class WeaponManager : MonoBehaviour
     {
         _animator.SetBool(IsPressingFire, true);
         var shot = Instantiate(ammunitionManager.gameObject, bulletHolder.position,
-            bulletHolder.rotation);
+            ammunitionManager.gameObject.transform.localRotation);
         shot.GetComponent<Rigidbody>().AddForce(bulletHolder.transform.forward * ammunitionManager.speed);
     }
 }

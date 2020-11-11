@@ -32,7 +32,7 @@ MonoBehaviour:
   antialiasing:
     m_Enabled: 1
     m_Settings:
-      method: 0
+      method: 1
       fxaaSettings:
         preset: 3
       taaSettings:
@@ -121,7 +121,7 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
+        postExposure: 0.6
         temperature: 15
         tint: 11
         hueShift: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
           power: {r: 1, g: 0.92095286, b: 0.8125722, a: 0}
           offset: {r: 0.99052256, g: 0.8639234, b: 1, a: 0}
         linear:
-          lift: {r: 0.89562786, g: 0.81391007, b: 1, a: 0}
-          gamma: {r: 0.7871758, g: 1, b: 0.82477957, a: 0}
-          gain: {r: 0.83872, g: 1, b: 0.84131026, a: 0}
+          lift: {r: 0.8893981, g: 0.8672333, b: 1, a: 0}
+          gamma: {r: 0.8424174, g: 0.9205353, b: 1, a: 0}
+          gain: {r: 0.9746357, g: 1, b: 0.9887699, a: 0}
       curves:
         master:
           curve:
@@ -309,7 +309,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       spectralTexture: {fileID: 0}
-      intensity: 0.105
+      intensity: 0.181
   grain:
     m_Enabled: 0
     m_Settings:
