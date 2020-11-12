@@ -76,7 +76,7 @@ namespace UnityEngine.PostProcessing
         [Serializable]
         public struct ScreenEdgeMask
         {
-            [Tooltip("Higher = fade out SSRR near the edge of the screen so that reflections don't pop under camera motion.")]
+            [Tooltip("Higher = fade out SSRR near the edge of the screen so that reflections don't pop under _camera motion.")]
             [Range(0.0f, 1.0f)]
             public float intensity;
         }

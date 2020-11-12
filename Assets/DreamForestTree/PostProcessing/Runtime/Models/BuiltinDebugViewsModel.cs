@@ -8,7 +8,7 @@ namespace UnityEngine.PostProcessing
         [Serializable]
         public struct DepthSettings
         {
-            [Range(0f, 1f), Tooltip("Scales the camera far plane before displaying the depth map.")]
+            [Range(0f, 1f), Tooltip("Scales the _camera far plane before displaying the depth map.")]
             public float scale;
 
             public static DepthSettings defaultSettings

@@ -20,12 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521969b7-13be-45d9-807f-97c1107a2361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot/1911-.45-ACP-Close-Single.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot/1911-.45-ACP-Close-Single.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Controllers/45 ACP.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/45 ACP.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DepthOfFieldModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DepthOfFieldModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/DemoTerrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/DemoTerrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/walking.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Player/walking.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +56,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -49,13 +70,15 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHeadBob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -138,5 +161,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604867987120" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605198369194">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605198369194" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605199739257">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605199739257" />
   </component>
 </project>

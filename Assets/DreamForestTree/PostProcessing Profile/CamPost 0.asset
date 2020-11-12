@@ -51,7 +51,7 @@ MonoBehaviour:
       ambientOnly: 0
       highPrecision: 0
   screenSpaceReflection:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       reflection:
         blendType: 0
@@ -72,10 +72,10 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 1
     m_Settings:
-      focusDistance: 11.48
-      aperture: 17.1
-      focalLength: 45
-      useCameraFov: 1
+      focusDistance: 10
+      aperture: 5.6
+      focalLength: 17
+      useCameraFov: 0
       kernelSize: 1
   motionBlur:
     m_Enabled: 0

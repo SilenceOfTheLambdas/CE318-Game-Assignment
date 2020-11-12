@@ -97,7 +97,7 @@ namespace UnityEngine.PostProcessing
                 return;
 
 #if UNITY_EDITOR
-            // Track the scene view camera to disable some effects we don't want to see in the
+            // Track the scene view _camera to disable some effects we don't want to see in the
             // scene view
             // Currently disabled effects :
             //  - Temporal Antialiasing
@@ -141,7 +141,7 @@ namespace UnityEngine.PostProcessing
 
             CheckObservers();
 
-            // Find out which camera flags are needed before rendering begins
+            // Find out which _camera flags are needed before rendering begins
             // Note that motion vectors will only be available one frame after being enabled
             var flags = context.camera.depthTextureMode;
             foreach (var component in m_Components)
@@ -213,7 +213,7 @@ namespace UnityEngine.PostProcessing
             // Render to a dedicated target when monitors are enabled so they can show information
             // about the final render.
             // At runtime the output will always be the backbuffer or whatever render target is
-            // currently set on the camera.
+            // currently set on the _camera.
             if (profile.monitors.onFrameEndEditorOnly != null)
                 dst = m_RenderTextureFactory.Get(src);
 #endif
