@@ -60,7 +60,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyUp(ShootKey))
         {
-            PlayerController.disableGunAnimation();
+            PlayerController.DisableGunAnimation();
         }
     }
 }

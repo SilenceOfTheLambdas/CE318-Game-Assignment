@@ -24,7 +24,7 @@ public class HeadBob : MonoBehaviour
         if (PlayerController.MovementState == PlayerController.MovementStates.Running)
         {
             GunMotion(controller.movementCounter * controller.runSpeed, bobbingAmount, bobbingAmount * 2);
-            controller.movementCounter += Time.deltaTime;
+            controller.movementCounter += Time.deltaTime * 0.4f;
         }
     }
 

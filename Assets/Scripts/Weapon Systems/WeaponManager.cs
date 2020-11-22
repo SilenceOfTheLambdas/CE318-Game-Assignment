@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
 /// <summary>
 /// This class is responsible for managing weapon functionality.

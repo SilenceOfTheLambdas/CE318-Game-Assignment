@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     }
     public static MovementStates MovementState = MovementStates.Idle;
     
+    // List of player "States"; this controls the position of the arms etc. when a weapon is equipped
+    public Dictionary<string, GameObject> playerEquippedStates;
+
     [Range(1, 20)] [Header("Movement")]
     public float moveSpeed = 8f;
     public float defaultMoveSpeed;
@@ -24,8 +28,12 @@ public class PlayerController : MonoBehaviour
     public float crouchHeight = 1f;
     public float crouchMovementSpeed = 6f;
 
+    [FormerlySerializedAs("equippedWeapon")] [Header("Equipped Weapons")]
+    public GameObject primaryWeapon;
+    public GameObject secondaryWeapon;
+    public GameObject thirdWeapon;
+    
     [Header("References")] 
-    public GameObject equippedWeapon;
     public Transform bulletSpawnPoint;
     public AmmunitionManager AmmunitionManager;
     public CharacterController controller;
@@ -34,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public Transform topCheck;
     public LayerMask topMask;
     [FormerlySerializedAs("camera")] public Camera _camera;
+    [SerializeField] private Inventory inventory;
 
     [SerializeField] 
     private float health;
@@ -48,13 +57,18 @@ public class PlayerController : MonoBehaviour
     private Vector3 _cameraOrigin;
     private static readonly int IsPressingFire = Animator.StringToHash("isPressingFire");
     private float _nextFire;
+    private Animator _playerAnimator;
+    private Animator _equippedWeaponAnimator;
 
     // Update is called once per frame
 
     private void Start()
     {
+        primaryWeapon = GameObject.Find("WPN_AKM(Clone)");
+        _playerAnimator = GetComponent<Animator>();
         _cameraOrigin = _camera.transform.localPosition;
         _defaultCharacterCenter = controller.center;
+//        _equippedWeaponAnimator = primaryWeapon.GetComponent<Animator>();
         defaultMoveSpeed = moveSpeed;
     }
 
@@ -86,6 +100,12 @@ public class PlayerController : MonoBehaviour
                 MovementState = MovementStates.Idle;
             }
         }
+        
+        // Open inventory when user presses 'tab'
+        if (Input.GetButtonDown("Inventory"))
+        {
+            GetComponent<PlayerEquipmentController>().StartInventory();
+        }
     }
 
     public void Jump() => 
@@ -98,22 +118,25 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonUp("Sprint"))
             {
                 MovementState = MovementStates.Walking;
-                GetComponent<Animator>().SetBool("isWalking", true);
-                equippedWeapon.GetComponent<Animator>().SetBool("isRunning", false);
+                _playerAnimator.SetBool("isWalking", true);
+                _playerAnimator.SetBool("isRunning", false);
+//                _equippedWeaponAnimator.SetBool("isRunning", false);
                 moveSpeed = defaultMoveSpeed;
             }
             if ((xAxis != 0 || zAxis != 0) && MovementState != MovementStates.Crouching && MovementState != MovementStates.Running)
             {
                 MovementState = MovementStates.Walking;
-                GetComponent<Animator>().SetBool("isWalking", true);
-                equippedWeapon.GetComponent<Animator>().SetBool("isRunning", false);
+                _playerAnimator.SetBool("isWalking", true);
+//                _equippedWeaponAnimator.SetBool("isRunning", false);
                 moveSpeed = defaultMoveSpeed;
             }
             if ((xAxis != 0 || zAxis != 0) && Input.GetButtonDown("Sprint") && MovementState != MovementStates.Crouching)
             {
+                Debug.Log("Running...");
                 MovementState = MovementStates.Running;
                 moveSpeed = runSpeed;
-                equippedWeapon.GetComponent<Animator>().SetBool("isRunning", true);
+                _equippedWeaponAnimator.SetBool("isRunning", true);
+                _playerAnimator.SetBool("isRunning", true);
             }
         }
 
@@ -134,19 +157,19 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot()
     {
-        if (Time.time > _nextFire && equippedWeapon.GetComponent<WeaponManager>().fireRate > 0)
+        if (Time.time > _nextFire && primaryWeapon.GetComponent<WeaponManager>().fireRate > 0)
         {
-            _nextFire = Time.time + equippedWeapon.GetComponent<WeaponManager>().fireRate;
+            _nextFire = Time.time + primaryWeapon.GetComponent<WeaponManager>().fireRate;
             
-            equippedWeapon.GetComponent<Animator>().SetBool(IsPressingFire, true);
+            _equippedWeaponAnimator.SetBool(IsPressingFire, true);
             
             var shot = Instantiate(AmmunitionManager.gameObject, bulletSpawnPoint.position,
                 AmmunitionManager.gameObject.transform.localRotation);
             shot.GetComponent<Rigidbody>().AddForce(bulletSpawnPoint.transform.forward * AmmunitionManager.speed);
-            equippedWeapon.GetComponent<AudioSource>().Play();
+            primaryWeapon.GetComponent<AudioSource>().Play();
         }
         
-        equippedWeapon.GetComponent<Animator>().SetBool("isRunning", MovementState == MovementStates.Running && IsGrounded);
+        _equippedWeaponAnimator.SetBool("isRunning", MovementState == MovementStates.Running && IsGrounded);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -160,8 +183,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void disableGunAnimation()
+    public void DisableGunAnimation()
     {
-        equippedWeapon.GetComponent<Animator>().SetBool(IsPressingFire, false);
+//        _equippedWeaponAnimator.SetBool(IsPressingFire, false);
     }
 }

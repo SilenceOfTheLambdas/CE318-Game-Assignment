@@ -184,6 +184,17 @@
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="InputManager.cs" t="Include" />
+          <e p="Inventory" t="Include">
+            <e p="Inventory.cs" t="Include" />
+            <e p="InventoryItem.cs" t="Include" />
+            <e p="InventoryItemWrapper.cs" t="Include" />
+            <e p="InventorySlot.cs" t="Include" />
+            <e p="InventoryUI.cs" t="Include" />
+            <e p="Items" t="Include">
+              <e p="RifleInventoryItem.cs" t="Include" />
+            </e>
+            <e p="PlayerEquipmentController.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="HeadBob.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
@@ -221,6 +232,9 @@
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
+        </e>
+        <e p="Textures" t="Include">
+          <e p="UIBGBlur.shader" t="Include" />
         </e>
       </e>
       <e p="CE318_Assignment.sln" t="IncludeFlat" />

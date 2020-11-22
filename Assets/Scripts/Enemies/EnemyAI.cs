@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// Script based on the implementation by Dave/GameDevelopment
@@ -91,8 +93,6 @@ public class EnemyAI : MonoBehaviour
         // Attack
         var rb = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * 10000000f, ForceMode.Acceleration);
-        //rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-        //
 
         _alreadyAttacked = true;
         Invoke(nameof(ResetAttack), timeBetweenAttacks);

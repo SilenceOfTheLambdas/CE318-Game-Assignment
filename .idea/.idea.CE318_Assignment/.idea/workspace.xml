@@ -20,30 +20,230 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521969b7-13be-45d9-807f-97c1107a2361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_run_arms.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_run_arms.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_weapon_run.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_weapon_run.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/AKM.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/AKM.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_0172bd15-8486-4783-8839-183b7da8e782.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_0172bd15-8486-4783-8839-183b7da8e782.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_0ab6d126-d07e-4d21-bcae-4d79eef2d960.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_0ab6d126-d07e-4d21-bcae-4d79eef2d960.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_0f911618-dc2e-4e59-9a3f-bc5c97d4355c.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_0f911618-dc2e-4e59-9a3f-bc5c97d4355c.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_18c377cf-3b18-436f-ae1f-b52e953de952.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_18c377cf-3b18-436f-ae1f-b52e953de952.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_210ba667-3d00-49e5-92a3-dc6c4acd3904.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_210ba667-3d00-49e5-92a3-dc6c4acd3904.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_23550eb7-9637-4cfb-a200-f07f7576476b.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_23550eb7-9637-4cfb-a200-f07f7576476b.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_25cee9b1-2f1c-41ac-ad6a-87e1e36890a3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_25cee9b1-2f1c-41ac-ad6a-87e1e36890a3.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_340e764e-db40-46bc-8c01-742bbfbb67d3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_340e764e-db40-46bc-8c01-742bbfbb67d3.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_34c2da31-38ca-4ebb-a2a3-28e6efbf8d3e.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_34c2da31-38ca-4ebb-a2a3-28e6efbf8d3e.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_3b381e4c-7279-438d-9494-b2090a8dc203.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_3b381e4c-7279-438d-9494-b2090a8dc203.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_3d32880c-0614-4221-98d6-119906729afc.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_3d32880c-0614-4221-98d6-119906729afc.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_4502c88a-098a-4324-9961-9751aea51a35.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_4502c88a-098a-4324-9961-9751aea51a35.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_471b4c9e-6067-48cb-bf04-980e0dd5783b.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_471b4c9e-6067-48cb-bf04-980e0dd5783b.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_491f15ef-1c19-42de-a1b9-118c09c0457c.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_491f15ef-1c19-42de-a1b9-118c09c0457c.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_4a39af5d-d3b7-459a-99dd-a8825c353c9d.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_4a39af5d-d3b7-459a-99dd-a8825c353c9d.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_63d7d6e1-ec7e-49a2-a8ec-eededdcb3897.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_63d7d6e1-ec7e-49a2-a8ec-eededdcb3897.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_6fc8b55f-a30a-4317-a1c5-3c1794b644d5.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_6fc8b55f-a30a-4317-a1c5-3c1794b644d5.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_715437ca-d2aa-4fff-a8bc-476e4d311995.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_715437ca-d2aa-4fff-a8bc-476e4d311995.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_71769070-d6e3-473f-93da-2d5638d23d2e.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_71769070-d6e3-473f-93da-2d5638d23d2e.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_71da4a52-abc0-4df9-92e1-efaed5a43e2c.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_71da4a52-abc0-4df9-92e1-efaed5a43e2c.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_76a28042-551e-40eb-9cde-a8e00211ee5d.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_76a28042-551e-40eb-9cde-a8e00211ee5d.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_7dc4b98a-1572-4c99-9f35-5d0d84bff0de.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_7dc4b98a-1572-4c99-9f35-5d0d84bff0de.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_83132346-1e32-4b71-92ee-ff68988c89c1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_83132346-1e32-4b71-92ee-ff68988c89c1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_84b0fedf-5cc9-4aa9-be17-890a9e480a24.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_84b0fedf-5cc9-4aa9-be17-890a9e480a24.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_87af2ec8-962f-4a3b-85fc-ad2149c72d5b.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_87af2ec8-962f-4a3b-85fc-ad2149c72d5b.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_8b5fb0fb-a03d-4a54-83ec-d38cae32041c.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_8b5fb0fb-a03d-4a54-83ec-d38cae32041c.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_93f398f4-6fca-41bf-b36d-5cd7821fc688.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_93f398f4-6fca-41bf-b36d-5cd7821fc688.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_99fb8380-aa6b-43fb-a843-8dffa6fc244c.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_99fb8380-aa6b-43fb-a843-8dffa6fc244c.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_a7312479-598e-42e4-ad64-ebc0bb9d2d01.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_a7312479-598e-42e4-ad64-ebc0bb9d2d01.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_aa960fca-68b1-4837-a776-5f43687cae35.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_aa960fca-68b1-4837-a776-5f43687cae35.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_b3d32a2d-8242-4f6a-82df-7e375a8d0046.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_b3d32a2d-8242-4f6a-82df-7e375a8d0046.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_b6fa7ec7-ae1a-4d7b-9e41-b41480526c8f.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_b6fa7ec7-ae1a-4d7b-9e41-b41480526c8f.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_ba5c78f7-3c30-4702-9852-d838f62539f2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_ba5c78f7-3c30-4702-9852-d838f62539f2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_beaeff3c-c771-47e4-99b7-8eecf1780eda.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_beaeff3c-c771-47e4-99b7-8eecf1780eda.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_ca8660d9-b251-4fdf-92fb-ed78bc7e0373.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_ca8660d9-b251-4fdf-92fb-ed78bc7e0373.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_cb2282d5-5ec0-4bdd-b819-dea5f722dd01.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_cb2282d5-5ec0-4bdd-b819-dea5f722dd01.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_ce0666e0-ff63-45c7-9c2f-275269fd9fda.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_ce0666e0-ff63-45c7-9c2f-275269fd9fda.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_e2bcda38-ba8b-4b66-aa18-06c489c30ef1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_e2bcda38-ba8b-4b66-aa18-06c489c30ef1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_f66d064d-38d2-4710-9d6b-c4ca729335b5.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_f66d064d-38d2-4710-9d6b-c4ca729335b5.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_fbd05e19-2e25-430c-a265-fbed78453e61.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_fbd05e19-2e25-430c-a265-fbed78453e61.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_fe0f1f1a-7a8e-46f3-999e-8b229fdb0fbb.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/TerrainData_fe0f1f1a-7a8e-46f3-999e-8b229fdb0fbb.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Textures/Water/Materials/water pool.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Textures/Water/Materials/water pool.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Textures/Water/Materials/water.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Textures/Water/Materials/water.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/UIBG.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/UIBG.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/AKM/WPN_AKM_floor_with_mag.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/AKM/WPN_AKM_floor_with_mag.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/Materials/WPNM_AKM.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/Materials/WPNM_calibers.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/WPN_AKM.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/WPN_AKM.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/cal_7_62x39.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/cal_7_62x39.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_AlbedoTransparency.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_Ambient_occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_Ambient_occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_MetallicSmoothness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_MetallicSmoothness.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_Normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_Normal.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Assualt_rifle_slot.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Assualt_rifle_slot.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Inventory.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Inventory.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/OcclusionCullingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/OcclusionCullingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/ReflectionProbe-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/AKM .762.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/AKM .762.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerInventory.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerInventory.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_inventory_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_inventory_background.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_inventory_cell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_inventory_cell.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_weapon_AKM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_weapon_AKM.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_weapon_slot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/CE318_weapon_slot.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_inventory_background.afdesign" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_inventory_cell.afdesign" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_inventory_cell.afdesign.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_weapon_AKM.afdesign" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_weapon_AKM.afdesign.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_weapon_slot.afdesign" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_weapon_slot.afdesign.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/UIBGBlur.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/UIBGBlur.shader.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Controllers/45 ACP.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/45 ACP.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Controllers/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/LightingData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/Materials/WPNM_calibers.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/ReflectionProbe-0.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/default_flare.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/default_flare/Flare50mm+.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/default_flare/Flare50mm+.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/default_flare/Sun+.flare" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/DemoScene/default_flare/Sun+.flare.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DepthOfFieldModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DepthOfFieldModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_BlueRed.tga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_BlueRed.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_GreenPurple.tga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_GreenPurple.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_PurpleGreen.tga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_PurpleGreen.tga.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_RedBlue.tga" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Textures/Spectral LUTs/DFSpectralLut_RedBlue.tga.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/DemoTerrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/DemoTerrain.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/walking.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Player/walking.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Assets_showcase_scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Assets_showcase_scene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/AKM.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Textures/Water/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Source/CE318_inventory_background.afdesign.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1/LightingData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/Materials/WPNM_AKM.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1/Lightmap-0_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Weapons_ChamferZone/AKM/textures/WPNT_AKM_AlbedoTransparency.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Map_v1/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Textures/Skyboxes/Skybox_v1/Skybox_v1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Textures/Skyboxes/Skybox_v1/Skybox_v1.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,31 +254,45 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHeadBob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" />
+        <option value="$PROJECT_DIR$/Assets/Textures/UIBGBlur.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -133,6 +347,11 @@
       <workItem from="1604933180306" duration="9137000" />
       <workItem from="1605007495778" duration="6417000" />
       <workItem from="1605106914843" duration="8563000" />
+      <workItem from="1605518704229" duration="2810000" />
+      <workItem from="1605617201696" duration="2528000" />
+      <workItem from="1605697759486" duration="3463000" />
+      <workItem from="1606049332970" duration="482000" />
+      <workItem from="1606049844936" duration="12118000" />
     </task>
     <servers />
   </component>
@@ -165,9 +384,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605198369194" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605199739257">
+    <state x="-1181" y="364" key="cloudConfig.PluginsDialog" timestamp="1606049816884">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1181" y="364" key="cloudConfig.PluginsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606049816884" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606074563775">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605199739257" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606074563775" />
   </component>
 </project>
