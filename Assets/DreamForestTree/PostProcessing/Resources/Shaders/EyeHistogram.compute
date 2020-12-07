@@ -8,7 +8,7 @@ RWStructuredBuffer<uint> _Histogram;
 Texture2D<float4> _Source;
 
 CBUFFER_START(Params)
-    float4 _ScaleOffsetRes; // x: scale, y: offset, z: width, w: height
+float4 _ScaleOffsetRes; // x: scale, y: offset, z: width, w: height
 CBUFFER_END
 
 groupshared uint gs_histogram[HISTOGRAM_BINS];
@@ -33,15 +33,15 @@ void KEyeHistogram(uint2 dispatchThreadId : SV_DispatchThreadID, uint2 groupThre
     // Gather local group histogram
     if (dispatchThreadId.x < (uint)_ScaleOffsetRes.z && dispatchThreadId.y < (uint)_ScaleOffsetRes.w)
     {
-#if USE_VIGNETTE_WEIGHTING
+        #if USE_VIGNETTE_WEIGHTING
         // Vignette weighting to put more focus on what's in the center of the screen
         float2 uv01 = float2(dispatchThreadId) / float2(_ScaleOffsetRes.z, _ScaleOffsetRes.w);
         float2 d = abs(uv01 - (0.5).xx);
         float vfactor = Pow2(saturate(1.0 - dot(d, d)));
         uint weight = (uint)(64.0 * vfactor);
-#else
+        #else
         uint weight = 1u;
-#endif
+        #endif
 
         float3 color = _Source[dispatchThreadId].xyz;
         float luminance = Max3(color); // Looks more natural than using a Rec.709 luminance for some reason

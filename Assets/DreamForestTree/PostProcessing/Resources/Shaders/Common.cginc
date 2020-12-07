@@ -69,18 +69,18 @@ inline half Min4(half x, half y, half z, half w) { return min(x, min(y, min(z, w
 inline half Max4(half4 x) { return max(x.x, max(x.y, max(x.z, x.w))); }
 inline half Max4(half x, half y, half z, half w) { return max(x, max(y, min(z, w))); }
 
-inline half  Pow2(half  x) { return x * x; }
+inline half Pow2(half x) { return x * x; }
 inline half2 Pow2(half2 x) { return x * x; }
 inline half3 Pow2(half3 x) { return x * x; }
 inline half4 Pow2(half4 x) { return x * x; }
 
-inline half  Pow3(half  x) { return x * x * x; }
+inline half Pow3(half x) { return x * x * x; }
 inline half2 Pow3(half2 x) { return x * x * x; }
 inline half3 Pow3(half3 x) { return x * x * x; }
 inline half4 Pow3(half4 x) { return x * x * x; }
 
 #ifndef UNITY_STANDARD_BRDF_INCLUDED
-inline half  Pow4(half  x) { return x * x * x * x; }
+inline half Pow4(half x) { return x * x * x * x; }
 inline half2 Pow4(half2 x) { return x * x * x * x; }
 inline half3 Pow4(half3 x) { return x * x * x * x; }
 inline half4 Pow4(half4 x) { return x * x * x * x; }
@@ -92,7 +92,7 @@ inline half3 MaxV(half3 v1, half3 v2) { return dot(v1, v1) < dot(v2, v2) ? v2 : 
 inline half4 MaxV(half4 v1, half4 v2) { return dot(v1, v1) < dot(v2, v2) ? v2 : v1; }
 
 // Clamp HDR value within a safe range
-inline half  SafeHDR(half  c) { return min(c, HALF_MAX); }
+inline half SafeHDR(half c) { return min(c, HALF_MAX); }
 inline half2 SafeHDR(half2 c) { return min(c, HALF_MAX); }
 inline half3 SafeHDR(half3 c) { return min(c, HALF_MAX); }
 inline half4 SafeHDR(half4 c) { return min(c, HALF_MAX); }
@@ -144,23 +144,23 @@ float LinearizeDepth(float z)
 
 half4 EncodeHDR(float3 rgb)
 {
-#if USE_RGBM
+    #if USE_RGBM
     rgb *= 1.0 / 8.0;
     float m = max(max(rgb.r, rgb.g), max(rgb.b, 1e-6));
     m = ceil(m * 255.0) / 255.0;
     return half4(rgb / m, m);
-#else
+    #else
     return half4(rgb, 0.0);
-#endif
+    #endif
 }
 
 float3 DecodeHDR(half4 rgba)
 {
-#if USE_RGBM
+    #if USE_RGBM
     return rgba.rgb * rgba.a * 8.0;
-#else
+    #else
     return rgba.rgb;
-#endif
+    #endif
 }
 
 #endif // __COMMON__

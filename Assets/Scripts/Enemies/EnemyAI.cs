@@ -1,37 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
-using Random = UnityEngine.Random;
 
 /// <summary>
-/// Script based on the implementation by Dave/GameDevelopment
-/// (https://www.youtube.com/watch?v=UjkSFoLxesw)
+///     Script based on the implementation by Dave/GameDevelopment
+///     (https://www.youtube.com/watch?v=UjkSFoLxesw)
 /// </summary>
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] private LayerMask groundMask, playerMask;
+
     private NavMeshAgent _navMeshAgent;
-    private Transform player;
-
-    [SerializeField] 
-    private LayerMask groundMask, playerMask;
-
-    #region Patrolling
-    public Vector3 walkPoint;
-    private bool _walkPointSet;
-    public float walkPointRange;
-    #endregion
-
-    #region Attacking
-    public float timeBetweenAttacks;
-    private bool _alreadyAttacked;
-    public GameObject projectile;
-    public Transform projectileSpawnPoint;
-    #endregion
-
-    #region States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
-    #endregion
+    private Transform    player;
 
     private void Awake()
     {
@@ -44,7 +23,7 @@ public class EnemyAI : MonoBehaviour
         // Check player sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
-        
+
         if (!playerInSightRange && !playerInAttackRange) Patrolling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
@@ -54,24 +33,18 @@ public class EnemyAI : MonoBehaviour
     {
         if (!_walkPointSet) SearchWalkPoint();
 
-        if (_walkPointSet)
-        {
-            _navMeshAgent.SetDestination(walkPoint);
-        }
+        if (_walkPointSet) _navMeshAgent.SetDestination(walkPoint);
 
         var distanceToWalkPoint = transform.position - walkPoint;
 
-        if (distanceToWalkPoint.magnitude < 1f)
-        {
-            _walkPointSet = false;
-        }
+        if (distanceToWalkPoint.magnitude < 1f) _walkPointSet = false;
     }
 
     private void SearchWalkPoint()
     {
         var randomZ = Random.Range(-walkPointRange, walkPointRange);
         var randomX = Random.Range(-walkPointRange, walkPointRange);
-        
+
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         _walkPointSet = Physics.Raycast(walkPoint, -transform.up, groundMask);
@@ -86,7 +59,7 @@ public class EnemyAI : MonoBehaviour
     {
         // Stop the enemy from moving
         _navMeshAgent.SetDestination(transform.position);
-        
+
         transform.LookAt(player);
 
         if (_alreadyAttacked) return;
@@ -98,5 +71,32 @@ public class EnemyAI : MonoBehaviour
         Invoke(nameof(ResetAttack), timeBetweenAttacks);
     }
 
-    private void ResetAttack() => _alreadyAttacked = false;
+    private void ResetAttack()
+    {
+        _alreadyAttacked = false;
+    }
+
+    #region Patrolling
+
+    public  Vector3 walkPoint;
+    private bool    _walkPointSet;
+    public  float   walkPointRange;
+
+    #endregion
+
+    #region Attacking
+
+    public  float      timeBetweenAttacks;
+    private bool       _alreadyAttacked;
+    public  GameObject projectile;
+    public  Transform  projectileSpawnPoint;
+
+    #endregion
+
+    #region States
+
+    public float sightRange,         attackRange;
+    public bool  playerInSightRange, playerInAttackRange;
+
+    #endregion
 }

@@ -608,7 +608,6 @@ FXAA QUALITY - EXTREME QUALITY
 #endif
 
 
-
 /*============================================================================
 
 API PORTING
@@ -710,8 +709,6 @@ FxaaFloat FxaaLuma(FxaaFloat4 rgba) { return rgba.w; }
 #else
 FxaaFloat FxaaLuma(FxaaFloat4 rgba) { return rgba.y; }
 #endif
-
-
 
 
 /*============================================================================
@@ -878,48 +875,49 @@ FxaaFloat4 FxaaPixelShader(
     // Immedates will result in compiler un-optimizing.
     // {xyzw} = float4(1.0, -1.0, 0.25, -0.25)
     FxaaFloat4 fxaaConsole360ConstDir
-) {
+)
+{
     /*--------------------------------------------------------------------------*/
     FxaaFloat2 posM;
     posM.x = pos.x;
     posM.y = pos.y;
-#if (FXAA_GATHER4_ALPHA == 1)
-#if (FXAA_DISCARD == 0)
+    #if (FXAA_GATHER4_ALPHA == 1)
+    #if (FXAA_DISCARD == 0)
     FxaaFloat4 rgbyM = FxaaTexTop(tex, posM);
-#if (FXAA_GREEN_AS_LUMA == 0)
+    #if (FXAA_GREEN_AS_LUMA == 0)
 #define lumaM rgbyM.w
-#else
+    #else
 #define lumaM rgbyM.y
-#endif
-#endif
-#if (FXAA_GREEN_AS_LUMA == 0)
+    #endif
+    #endif
+    #if (FXAA_GREEN_AS_LUMA == 0)
     FxaaFloat4 luma4A = FxaaTexAlpha4(tex, posM);
     FxaaFloat4 luma4B = FxaaTexOffAlpha4(tex, posM, FxaaInt2(-1, -1));
-#else
+    #else
     FxaaFloat4 luma4A = FxaaTexGreen4(tex, posM);
     FxaaFloat4 luma4B = FxaaTexOffGreen4(tex, posM, FxaaInt2(-1, -1));
-#endif
-#if (FXAA_DISCARD == 1)
+    #endif
+    #if (FXAA_DISCARD == 1)
 #define lumaM luma4A.w
-#endif
+    #endif
 #define lumaE luma4A.z
 #define lumaS luma4A.x
 #define lumaSE luma4A.y
 #define lumaNW luma4B.w
 #define lumaN luma4B.z
 #define lumaW luma4B.x
-#else
+    #else
     FxaaFloat4 rgbyM = FxaaTexTop(tex, posM);
-#if (FXAA_GREEN_AS_LUMA == 0)
+    #if (FXAA_GREEN_AS_LUMA == 0)
 #define lumaM rgbyM.w
-#else
-#define lumaM rgbyM.y
-#endif
+    #else
+    #define lumaM rgbyM.y
+    #endif
     FxaaFloat lumaS = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(0, 1), fxaaQualityRcpFrame.xy));
     FxaaFloat lumaE = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(1, 0), fxaaQualityRcpFrame.xy));
     FxaaFloat lumaN = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(0, -1), fxaaQualityRcpFrame.xy));
     FxaaFloat lumaW = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(-1, 0), fxaaQualityRcpFrame.xy));
-#endif
+    #endif
     /*--------------------------------------------------------------------------*/
     FxaaFloat maxSM = max(lumaS, lumaM);
     FxaaFloat minSM = min(lumaS, lumaM);
@@ -935,21 +933,21 @@ FxaaFloat4 FxaaPixelShader(
     FxaaBool earlyExit = range < rangeMaxClamped;
     /*--------------------------------------------------------------------------*/
     if (earlyExit)
-#if (FXAA_DISCARD == 1)
+    #if (FXAA_DISCARD == 1)
         FxaaDiscard;
-#else
+    #else
         return rgbyM;
-#endif
+    #endif
     /*--------------------------------------------------------------------------*/
-#if (FXAA_GATHER4_ALPHA == 0)
+    #if (FXAA_GATHER4_ALPHA == 0)
     FxaaFloat lumaNW = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(-1, -1), fxaaQualityRcpFrame.xy));
     FxaaFloat lumaSE = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(1, 1), fxaaQualityRcpFrame.xy));
     FxaaFloat lumaNE = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(1, -1), fxaaQualityRcpFrame.xy));
     FxaaFloat lumaSW = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(-1, 1), fxaaQualityRcpFrame.xy));
-#else
+    #else
     FxaaFloat lumaNE = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(1, -1), fxaaQualityRcpFrame.xy));
     FxaaFloat lumaSW = FxaaLuma(FxaaTexOff(tex, posM, FxaaInt2(-1, 1), fxaaQualityRcpFrame.xy));
-#endif
+    #endif
     /*--------------------------------------------------------------------------*/
     FxaaFloat lumaNS = lumaN + lumaS;
     FxaaFloat lumaWE = lumaW + lumaE;
@@ -1006,7 +1004,7 @@ FxaaFloat4 FxaaPixelShader(
     FxaaFloat2 posP;
     posP.x = posB.x + offNP.x * FXAA_QUALITY__P0;
     posP.y = posB.y + offNP.y * FXAA_QUALITY__P0;
-    FxaaFloat subpixD = ((-2.0)*subpixC) + 3.0;
+    FxaaFloat subpixD = ((-2.0) * subpixC) + 3.0;
     FxaaFloat lumaEndN = FxaaLuma(FxaaTexTop(tex, posN));
     FxaaFloat subpixE = subpixC * subpixC;
     FxaaFloat lumaEndP = FxaaLuma(FxaaTexTop(tex, posP));
@@ -1041,7 +1039,7 @@ FxaaFloat4 FxaaPixelShader(
         if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P2;
         if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P2;
         /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 3)
+        #if (FXAA_QUALITY__PS > 3)
         if (doneNP)
         {
             if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1056,7 +1054,7 @@ FxaaFloat4 FxaaPixelShader(
             if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P3;
             if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P3;
             /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 4)
+            #if (FXAA_QUALITY__PS > 4)
             if (doneNP)
             {
                 if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1071,7 +1069,7 @@ FxaaFloat4 FxaaPixelShader(
                 if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P4;
                 if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P4;
                 /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 5)
+                #if (FXAA_QUALITY__PS > 5)
                 if (doneNP)
                 {
                     if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1086,7 +1084,7 @@ FxaaFloat4 FxaaPixelShader(
                     if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P5;
                     if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P5;
                     /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 6)
+                    #if (FXAA_QUALITY__PS > 6)
                     if (doneNP)
                     {
                         if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1101,7 +1099,7 @@ FxaaFloat4 FxaaPixelShader(
                         if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P6;
                         if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P6;
                         /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 7)
+                        #if (FXAA_QUALITY__PS > 7)
                         if (doneNP)
                         {
                             if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1116,7 +1114,7 @@ FxaaFloat4 FxaaPixelShader(
                             if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P7;
                             if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P7;
                             /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 8)
+                            #if (FXAA_QUALITY__PS > 8)
                             if (doneNP)
                             {
                                 if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1131,7 +1129,7 @@ FxaaFloat4 FxaaPixelShader(
                                 if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P8;
                                 if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P8;
                                 /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 9)
+                                #if (FXAA_QUALITY__PS > 9)
                                 if (doneNP)
                                 {
                                     if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1146,7 +1144,7 @@ FxaaFloat4 FxaaPixelShader(
                                     if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P9;
                                     if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P9;
                                     /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 10)
+                                    #if (FXAA_QUALITY__PS > 10)
                                     if (doneNP)
                                     {
                                         if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1161,7 +1159,7 @@ FxaaFloat4 FxaaPixelShader(
                                         if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P10;
                                         if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P10;
                                         /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 11)
+                                        #if (FXAA_QUALITY__PS > 11)
                                         if (doneNP)
                                         {
                                             if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1176,7 +1174,7 @@ FxaaFloat4 FxaaPixelShader(
                                             if (!doneP) posP.x += offNP.x * FXAA_QUALITY__P11;
                                             if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P11;
                                             /*--------------------------------------------------------------------------*/
-#if (FXAA_QUALITY__PS > 12)
+                                            #if (FXAA_QUALITY__PS > 12)
                                             if (doneNP)
                                             {
                                                 if (!doneN) lumaEndN = FxaaLuma(FxaaTexTop(tex, posN.xy));
@@ -1192,34 +1190,34 @@ FxaaFloat4 FxaaPixelShader(
                                                 if (!doneP) posP.y += offNP.y * FXAA_QUALITY__P12;
                                                 /*--------------------------------------------------------------------------*/
                                             }
-#endif
+                                            #endif
                                             /*--------------------------------------------------------------------------*/
                                         }
-#endif
+                                        #endif
                                         /*--------------------------------------------------------------------------*/
                                     }
-#endif
+                                    #endif
                                     /*--------------------------------------------------------------------------*/
                                 }
-#endif
+                                #endif
                                 /*--------------------------------------------------------------------------*/
                             }
-#endif
+                            #endif
                             /*--------------------------------------------------------------------------*/
                         }
-#endif
+                        #endif
                         /*--------------------------------------------------------------------------*/
                     }
-#endif
+                    #endif
                     /*--------------------------------------------------------------------------*/
                 }
-#endif
+                #endif
                 /*--------------------------------------------------------------------------*/
             }
-#endif
+            #endif
             /*--------------------------------------------------------------------------*/
         }
-#endif
+        #endif
         /*--------------------------------------------------------------------------*/
     }
     /*--------------------------------------------------------------------------*/
@@ -1244,16 +1242,15 @@ FxaaFloat4 FxaaPixelShader(
     FxaaFloat pixelOffsetSubpix = max(pixelOffsetGood, subpixH);
     if (!horzSpan) posM.x += pixelOffsetSubpix * lengthSign;
     if (horzSpan) posM.y += pixelOffsetSubpix * lengthSign;
-#if (FXAA_DISCARD == 1)
+    #if (FXAA_DISCARD == 1)
     return FxaaTexTop(tex, posM);
-#else
+    #else
     return FxaaFloat4(FxaaTexTop(tex, posM).xyz, lumaM);
-#endif
+    #endif
 }
+
 /*==========================================================================*/
 #endif
-
-
 
 
 /*============================================================================
@@ -1349,7 +1346,6 @@ FxaaFloat4 FxaaPixelShader(
 }
 /*==========================================================================*/
 #endif
-
 
 
 /*============================================================================
@@ -1449,7 +1445,6 @@ float4 FxaaPixelShader(
 }
 /*==========================================================================*/
 #endif
-
 
 
 /*============================================================================
@@ -1648,7 +1643,7 @@ half4 FxaaPixelShader(
     dir.x = -lumaNe.y;
     dir.z = -lumaNe.y;
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (2)
     half4 lumaSw = h4tex2Dlod(tex, half4(fxaaConsolePosPos.xw, 0, 0));
 #if (FXAA_GREEN_AS_LUMA == 0)
@@ -1658,7 +1653,7 @@ half4 FxaaPixelShader(
     dir.x += lumaSw.y;
     dir.z += lumaSw.y;
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (3)
     half4 lumaNw = h4tex2Dlod(tex, half4(fxaaConsolePosPos.xy, 0, 0));
 #if (FXAA_GREEN_AS_LUMA == 0)
@@ -1668,7 +1663,7 @@ half4 FxaaPixelShader(
     dir.x -= lumaNw.y;
     dir.z += lumaNw.y;
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (4)
     half4 lumaSe = h4tex2Dlod(tex, half4(fxaaConsolePosPos.zw, 0, 0));
 #if (FXAA_GREEN_AS_LUMA == 0)
@@ -1678,7 +1673,7 @@ half4 FxaaPixelShader(
     dir.x += lumaSe.y;
     dir.z -= lumaSe.y;
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (5)
     half4 dir1_pos;
     dir1_pos.xy = normalize(dir.xyz).xz;
@@ -1712,8 +1707,8 @@ half4 FxaaPixelShader(
     rgby2 = h4tex2Dlod(tex, half4(rgby2.xy, 0.0, 0.0));
     rgby2 = (temp2N + rgby2) * 0.5;
     /*--------------------------------------------------------------------------*/
-    // (11)
-    // compilier moves these scalar ops up to other cycles
+// (11)
+// compilier moves these scalar ops up to other cycles
 #if (FXAA_GREEN_AS_LUMA == 0)
     half lumaMin = min(min(lumaNw.w, lumaSw.w), min(lumaNe.w, lumaSe.w));
     half lumaMax = max(max(lumaNw.w, lumaSw.w), max(lumaNe.w, lumaSe.w));
@@ -1723,7 +1718,7 @@ half4 FxaaPixelShader(
 #endif
     rgby2 = (rgby2 + rgby1) * 0.5;
     /*--------------------------------------------------------------------------*/
-    // (12)
+// (12)
 #if (FXAA_GREEN_AS_LUMA == 0)
     bool twoTapLt = rgby2.w < lumaMin;
     bool twoTapGt = rgby2.w > lumaMax;
@@ -1731,7 +1726,7 @@ half4 FxaaPixelShader(
     bool twoTapLt = rgby2.y < lumaMin;
     bool twoTapGt = rgby2.y > lumaMax;
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (13)
     if (twoTapLt || twoTapGt) rgby2 = rgby1;
     /*--------------------------------------------------------------------------*/
@@ -1739,7 +1734,6 @@ half4 FxaaPixelShader(
 }
 /*==========================================================================*/
 #endif
-
 
 
 /*============================================================================
@@ -1954,7 +1948,7 @@ half4 FxaaPixelShader(
 #else
     half lumaNe = rgbyNe.y + half(1.0 / 512.0);
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (2)
     half4 lumaSw = h4tex2Dlod(tex, half4(fxaaConsolePosPos.xw, 0, 0));
 #if (FXAA_GREEN_AS_LUMA == 0)
@@ -1962,7 +1956,7 @@ half4 FxaaPixelShader(
 #else
     half lumaSwNegNe = lumaSw.y - lumaNe;
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (3)
     half4 lumaNw = h4tex2Dlod(tex, half4(fxaaConsolePosPos.xy, 0, 0));
 #if (FXAA_GREEN_AS_LUMA == 0)
@@ -1972,7 +1966,7 @@ half4 FxaaPixelShader(
     half lumaMaxNwSw = max(lumaNw.y, lumaSw.y);
     half lumaMinNwSw = min(lumaNw.y, lumaSw.y);
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (4)
     half4 lumaSe = h4tex2Dlod(tex, half4(fxaaConsolePosPos.zw, 0, 0));
 #if (FXAA_GREEN_AS_LUMA == 0)
@@ -1982,7 +1976,7 @@ half4 FxaaPixelShader(
     half dirZ = lumaNw.y + lumaSwNegNe;
     half dirX = -lumaNw.y + lumaSwNegNe;
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (5)
     half3 dir;
     dir.y = 0.0;
@@ -1995,7 +1989,7 @@ half4 FxaaPixelShader(
     dir.z = -lumaSe.y + dirZ;
     half lumaMinNeSe = min(lumaNe, lumaSe.y);
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (6)
     half4 dir1_pos;
     dir1_pos.xy = normalize(dir).xz;
@@ -2011,7 +2005,7 @@ half4 FxaaPixelShader(
 #else
     half lumaMaxNeSe = max(lumaNe, lumaSe.y);
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (8)
     half4 temp1N;
     temp1N.xy = dir1_pos.zw - dir1_pos.xy * fxaaConsoleRcpFrameOpt.zw;
@@ -2034,7 +2028,7 @@ half4 FxaaPixelShader(
     half lumaMaxM = max(lumaMax, rgbyM.y);
     half lumaMinM = min(lumaMin, rgbyM.y);
 #endif
-    /*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
     // (11)
     half4 temp2N;
     temp2N.xy = dir2_pos.zw - dir2_pos.xy * fxaaConsoleRcpFrameOpt2.zw;
@@ -2050,7 +2044,7 @@ half4 FxaaPixelShader(
     // (13)
     rgby2 = (rgby2 + rgby1) * 0.5;
     /*--------------------------------------------------------------------------*/
-    // (14)
+// (14)
 #if (FXAA_GREEN_AS_LUMA == 0)
     bool twoTapLt = rgby2.w < lumaMin;
     bool twoTapGt = rgby2.w > lumaMax;

@@ -31,10 +31,12 @@ bool isIntersecting(float rayZMin, float rayZMax, float sceneZ, float layerThick
     return (rayZMax >= sceneZ - layerThickness) && (rayZMin <= sceneZ);
 }
 
-void rayIterations(in bool traceBehindObjects, inout float2 P, inout float stepDirection, inout float end, inout int stepCount, inout int maxSteps, inout bool intersecting,
-        inout float sceneZ, inout float2 dP, inout float3 Q, inout float3 dQ, inout float k, inout float dk,
-        inout float rayZMin, inout float rayZMax, inout float prevZMaxEstimate, inout bool permute, inout float2 hitPixel,
-        inout float2 invSize, inout float layerThickness)
+void rayIterations(in bool traceBehindObjects, inout float2 P, inout float stepDirection, inout float end,
+                   inout int stepCount, inout int maxSteps, inout bool intersecting,
+                   inout float sceneZ, inout float2 dP, inout float3 Q, inout float3 dQ, inout float k, inout float dk,
+                   inout float rayZMin, inout float rayZMax, inout float prevZMaxEstimate, inout bool permute,
+                   inout float2 hitPixel,
+                   inout float2 invSize, inout float layerThickness)
 {
     bool stop = intersecting;
 
@@ -58,13 +60,12 @@ void rayIterations(in bool traceBehindObjects, inout float2 P, inout float stepD
         // Q at each point
         hitPixel = permute ? P.yx : P;
 
-        sceneZ = tex2Dlod(_CameraDepthTexture, float4(hitPixel * invSize,0,0)).r;
+        sceneZ = tex2Dlod(_CameraDepthTexture, float4(hitPixel * invSize, 0, 0)).r;
         sceneZ = -LinearEyeDepth(sceneZ);
 
         bool isBehind = (rayZMin <= sceneZ);
         intersecting = isBehind && (rayZMax >= sceneZ - layerThickness);
         stop = traceBehindObjects ? intersecting : isBehind;
-
     } // pixel on ray
 
     P -= dP, Q.z -= dQ.z, k -= dk;
@@ -75,21 +76,21 @@ void rayIterations(in bool traceBehindObjects, inout float2 P, inout float stepD
   \param stepRate Set to 1.0 by default, higher to step faster
  */
 bool castDenseScreenSpaceRay
-   (float3          csOrigin,
-    float3          csDirection,
-    float4x4        projectToPixelMatrix,
-    float2          csZBufferSize,
-    float3          clipInfo,
-    float           jitterFraction,
-    int             maxSteps,
-    float           layerThickness,
-    float           maxRayTraceDistance,
-    out float2      hitPixel,
-    int             stepRate,
-    bool            traceBehindObjects,
-    out float3      csHitPoint,
-    out float       stepCount) {
-
+(float3 csOrigin,
+ float3 csDirection,
+ float4x4 projectToPixelMatrix,
+ float2 csZBufferSize,
+ float3 clipInfo,
+ float jitterFraction,
+ int maxSteps,
+ float layerThickness,
+ float maxRayTraceDistance,
+ out float2 hitPixel,
+ int stepRate,
+ bool traceBehindObjects,
+ out float3 csHitPoint,
+ out float stepCount)
+{
     float2 invSize = float2(1.0 / csZBufferSize.x, 1.0 / csZBufferSize.y);
 
     // Initialize to off screen
@@ -97,9 +98,9 @@ bool castDenseScreenSpaceRay
 
     float nearPlaneZ = -0.01;
     // Clip ray to a near plane in 3D (doesn't have to be *the* near plane, although that would be a good idea)
-    float rayLength = ((csOrigin.z + csDirection.z * maxRayTraceDistance) > nearPlaneZ) ?
-                        ((nearPlaneZ - csOrigin.z) / csDirection.z) :
-                        maxRayTraceDistance;
+    float rayLength = ((csOrigin.z + csDirection.z * maxRayTraceDistance) > nearPlaneZ)
+                          ? ((nearPlaneZ - csOrigin.z) / csDirection.z)
+                          : maxRayTraceDistance;
 
     float3 csEndPoint = csDirection * rayLength + csOrigin;
 
@@ -128,7 +129,7 @@ bool castDenseScreenSpaceRay
     float3 Q0 = csOrigin * k0;
     float3 Q1 = csEndPoint * k1;
 
-#if 1 // Clipping to the screen coordinates. We could simply modify maxSteps instead
+    #if 1 // Clipping to the screen coordinates. We could simply modify maxSteps instead
     float yMax = csZBufferSize.y - 0.5;
     float yMin = 0.5;
     float xMax = csZBufferSize.x - 0.5;
@@ -137,16 +138,20 @@ bool castDenseScreenSpaceRay
     // 2D interpolation parameter
     float alpha = 0.0;
     // P0 must be in bounds
-    if (P1.y > yMax || P1.y < yMin) {
+    if (P1.y > yMax || P1.y < yMin)
+    {
         float yClip = (P1.y > yMax) ? yMax : yMin;
-        float yAlpha = (P1.y - yClip) / (P1.y - P0.y); // Denominator is not zero, since P0 != P1 (or P0 would have been clipped!)
+        float yAlpha = (P1.y - yClip) / (P1.y - P0.y);
+        // Denominator is not zero, since P0 != P1 (or P0 would have been clipped!)
         alpha = yAlpha;
     }
 
     // P0 must be in bounds
-    if (P1.x > xMax || P1.x < xMin) {
+    if (P1.x > xMax || P1.x < xMin)
+    {
         float xClip = (P1.x > xMax) ? xMax : xMin;
-        float xAlpha = (P1.x - xClip) / (P1.x - P0.x); // Denominator is not zero, since P0 != P1 (or P0 would have been clipped!)
+        float xAlpha = (P1.x - xClip) / (P1.x - P0.x);
+        // Denominator is not zero, since P0 != P1 (or P0 would have been clipped!)
         alpha = max(alpha, xAlpha);
     }
 
@@ -154,7 +159,7 @@ bool castDenseScreenSpaceRay
     P1 = lerp(P1, P0, alpha);
     k1 = lerp(k1, k0, alpha);
     Q1 = lerp(Q1, Q0, alpha);
-#endif
+    #endif
 
     // We're doing this to avoid divide by zero (rays exactly parallel to an eye ray)
     P1 = (distanceSquared(P0, P1) < 0.0001) ? P0 + float2(0.01, 0.01) : P1;
@@ -163,7 +168,8 @@ bool castDenseScreenSpaceRay
 
     // Assume horizontal
     bool permute = false;
-    if (abs(delta.x) < abs(delta.y)) {
+    if (abs(delta.x) < abs(delta.y))
+    {
         // More-vertical line. Create a permutation that swaps x and y in the output
         permute = true;
 
@@ -181,7 +187,7 @@ bool castDenseScreenSpaceRay
 
     // Track the derivatives of Q and k
     float3 dQ = (Q1 - Q0) * invdx;
-    float   dk = (k1 - k0) * invdx;
+    float dk = (k1 - k0) * invdx;
 
     dP *= stepRate;
     dQ *= stepRate;
@@ -193,7 +199,7 @@ bool castDenseScreenSpaceRay
 
     // Slide P from P0 to P1, (now-homogeneous) Q from Q0 to Q1, and k from k0 to k1
     float3 Q = Q0;
-    float  k = k0;
+    float k = k0;
 
     // We track the ray depth at +/- 1/2 pixel to treat pixels as clip-space solid
     // voxels. Because the depth at -1/2 for a given pixel will be the same as at
@@ -218,10 +224,10 @@ bool castDenseScreenSpaceRay
     float2 P = P0;
 
     int originalStepCount = 0;
-    rayIterations(traceBehindObjects, P, stepDirection, end,  originalStepCount,  maxSteps, intersecting,
-         sceneZ, dP, Q, dQ,  k,  dk,
-         rayZMin,  rayZMax,  prevZMaxEstimate, permute, hitPixel,
-         invSize,  layerThickness);
+    rayIterations(traceBehindObjects, P, stepDirection, end, originalStepCount, maxSteps, intersecting,
+                  sceneZ, dP, Q, dQ, k, dk,
+                  rayZMin, rayZMax, prevZMaxEstimate, permute, hitPixel,
+                  invSize, layerThickness);
 
 
     stepCount = originalStepCount;

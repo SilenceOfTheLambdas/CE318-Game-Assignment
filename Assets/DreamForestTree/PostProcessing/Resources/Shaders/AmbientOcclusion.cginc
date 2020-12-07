@@ -92,53 +92,53 @@ fixed3 GetPackedNormal(fixed4 p)
 float CheckBounds(float2 uv, float d)
 {
     float ob = any(uv < 0) + any(uv > 1);
-#if defined(UNITY_REVERSED_Z)
+    #if defined(UNITY_REVERSED_Z)
     ob += (d <= 0.00001);
-#else
+    #else
     ob += (d >= 0.99999);
-#endif
+    #endif
     return ob * 1e8;
 }
 
 // Depth/normal sampling functions
 float SampleDepth(float2 uv)
 {
-#if defined(SOURCE_GBUFFER) || defined(SOURCE_DEPTH)
+    #if defined(SOURCE_GBUFFER) || defined(SOURCE_DEPTH)
     float d = LinearizeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv));
-#else
+    #else
     float4 cdn = tex2D(_CameraDepthNormalsTexture, uv);
     float d = DecodeFloatRG(cdn.zw);
-#endif
+    #endif
     return d * _ProjectionParams.z + CheckBounds(uv, d);
 }
 
 float3 SampleNormal(float2 uv)
 {
-#if defined(SOURCE_GBUFFER)
+    #if defined(SOURCE_GBUFFER)
     float3 norm = tex2D(_CameraGBufferTexture2, uv).xyz;
     norm = norm * 2 - any(norm); // gets (0,0,0) when norm == 0
     norm = mul((float3x3)unity_WorldToCamera, norm);
-#if defined(VALIDATE_NORMALS)
+    #if defined(VALIDATE_NORMALS)
     norm = normalize(norm);
-#endif
+    #endif
     return norm;
-#else
+    #else
     float4 cdn = tex2D(_CameraDepthNormalsTexture, uv);
     return DecodeViewNormalStereo(cdn) * float3(1.0, 1.0, -1.0);
-#endif
+    #endif
 }
 
 float SampleDepthNormal(float2 uv, out float3 normal)
 {
-#if defined(SOURCE_GBUFFER) || defined(SOURCE_DEPTH)
+    #if defined(SOURCE_GBUFFER) || defined(SOURCE_DEPTH)
     normal = SampleNormal(uv);
     return SampleDepth(uv);
-#else
+    #else
     float4 cdn = tex2D(_CameraDepthNormalsTexture, uv);
     normal = DecodeViewNormalStereo(cdn) * float3(1.0, 1.0, -1.0);
     float d = DecodeFloatRG(cdn.zw);
     return d * _ProjectionParams.z + CheckBounds(uv, d);
-#endif
+    #endif
 }
 
 // Normal vector comparer (for geometry-aware weighting)
@@ -151,8 +151,8 @@ half CompareNormal(half3 d1, half3 d2)
 struct VaryingsMultitex
 {
     float4 pos : SV_POSITION;
-    half2 uv : TEXCOORD0;    // Original UV
-    half2 uv01 : TEXCOORD1;  // Alternative UV (supports v-flip case)
+    half2 uv : TEXCOORD0; // Original UV
+    half2 uv01 : TEXCOORD1; // Alternative UV (supports v-flip case)
     half2 uvSPR : TEXCOORD2; // Single pass stereo rendering UV
 };
 
@@ -160,9 +160,9 @@ VaryingsMultitex VertMultitex(AttributesDefault v)
 {
     half2 uvAlt = v.texcoord.xy;
 
-#if UNITY_UV_STARTS_AT_TOP
+    #if UNITY_UV_STARTS_AT_TOP
     if (_MainTex_TexelSize.y < 0.0) uvAlt.y = 1.0 - uvAlt.y;
-#endif
+    #endif
 
     VaryingsMultitex o;
     o.pos = UnityObjectToClipPos(v.vertex);
@@ -207,16 +207,16 @@ float3 ReconstructViewPos(float2 uv, float depth, float2 p11_22, float2 p13_31)
 float3 PickSamplePoint(float2 uv, float index)
 {
     // Uniformaly distributed points on a unit sphere http://goo.gl/X2F1Ho
-#if defined(FIX_SAMPLING_PATTERN)
+    #if defined(FIX_SAMPLING_PATTERN)
     float gn = GradientNoise(uv * _Downsample);
     // FIXME: This was added to avoid a NVIDIA driver issue.
     //                                   vvvvvvvvvvvv
     float u = frac(UVRandom(0.0, index + uv.x * 1e-10) + gn) * 2.0 - 1.0;
     float theta = (UVRandom(1.0, index + uv.x * 1e-10) + gn) * UNITY_PI_2;
-#else
+    #else
     float u = UVRandom(uv.x + _Time.x, uv.y + index) * 2.0 - 1.0;
     float theta = UVRandom(-uv.x - _Time.x, uv.y + index) * UNITY_PI_2;
-#endif
+    #endif
     float3 v = float3(CosSin(theta) * sqrt(1.0 - u * u), u);
     // Make them distributed between [0, _Radius]
     float l = sqrt((index + 1.0) / _SampleCount) * _Radius;
@@ -227,14 +227,14 @@ float3 PickSamplePoint(float2 uv, float index)
 half ComputeFog(float z)
 {
     half fog = 0.0;
-#if FOG_LINEAR
+    #if FOG_LINEAR
     fog = (_FogParams.z - z) / (_FogParams.z - _FogParams.y);
-#elif FOG_EXP
+    #elif FOG_EXP
     fog = exp2(-_FogParams.x * z);
-#else // FOG_EXP2
+    #else // FOG_EXP2
     fog = _FogParams.x * z;
     fog = exp2(-fog * fog);
-#endif
+    #endif
     return saturate(fog);
 }
 
@@ -261,11 +261,11 @@ half4 FragAO(VaryingsMultitex i) : SV_Target
     float3 norm_o;
     float depth_o = SampleDepthNormal(UnityStereoScreenSpaceUVAdjust(uv, _CameraDepthTexture_ST), norm_o);
 
-#if defined(SOURCE_DEPTHNORMALS)
+    #if defined(SOURCE_DEPTHNORMALS)
     // Offset the depth value to avoid precision error.
     // (depth in the DepthNormals mode has only 16-bit precision)
     depth_o -= _ProjectionParams.z / 65536;
-#endif
+    #endif
 
     // Reconstruct the view-space position.
     float3 vpos_o = ReconstructViewPos(i.uv01, depth_o, p11_22, p13_31);
@@ -275,13 +275,13 @@ half4 FragAO(VaryingsMultitex i) : SV_Target
     for (int s = 0; s < _SampleCount; s++)
     {
         // Sample point
-#if defined(SHADER_API_D3D11)
+        #if defined(SHADER_API_D3D11)
         // This 'floor(1.0001 * s)' operation is needed to avoid a NVidia
         // shader issue. This issue is only observed on DX11.
         float3 v_s1 = PickSamplePoint(uv, floor(1.0001 * s));
-#else
+        #else
         float3 v_s1 = PickSamplePoint(uv, s);
-#endif
+        #endif
         v_s1 = faceforward(v_s1, -norm_o, v_s1);
         float3 vpos_s1 = vpos_o + v_s1;
 
@@ -308,11 +308,11 @@ half4 FragAO(VaryingsMultitex i) : SV_Target
     ao = pow(ao * _Intensity / _SampleCount, kContrast);
 
     // Apply fog when enabled (forward-only)
-#if !FOG_OFF
+    #if !FOG_OFF
     float d = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv));
     d = ComputeDistance(d);
     ao *= ComputeFog(d);
-#endif
+    #endif
 
     return PackAONormal(ao, norm_o);
 }
@@ -320,17 +320,17 @@ half4 FragAO(VaryingsMultitex i) : SV_Target
 // Geometry-aware separable bilateral filter
 half4 FragBlur(VaryingsMultitex i) : SV_Target
 {
-#if defined(BLUR_HORIZONTAL)
+    #if defined(BLUR_HORIZONTAL)
     // Horizontal pass: Always use 2 texels interval to match to
     // the dither pattern.
     float2 delta = float2(_MainTex_TexelSize.x * 2.0, 0.0);
-#else
+    #else
     // Vertical pass: Apply _Downsample to match to the dither
     // pattern in the original occlusion buffer.
     float2 delta = float2(0.0, _MainTex_TexelSize.y / _Downsample * 2.0);
-#endif
+    #endif
 
-#if defined(BLUR_HIGH_QUALITY)
+    #if defined(BLUR_HIGH_QUALITY)
 
     // High quality 7-tap Gaussian with adaptive sampling
 
@@ -342,11 +342,11 @@ half4 FragBlur(VaryingsMultitex i) : SV_Target
     fixed4 p3a = tex2D(_MainTex, i.uvSPR - delta * 3.2307692308);
     fixed4 p3b = tex2D(_MainTex, i.uvSPR + delta * 3.2307692308);
 
-#if defined(BLUR_SAMPLE_CENTER_NORMAL)
+    #if defined(BLUR_SAMPLE_CENTER_NORMAL)
     fixed3 n0 = SampleNormal(i.uvSPR);
-#else
+    #else
     fixed3 n0 = GetPackedNormal(p0);
-#endif
+    #endif
 
     half w0  = 0.37004405286;
     half w1a = CompareNormal(n0, GetPackedNormal(p1a)) * 0.31718061674;
@@ -367,29 +367,29 @@ half4 FragBlur(VaryingsMultitex i) : SV_Target
 
     s /= w0 + w1a + w1b + w2a + w2b + w3a + w3b;
 
-#else
+    #else
 
     // Fater 5-tap Gaussian with linear sampling
-    fixed4 p0  = tex2D(_MainTex, i.uvSPR);
+    fixed4 p0 = tex2D(_MainTex, i.uvSPR);
     fixed4 p1a = tex2D(_MainTex, i.uvSPR - delta * 1.3846153846);
     fixed4 p1b = tex2D(_MainTex, i.uvSPR + delta * 1.3846153846);
     fixed4 p2a = tex2D(_MainTex, i.uvSPR - delta * 3.2307692308);
     fixed4 p2b = tex2D(_MainTex, i.uvSPR + delta * 3.2307692308);
 
-#if defined(BLUR_SAMPLE_CENTER_NORMAL)
+    #if defined(BLUR_SAMPLE_CENTER_NORMAL)
     fixed3 n0 = SampleNormal(i.uvSPR);
-#else
+    #else
     fixed3 n0 = GetPackedNormal(p0);
-#endif
+    #endif
 
-    half w0  = 0.2270270270;
+    half w0 = 0.2270270270;
     half w1a = CompareNormal(n0, GetPackedNormal(p1a)) * 0.3162162162;
     half w1b = CompareNormal(n0, GetPackedNormal(p1b)) * 0.3162162162;
     half w2a = CompareNormal(n0, GetPackedNormal(p2a)) * 0.0702702703;
     half w2b = CompareNormal(n0, GetPackedNormal(p2b)) * 0.0702702703;
 
     half s;
-    s  = GetPackedAO(p0)  * w0;
+    s = GetPackedAO(p0) * w0;
     s += GetPackedAO(p1a) * w1a;
     s += GetPackedAO(p1b) * w1b;
     s += GetPackedAO(p2a) * w2a;
@@ -397,7 +397,7 @@ half4 FragBlur(VaryingsMultitex i) : SV_Target
 
     s /= w0 + w1a + w1b + w2a + w2b;
 
-#endif
+    #endif
 
     return PackAONormal(s, n0);
 }
@@ -428,7 +428,7 @@ half BlurSmall(sampler2D tex, float2 uv, float2 delta)
     half w4 = CompareNormal(n0, GetPackedNormal(p4));
 
     half s;
-    s  = GetPackedAO(p0) * w0;
+    s = GetPackedAO(p0) * w0;
     s += GetPackedAO(p1) * w1;
     s += GetPackedAO(p2) * w2;
     s += GetPackedAO(p3) * w3;
@@ -444,11 +444,11 @@ half4 FragComposition(VaryingsMultitex i) : SV_Target
     half ao = BlurSmall(_OcclusionTexture, i.uvSPR, delta);
     half4 color = tex2D(_MainTex, i.uvSPR);
 
-#if !defined(DEBUG_COMPOSITION)
+    #if !defined(DEBUG_COMPOSITION)
     color.rgb *= 1.0 - EncodeAO(ao);
-#else
+    #else
     color.rgb = 1.0 - EncodeAO(ao);
-#endif
+    #endif
 
     return color;
 }
@@ -458,11 +458,11 @@ VaryingsDefault VertCompositionGBuffer(AttributesDefault v)
 {
     VaryingsDefault o;
     o.pos = v.vertex;
-#if UNITY_UV_STARTS_AT_TOP
+    #if UNITY_UV_STARTS_AT_TOP
     o.uv = v.texcoord.xy * float2(1.0, -1.0) + float2(0.0, 1.0);
-#else
+    #else
     o.uv = v.texcoord.xy;
-#endif
+    #endif
     o.uvSPR = UnityStereoTransformScreenSpaceTex(o.uv);
     return o;
 }

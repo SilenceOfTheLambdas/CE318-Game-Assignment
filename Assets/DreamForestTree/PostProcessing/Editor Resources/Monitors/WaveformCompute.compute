@@ -3,9 +3,9 @@
 RWStructuredBuffer<uint4> _Waveform;
 Texture2D<float4> _Source;
 
-CBUFFER_START (Params)
-    uint _IsLinear;
-    uint4 _Channels;
+CBUFFER_START(Params)
+uint _IsLinear;
+uint4 _Channels;
 CBUFFER_END
 
 #define COLUMNS 384

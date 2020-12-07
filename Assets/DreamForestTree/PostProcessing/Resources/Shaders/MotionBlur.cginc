@@ -63,10 +63,10 @@ VaryingsMultitex VertMultitex(AttributesDefault v)
     o.uv0 = v.texcoord.xy;
     o.uv1 = v.texcoord.xy;
 
-#if UNITY_UV_STARTS_AT_TOP
+    #if UNITY_UV_STARTS_AT_TOP
     if (_MainTex_TexelSize.y < 0.0)
         o.uv1.y = 1.0 - v.texcoord.y;
-#endif
+    #endif
 
     return o;
 }
@@ -293,11 +293,11 @@ VaryingsDefault VertFrameCompress(AttributesDefault v)
     VaryingsDefault o;
     o.pos = v.vertex;
     o.uvSPR = 0;
-#if UNITY_UV_STARTS_AT_TOP
+    #if UNITY_UV_STARTS_AT_TOP
     o.uv = v.texcoord * float2(1.0, -1.0) + float2(0.0, 1.0);
-#else
+    #else
     o.uv = v.texcoord;
-#endif
+    #endif
     return o;
 }
 
@@ -306,20 +306,20 @@ VaryingsDefault VertFrameCompress(AttributesDefault v)
 // MRT output struct for the compressor
 struct CompressorOutput
 {
-    half4 luma   : SV_Target0;
+    half4 luma : SV_Target0;
     half4 chroma : SV_Target1;
 };
 
 // Frame compression fragment shader
 CompressorOutput FragFrameCompress(VaryingsDefault i)
 {
-    float sw = _ScreenParams.x;     // Screen width
+    float sw = _ScreenParams.x; // Screen width
     float pw = _ScreenParams.z - 1; // Pixel width
 
     // RGB to YCbCr convertion matrix
-    const half3 kY  = half3( 0.299   ,  0.587   ,  0.114   );
-    const half3 kCB = half3(-0.168736, -0.331264,  0.5     );
-    const half3 kCR = half3( 0.5     , -0.418688, -0.081312);
+    const half3 kY = half3(0.299, 0.587, 0.114);
+    const half3 kCB = half3(-0.168736, -0.331264, 0.5);
+    const half3 kCR = half3(0.5, -0.418688, -0.081312);
 
     // 0: even column, 1: odd column
     half odd = frac(i.uv.x * sw * 0.5) > 0.5;
@@ -395,7 +395,7 @@ half4 FragFrameBlending(VaryingsMultitex i) : SV_Target
     acc += DecodeHistory(uvLuma, uvCb, uvCr, _History2LumaTex, _History2ChromaTex) * _History2Weight;
     acc += DecodeHistory(uvLuma, uvCb, uvCr, _History3LumaTex, _History3ChromaTex) * _History3Weight;
     acc += DecodeHistory(uvLuma, uvCb, uvCr, _History4LumaTex, _History4ChromaTex) * _History4Weight;
-    acc /= 1.0 + _History1Weight + _History2Weight +_History3Weight +_History4Weight;
+    acc /= 1.0 + _History1Weight + _History2Weight + _History3Weight + _History4Weight;
 
     #if !UNITY_COLORSPACE_GAMMA
     acc = GammaToLinearSpace(acc);
@@ -413,7 +413,7 @@ half4 FragFrameBlendingRaw(VaryingsMultitex i) : SV_Target
     acc += tex2D(_History2LumaTex, i.uv0) * _History2Weight;
     acc += tex2D(_History3LumaTex, i.uv0) * _History3Weight;
     acc += tex2D(_History4LumaTex, i.uv0) * _History4Weight;
-    acc /= 1.0 + _History1Weight + _History2Weight +_History3Weight +_History4Weight;
+    acc /= 1.0 + _History1Weight + _History2Weight + _History3Weight + _History4Weight;
     return half4(acc, src.a);
 }
 

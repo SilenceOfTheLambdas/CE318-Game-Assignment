@@ -28,7 +28,7 @@ static const ParamsLogC LogC =
     0.244161, // c
     0.386036, // d
     5.301883, // e
-    0.092819  // f
+    0.092819 // f
 };
 
 half LinearToLogC_Precise(half x)
@@ -43,15 +43,15 @@ half LinearToLogC_Precise(half x)
 
 half3 LinearToLogC(half3 x)
 {
-#if COLOR_GRADING_PRECISE_LOG
+    #if COLOR_GRADING_PRECISE_LOG
     return half3(
         LinearToLogC_Precise(x.x),
         LinearToLogC_Precise(x.y),
         LinearToLogC_Precise(x.z)
     );
-#else
+    #else
     return LogC.c * log10(LogC.a * x + LogC.b) + LogC.d;
-#endif
+    #endif
 }
 
 half LogCToLinear_Precise(half x)
@@ -66,15 +66,15 @@ half LogCToLinear_Precise(half x)
 
 half3 LogCToLinear(half3 x)
 {
-#if COLOR_GRADING_PRECISE_LOG
+    #if COLOR_GRADING_PRECISE_LOG
     return half3(
         LogCToLinear_Precise(x.x),
         LogCToLinear_Precise(x.y),
         LogCToLinear_Precise(x.z)
     );
-#else
+    #else
     return (pow(10.0, (x - LogC.d) / LogC.c) - LogC.b) / LogC.a;
-#endif
+    #endif
 }
 
 //
@@ -88,9 +88,9 @@ static const half3x3 LIN_2_LMS_MAT = {
 };
 
 static const half3x3 LMS_2_LIN_MAT = {
-     2.85847e+0, -1.62879e+0, -2.48910e-2,
-    -2.10182e-1,  1.15820e+0,  3.24281e-4,
-    -4.18120e-2, -1.18169e-1,  1.06867e+0
+    2.85847e+0, -1.62879e+0, -2.48910e-2,
+    -2.10182e-1, 1.15820e+0, 3.24281e-4,
+    -4.18120e-2, -1.18169e-1, 1.06867e+0
 };
 
 half3 WhiteBalance(half3 c, half3 balance)
@@ -182,10 +182,10 @@ half3 HsvToRgb(half3 c)
 half RotateHue(half value, half low, half hi)
 {
     return (value < low)
-            ? value + hi
-            : (value > hi)
-                ? value - hi
-                : value;
+               ? value + hi
+               : (value > hi)
+               ? value - hi
+               : value;
 }
 
 //

@@ -7,8 +7,8 @@
     #define DOF_DECL_TEX2D(tex) Texture2D tex; SamplerState sampler##tex
     #define DOF_TEX2D(tex, coord) tex.Sample(sampler##tex, coord)
 #else
-    #define DOF_DECL_TEX2D(tex) sampler2D tex
-    #define DOF_TEX2D(tex, coord) tex2D(tex, coord)
+#define DOF_DECL_TEX2D(tex) sampler2D tex
+#define DOF_TEX2D(tex, coord) tex2D(tex, coord)
 #endif
 
 #include "Common.cginc"
@@ -20,7 +20,7 @@ DOF_DECL_TEX2D(_CoCTex);
 
 // Camera parameters
 float _Distance;
-float _LensCoeff;  // f^2 / (N * (S1 - f) * film_width * 2)
+float _LensCoeff; // f^2 / (N * (S1 - f) * film_width * 2)
 float _MaxCoC;
 float _RcpMaxCoC;
 float _RcpAspect;
@@ -37,20 +37,20 @@ struct VaryingsDOF
 VaryingsDOF VertDOF(AttributesDefault v)
 {
     half2 uvAlt = v.texcoord;
-#if UNITY_UV_STARTS_AT_TOP
+    #if UNITY_UV_STARTS_AT_TOP
     if (_MainTex_TexelSize.y < 0.0) uvAlt.y = 1.0 - uvAlt.y;
-#endif
+    #endif
 
     VaryingsDOF o;
     o.pos = UnityObjectToClipPos(v.vertex);
 
-#if defined(UNITY_SINGLE_PASS_STEREO)
+    #if defined(UNITY_SINGLE_PASS_STEREO)
     o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord, _MainTex_ST);
     o.uvAlt = UnityStereoScreenSpaceUVAdjust(uvAlt, _MainTex_ST);
-#else
+    #else
     o.uv = v.texcoord;
     o.uvAlt = uvAlt;
-#endif
+    #endif
 
     return o;
 }
@@ -68,7 +68,7 @@ half4 FragTempFilter(VaryingsDOF i) : SV_Target
 {
     float3 uvOffs = _MainTex_TexelSize.xyy * float3(1, 1, 0);
 
-#if defined(SEPARATE_TEXTURE_SAMPLER)
+    #if defined(SEPARATE_TEXTURE_SAMPLER)
 
     half4 cocTL = _CoCTex.GatherRed(sampler_CoCTex, i.uv - uvOffs.xy * 0.5); // top-left
     half4 cocBR = _CoCTex.GatherRed(sampler_CoCTex, i.uv + uvOffs.xy * 0.5); // bottom-right
@@ -77,14 +77,14 @@ half4 FragTempFilter(VaryingsDOF i) : SV_Target
     half coc3 = cocBR.x; // bottom
     half coc4 = cocBR.z; // right
 
-#else
+    #else
 
     half coc1 = DOF_TEX2D(_CoCTex, i.uv - uvOffs.xz).r; // top
     half coc2 = DOF_TEX2D(_CoCTex, i.uv - uvOffs.zy).r; // left
     half coc3 = DOF_TEX2D(_CoCTex, i.uv + uvOffs.zy).r; // bottom
     half coc4 = DOF_TEX2D(_CoCTex, i.uv + uvOffs.xz).r; // right
 
-#endif
+    #endif
 
     // Dejittered center sample.
     half coc0 = DOF_TEX2D(_CoCTex, i.uv - _TaaParams.xy).r;
@@ -112,7 +112,7 @@ half4 FragTempFilter(VaryingsDOF i) : SV_Target
 // Prefilter: downsampling and premultiplying.
 half4 FragPrefilter(VaryingsDOF i) : SV_Target
 {
-#if defined(SEPARATE_TEXTURE_SAMPLER)
+    #if defined(SEPARATE_TEXTURE_SAMPLER)
 
     // Sample source colors.
     half4 c_r = _MainTex.GatherRed  (sampler_MainTex, i.uv);
@@ -131,7 +131,7 @@ half4 FragPrefilter(VaryingsDOF i) : SV_Target
     half coc2 = cocs.z;
     half coc3 = cocs.w;
 
-#else
+    #else
 
     float3 duv = _MainTex_TexelSize.xyx * float3(0.5, 0.5, -0.5);
 
@@ -147,7 +147,7 @@ half4 FragPrefilter(VaryingsDOF i) : SV_Target
     half coc2 = DOF_TEX2D(_CoCTex, i.uvAlt + duv.zy).r * 2.0 - 1.0;
     half coc3 = DOF_TEX2D(_CoCTex, i.uvAlt + duv.xy).r * 2.0 - 1.0;
 
-#endif
+    #endif
 
     // Apply CoC and luma weights to reduce bleeding and flickering.
     float w0 = abs(coc0) / (Max3(c0) + 1.0);
@@ -167,9 +167,9 @@ half4 FragPrefilter(VaryingsDOF i) : SV_Target
     // Premultiply CoC again.
     avg *= smoothstep(0, _MainTex_TexelSize.y * 2, abs(coc));
 
-#if defined(UNITY_COLORSPACE_GAMMA)
+    #if defined(UNITY_COLORSPACE_GAMMA)
     avg = GammaToLinearSpace(avg);
-#endif
+    #endif
 
     return half4(avg, coc);
 }
@@ -197,7 +197,7 @@ half4 FragBlur(VaryingsDOF i) : SV_Target
         // Compare the CoC to the sample distance.
         // Add a small margin to smooth out.
         const half margin = _MainTex_TexelSize.y * 2;
-        half bgWeight = saturate((bgCoC   - dist + margin) / margin);
+        half bgWeight = saturate((bgCoC - dist + margin) / margin);
         half fgWeight = saturate((-samp.a - dist + margin) / margin);
 
         // Cut influence from focused areas because they're darkened by CoC
@@ -233,7 +233,7 @@ half4 FragPostBlur(VaryingsDOF i) : SV_Target
     // 9 tap tent filter with 4 bilinear samples
     const float4 duv = _MainTex_TexelSize.xyxy * float4(0.5, 0.5, -0.5, 0);
     half4 acc;
-    acc  = DOF_TEX2D(_MainTex, i.uv - duv.xy);
+    acc = DOF_TEX2D(_MainTex, i.uv - duv.xy);
     acc += DOF_TEX2D(_MainTex, i.uv - duv.zy);
     acc += DOF_TEX2D(_MainTex, i.uv + duv.zy);
     acc += DOF_TEX2D(_MainTex, i.uv + duv.xy);

@@ -106,45 +106,45 @@ static const half3x3 AP1_2_sRGB = {
 };
 
 static const half3x3 AP0_2_AP1_MAT = {
-     1.4514393161, -0.2365107469, -0.2149285693,
-    -0.0765537734,  1.1762296998, -0.0996759264,
-     0.0083161484, -0.0060324498,  0.9977163014
+    1.4514393161, -0.2365107469, -0.2149285693,
+    -0.0765537734, 1.1762296998, -0.0996759264,
+    0.0083161484, -0.0060324498, 0.9977163014
 };
 
 static const half3x3 AP1_2_AP0_MAT = {
-     0.6954522414, 0.1406786965, 0.1638690622,
-     0.0447945634, 0.8596711185, 0.0955343182,
+    0.6954522414, 0.1406786965, 0.1638690622,
+    0.0447945634, 0.8596711185, 0.0955343182,
     -0.0055258826, 0.0040252103, 1.0015006723
 };
 
 static const half3x3 AP1_2_XYZ_MAT = {
-     0.6624541811, 0.1340042065, 0.1561876870,
-     0.2722287168, 0.6740817658, 0.0536895174,
+    0.6624541811, 0.1340042065, 0.1561876870,
+    0.2722287168, 0.6740817658, 0.0536895174,
     -0.0055746495, 0.0040607335, 1.0103391003
 };
 
 static const half3x3 XYZ_2_AP1_MAT = {
-     1.6410233797, -0.3248032942, -0.2364246952,
-    -0.6636628587,  1.6153315917,  0.0167563477,
-     0.0117218943, -0.0082844420,  0.9883948585
+    1.6410233797, -0.3248032942, -0.2364246952,
+    -0.6636628587, 1.6153315917, 0.0167563477,
+    0.0117218943, -0.0082844420, 0.9883948585
 };
 
 static const half3x3 XYZ_2_REC709_MAT = {
-     3.2409699419, -1.5373831776, -0.4986107603,
-    -0.9692436363,  1.8759675015,  0.0415550574,
-     0.0556300797, -0.2039769589,  1.0569715142
+    3.2409699419, -1.5373831776, -0.4986107603,
+    -0.9692436363, 1.8759675015, 0.0415550574,
+    0.0556300797, -0.2039769589, 1.0569715142
 };
 
 static const half3x3 XYZ_2_REC2020_MAT = {
-     1.7166511880, -0.3556707838, -0.2533662814,
-    -0.6666843518,  1.6164812366,  0.0157685458,
-     0.0176398574, -0.0427706133,  0.9421031212
+    1.7166511880, -0.3556707838, -0.2533662814,
+    -0.6666843518, 1.6164812366, 0.0157685458,
+    0.0176398574, -0.0427706133, 0.9421031212
 };
 
 static const half3x3 XYZ_2_DCIP3_MAT = {
-     2.7253940305, -1.0180030062, -0.4401631952,
-    -0.7951680258,  1.6897320548,  0.0226471906,
-     0.0412418914, -0.0876390192,  1.1009293786
+    2.7253940305, -1.0180030062, -0.4401631952,
+    -0.7951680258, 1.6897320548, 0.0226471906,
+    0.0412418914, -0.0876390192, 1.1009293786
 };
 
 static const half3 AP1_RGB2Y = half3(0.272229, 0.674082, 0.0536895);
@@ -162,9 +162,9 @@ static const half3x3 ODT_SAT_MAT = {
 };
 
 static const half3x3 D60_2_D65_CAT = {
-     0.98722400, -0.00611327, 0.0159533,
-    -0.00759836,  1.00186000, 0.0053302,
-     0.00307257, -0.00509595, 1.0816800
+    0.98722400, -0.00611327, 0.0159533,
+    -0.00759836, 1.00186000, 0.0053302,
+    0.00307257, -0.00509595, 1.0816800
 };
 
 //
@@ -227,10 +227,10 @@ half ACES_to_ACEScc(half x)
 {
     if (x <= 0.0)
         return -0.35828683; // = (log2(pow(2.0, -15.0) * 0.5) + 9.72) / 17.52
-    else if (x < pow(2.0, -15.0))
+    if (x < pow(2.0, -15.0))
         return (log2(pow(2.0, -16.0) + x * 0.5) + 9.72) / 17.52;
-    else // (x >= pow(2.0, -15.0))
-        return (log2(x) + 9.72) / 17.52;
+    // (x >= pow(2.0, -15.0))
+    return (log2(x) + 9.72) / 17.52;
 }
 
 half3 ACES_to_ACEScc(half3 x)
@@ -262,10 +262,10 @@ half ACEScc_to_ACES(half x)
     // TODO: Optimize me
     if (x < -0.3013698630) // (9.72 - 15) / 17.52
         return (pow(2.0, x * 17.52 - 9.72) - pow(2.0, -16.0)) * 2.0;
-    else if (x < (log2(HALF_MAX) + 9.72) / 17.52)
+    if (x < (log2(HALF_MAX) + 9.72) / 17.52)
         return pow(2.0, x * 17.52 - 9.72);
-    else // (x >= (log2(HALF_MAX) + 9.72) / 17.52)
-        return HALF_MAX;
+    // (x >= (log2(HALF_MAX) + 9.72) / 17.52)
+    return HALF_MAX;
 }
 
 half3 ACEScc_to_ACES(half3 x)
@@ -447,15 +447,17 @@ half cubic_basis_shaper
 */
 
 static const half3x3 M = {
-     0.5, -1.0, 0.5,
-    -1.0,  1.0, 0.0,
-     0.5,  0.5, 0.0
+    0.5, -1.0, 0.5,
+    -1.0, 1.0, 0.0,
+    0.5, 0.5, 0.0
 };
 
 half segmented_spline_c5_fwd(half x)
 {
-    const half coefsLow[6] = { -4.0000000000, -4.0000000000, -3.1573765773, -0.4852499958, 1.8477324706, 1.8477324706 }; // coefs for B-spline between minPoint and midPoint (units of log luminance)
-    const half coefsHigh[6] = { -0.7185482425, 2.0810307172, 3.6681241237, 4.0000000000, 4.0000000000, 4.0000000000 }; // coefs for B-spline between midPoint and maxPoint (units of log luminance)
+    const half coefsLow[6] = {-4.0000000000, -4.0000000000, -3.1573765773, -0.4852499958, 1.8477324706, 1.8477324706};
+    // coefs for B-spline between minPoint and midPoint (units of log luminance)
+    const half coefsHigh[6] = {-0.7185482425, 2.0810307172, 3.6681241237, 4.0000000000, 4.0000000000, 4.0000000000};
+    // coefs for B-spline between midPoint and maxPoint (units of log luminance)
     const half2 minPoint = half2(0.18 * exp2(-15.0), 0.0001); // {luminance, luminance} linear extension below this
     const half2 midPoint = half2(0.18, 0.48); // {luminance, luminance}
     const half2 maxPoint = half2(0.18 * exp2(18.0), 10000.0); // {luminance, luminance} linear extension above this
@@ -498,7 +500,8 @@ half segmented_spline_c5_fwd(half x)
         logy = dot(monomials, mul(M, cf));
     }
     else
-    { //if (logIn >= log10(maxPoint.x)) {
+    {
+        //if (logIn >= log10(maxPoint.x)) {
         logy = logx * slopeHigh + (log10(maxPoint.y) - slopeHigh * log10(maxPoint.x));
     }
 
@@ -507,11 +510,19 @@ half segmented_spline_c5_fwd(half x)
 
 half segmented_spline_c9_fwd(half x)
 {
-    const half coefsLow[10] = { -1.6989700043, -1.6989700043, -1.4779000000, -1.2291000000, -0.8648000000, -0.4480000000, 0.0051800000, 0.4511080334, 0.9113744414, 0.9113744414 }; // coefs for B-spline between minPoint and midPoint (units of log luminance)
-    const half coefsHigh[10] = { 0.5154386965, 0.8470437783, 1.1358000000, 1.3802000000, 1.5197000000, 1.5985000000, 1.6467000000, 1.6746091357, 1.6878733390, 1.6878733390 }; // coefs for B-spline between midPoint and maxPoint (units of log luminance)
-    const half2 minPoint = half2(segmented_spline_c5_fwd(0.18 * exp2(-6.5)), 0.02); // {luminance, luminance} linear extension below this
+    const half coefsLow[10] = {
+        -1.6989700043, -1.6989700043, -1.4779000000, -1.2291000000, -0.8648000000, -0.4480000000, 0.0051800000,
+        0.4511080334, 0.9113744414, 0.9113744414
+    }; // coefs for B-spline between minPoint and midPoint (units of log luminance)
+    const half coefsHigh[10] = {
+        0.5154386965, 0.8470437783, 1.1358000000, 1.3802000000, 1.5197000000, 1.5985000000, 1.6467000000, 1.6746091357,
+        1.6878733390, 1.6878733390
+    }; // coefs for B-spline between midPoint and maxPoint (units of log luminance)
+    const half2 minPoint = half2(segmented_spline_c5_fwd(0.18 * exp2(-6.5)), 0.02);
+    // {luminance, luminance} linear extension below this
     const half2 midPoint = half2(segmented_spline_c5_fwd(0.18), 4.8); // {luminance, luminance}
-    const half2 maxPoint = half2(segmented_spline_c5_fwd(0.18 * exp2(6.5)), 48.0); // {luminance, luminance} linear extension above this
+    const half2 maxPoint = half2(segmented_spline_c5_fwd(0.18 * exp2(6.5)), 48.0);
+    // {luminance, luminance} linear extension above this
     const half slopeLow = 0.0; // log-log slope of low linear extension
     const half slopeHigh = 0.04; // log-log slope of high linear extension
 
@@ -551,7 +562,8 @@ half segmented_spline_c9_fwd(half x)
         logy = dot(monomials, mul(M, cf));
     }
     else
-    { //if (logIn >= log10(maxPoint.x)) {
+    {
+        //if (logIn >= log10(maxPoint.x)) {
         logy = logx * slopeHigh + (log10(maxPoint.y) - slopeHigh * log10(maxPoint.x));
     }
 
@@ -590,7 +602,7 @@ half3 RRT(half3 aces)
     aces.r += hueWeight * saturation * (RRT_RED_PIVOT - aces.r) * (1.0 - RRT_RED_SCALE);
 
     // --- ACES to RGB rendering space --- //
-    aces = clamp(aces, 0.0, HALF_MAX);  // avoids saturated negative colors from becoming positive in the matrix
+    aces = clamp(aces, 0.0, HALF_MAX); // avoids saturated negative colors from becoming positive in the matrix
     half3 rgbPre = mul(AP0_2_AP1_MAT, aces);
     rgbPre = clamp(rgbPre, 0, HALF_MAX);
 
@@ -670,10 +682,10 @@ half bt1886_r(half L, half gamma, half Lw, half Lb)
 }
 
 half roll_white_fwd(
-    half x,       // color value to adjust (white scaled to around 1.0)
+    half x, // color value to adjust (white scaled to around 1.0)
     half new_wht, // white adjustment (e.g. 0.9 for 10% darkening)
-    half width    // adjusted width (e.g. 0.25 for top quarter of the tone scale)
-    )
+    half width // adjusted width (e.g. 0.25 for top quarter of the tone scale)
+)
 {
     const half x0 = -1.0;
     const half x1 = x0 + width;
@@ -784,7 +796,7 @@ half3 ODT_RGBmonitor_100nits_dim(half3 oces)
     // Scale luminance to linear code value
     half3 linearCV = Y_2_linCV(rgbPost, CINEMA_WHITE, CINEMA_BLACK);
 
-     // Apply gamma adjustment to compensate for dim surround
+    // Apply gamma adjustment to compensate for dim surround
     linearCV = darkSurround_to_dimSurround(linearCV);
 
     // Apply desaturation to compensate for luminance difference

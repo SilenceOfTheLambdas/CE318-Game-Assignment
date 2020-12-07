@@ -51,7 +51,7 @@ half3 DownsampleAntiFlickerFilter(sampler2D tex, float2 uv, float2 texelSize)
 
 half3 UpsampleFilter(sampler2D tex, float2 uv, float2 texelSize, float sampleScale)
 {
-#if MOBILE_OR_CONSOLE
+    #if MOBILE_OR_CONSOLE
     // 4-tap bilinear upsampler
     float4 d = texelSize.xyxy * float4(-1.0, -1.0, 1.0, 1.0) * (sampleScale * 0.5);
 
@@ -62,17 +62,17 @@ half3 UpsampleFilter(sampler2D tex, float2 uv, float2 texelSize, float sampleSca
     s += DecodeHDR(tex2D(tex, uv + d.zw));
 
     return s * (1.0 / 4.0);
-#else
+    #else
     // 9-tap bilinear upsampler (tent filter)
     float4 d = texelSize.xyxy * float4(1.0, 1.0, -1.0, 0.0) * sampleScale;
 
     half3 s;
-    s =  DecodeHDR(tex2D(tex, uv - d.xy));
+    s = DecodeHDR(tex2D(tex, uv - d.xy));
     s += DecodeHDR(tex2D(tex, uv - d.wy)) * 2.0;
     s += DecodeHDR(tex2D(tex, uv - d.zy));
 
     s += DecodeHDR(tex2D(tex, uv + d.zw)) * 2.0;
-    s += DecodeHDR(tex2D(tex, uv))        * 4.0;
+    s += DecodeHDR(tex2D(tex, uv)) * 4.0;
     s += DecodeHDR(tex2D(tex, uv + d.xw)) * 2.0;
 
     s += DecodeHDR(tex2D(tex, uv + d.zy));
@@ -80,7 +80,7 @@ half3 UpsampleFilter(sampler2D tex, float2 uv, float2 texelSize, float sampleSca
     s += DecodeHDR(tex2D(tex, uv + d.xy));
 
     return s * (1.0 / 16.0);
-#endif
+    #endif
 }
 
 #endif // __BLOOM__

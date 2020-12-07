@@ -48,13 +48,13 @@ half3 NeutralTonemap(half3 x, half4 params1, half4 params2)
 //
 half3 FilmicTonemap(half3 aces)
 {
-#if TONEMAPPING_USE_FULL_ACES
+    #if TONEMAPPING_USE_FULL_ACES
 
     half3 oces = RRT(aces);
     half3 odt = ODT_RGBmonitor_100nits_dim(oces);
     return odt;
 
-#else
+    #else
 
     // --- Glow module --- //
     half saturation = rgb_2_saturation(aces);
@@ -114,7 +114,7 @@ half3 FilmicTonemap(half3 aces)
 
     return linearCV;
 
-#endif
+    #endif
 }
 
 #endif // __TONEMAPPING__

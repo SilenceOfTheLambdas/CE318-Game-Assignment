@@ -3,18 +3,18 @@
 RWStructuredBuffer<uint> _Vectorscope;
 Texture2D<float4> _Source;
 
-CBUFFER_START (Params)
-    uint _IsLinear;
-    float4 _Res;
+CBUFFER_START(Params)
+uint _IsLinear;
+float4 _Res;
 CBUFFER_END
 
 #define GROUP_SIZE 32
 
 float3 RgbToYUV(float3 c)
 {
-    float Y =  0.299 * c.r + 0.587 * c.g + 0.114 * c.b;
+    float Y = 0.299 * c.r + 0.587 * c.g + 0.114 * c.b;
     float U = -0.169 * c.r - 0.331 * c.g + 0.500 * c.b;
-    float V =  0.500 * c.r - 0.419 * c.g - 0.081 * c.b;
+    float V = 0.500 * c.r - 0.419 * c.g - 0.081 * c.b;
     return float3(Y, U, V);
 }
 

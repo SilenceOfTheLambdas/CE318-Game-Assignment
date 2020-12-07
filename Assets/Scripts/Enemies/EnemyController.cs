@@ -1,13 +1,10 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Original implementation adapted from https://forum.unity.com/threads/solved-random-wander-ai-using-navmesh.327950
+///     Original implementation adapted from https://forum.unity.com/threads/solved-random-wander-ai-using-navmesh.327950
 /// </summary>
 public class EnemyController : MonoBehaviour
 {
-    [Header("Enemy Stats")] 
-    public float hp;
-    
     public enum MovementStates
     {
         Idle,
@@ -15,26 +12,25 @@ public class EnemyController : MonoBehaviour
         Crouching,
         Running
     }
+
     public static MovementStates MovementState = MovementStates.Idle;
-    
-    [Range(1, 20)] [Header("Movement")]
-    public float moveSpeed = 8f;
-    public float defaultMoveSpeed;
-    [Range(1, 20)]
-    public float runSpeed = 12f;
-    
+
     //private Animator _animator;
     private static readonly int IsDead = Animator.StringToHash("isDead");
-    
+
+    [Header("Enemy Stats")] public float hp;
+
+    [Range(1, 20)] [Header("Movement")] public float moveSpeed = 8f;
+
+    public float defaultMoveSpeed;
+
+    [Range(1, 20)] public float runSpeed = 12f;
+
 
     // Update is called once per frame
     private void Update()
     {
-
-        if (hp <= 0)
-        {
-            Die();
-        }
+        if (hp <= 0) Die();
     }
 
     private void OnCollisionEnter(Collision other)

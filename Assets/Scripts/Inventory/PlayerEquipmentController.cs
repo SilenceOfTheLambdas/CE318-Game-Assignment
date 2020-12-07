@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
-/// Adjusted by 1806094
+///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
+///     Adjusted by 1806094
 /// </summary>
 public class PlayerEquipmentController : MonoBehaviour
 {
-    [SerializeField] private Inventory inventory;
-    [SerializeField] private Transform inventoryUIParent;
+    [SerializeField] private Inventory        inventory;
+    [SerializeField] private Transform        inventoryUIParent;
+    [SerializeField] private PlayerController Player;
 
     [Header("Anchors")] [SerializeField] private Transform weaponAnchor;
 
     private GameObject _currentEquippedWeapon;
 
-    
+
     public void StartInventory()
     {
         inventory.InitInventory(this);
@@ -24,9 +25,10 @@ public class PlayerEquipmentController : MonoBehaviour
     {
         DestroyIfNotNull(_currentEquippedWeapon);
         _currentEquippedWeapon = CreateNewItemInstance(rifleInventoryItem, weaponAnchor);
+        Player.primaryWeapon = _currentEquippedWeapon;
     }
 
-    private GameObject CreateNewItemInstance(InventoryItem item, Transform anchor)
+    private static GameObject CreateNewItemInstance(InventoryItem item, Transform anchor)
     {
         var itemInstance = Instantiate(item.GetPrefab(), anchor);
         itemInstance.transform.localPosition = item.GetLocalPosition();
@@ -34,12 +36,14 @@ public class PlayerEquipmentController : MonoBehaviour
         return itemInstance;
     }
 
-    private void DestroyIfNotNull(GameObject obj)
+    private static void DestroyIfNotNull(GameObject obj)
     {
         if (obj)
             Destroy(obj);
     }
 
-    public Transform GetUIParent() => inventoryUIParent;
-
+    public Transform GetUIParent()
+    {
+        return inventoryUIParent;
+    }
 }

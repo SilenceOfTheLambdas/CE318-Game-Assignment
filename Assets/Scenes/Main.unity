@@ -442,8 +442,8 @@ Light:
     m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 1
-  m_Flare: {fileID: 12100000, guid: 09ebe82dbd1113c3d000dc0b8d76c639, type: 2}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -2481,6 +2481,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5172251131586284061}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2057044683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1298990506, guid: a6a8101f00d43134c88a01ff7847b792,
+    type: 3}
+  m_PrefabInstance: {fileID: 4740947532767219902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83a817f7e3f3a741b97e2469ebdbd39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2077101283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,9 +2555,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4028ca76ceca2bf4f9c4890a59045976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerEquipmentController: {fileID: 2057044683}
+  PlayerController: {fileID: 1298956935}
+  inventoryOpen: 0
   DeathMessage: {fileID: 663778073}
   DeathBG: {fileID: 342817896}
-  PlayerController: {fileID: 1298956935}
+  InventoryUI: {fileID: 6502618899445221777, guid: 8042704039b7638459b42b36c356873e,
+    type: 3}
 --- !u!1 &2147453452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2776,6 +2792,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1298990506, guid: a6a8101f00d43134c88a01ff7847b792, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1298956935}
+    - target: {fileID: 1298990506, guid: a6a8101f00d43134c88a01ff7847b792, type: 3}
+      propertyPath: inventoryUIParent
+      value: 
+      objectReference: {fileID: 765069397}
     - target: {fileID: 4740947533888506167, guid: a6a8101f00d43134c88a01ff7847b792,
         type: 3}
       propertyPath: m_LocalPosition.x

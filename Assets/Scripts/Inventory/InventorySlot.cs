@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
-/// Adjusted by 1806094
+///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
+///     Adjusted by 1806094
 /// </summary>
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField] private Image itemImage;
+    [SerializeField] private Image           itemImage;
     [SerializeField] private TextMeshProUGUI itemNameText;
     [SerializeField] private TextMeshProUGUI itemCountText;
-    [SerializeField] private Button slotButton;
+    [SerializeField] private Button          slotButton;
 
     public void InitSlotVisualisation(Sprite itemSprite, string itemName, int itemCount)
     {

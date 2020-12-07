@@ -73,6 +73,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponFireState: 1
   fireRate: 0.1
+  bulletSpawnPoint: {fileID: 7470892907471136023}
+  ammunitionManager: {fileID: 114216033368745670, guid: f4d2284700fce5a42abd7d520d0e25d5,
+    type: 3}
 --- !u!82 &1606479664237517568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -83,7 +86,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 062d2479a6e089f428613f4df8c5f361, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

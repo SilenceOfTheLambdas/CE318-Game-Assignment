@@ -2,23 +2,21 @@
 using UnityEngine;
 
 /// <summary>
-/// Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
-/// Adjusted by 1806094
+///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
+///     Adjusted by 1806094
 /// </summary>
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] private Transform slotsParent;
+    [SerializeField] private Transform     slotsParent;
     [SerializeField] private InventorySlot slotPrefab;
-    
-    private Dictionary<InventoryItem, InventorySlot> itemToSlotMap = new Dictionary<InventoryItem, InventorySlot>();
+
+    private readonly Dictionary<InventoryItem, InventorySlot> itemToSlotMap =
+        new Dictionary<InventoryItem, InventorySlot>();
 
     public void InitInventory(Inventory inventory)
     {
         var itemsMap = inventory.GetAllItemsMap();
-        foreach (var kvp in itemsMap)
-        {
-            CreateOrUpdateSlot(inventory, kvp.Key, kvp.Value);
-        }
+        foreach (var kvp in itemsMap) CreateOrUpdateSlot(inventory, kvp.Key, kvp.Value);
     }
 
     public void CreateOrUpdateSlot(Inventory inventory, InventoryItem inventoryItem, int count)
@@ -39,7 +37,7 @@ public class InventoryUI : MonoBehaviour
         var slot = Instantiate(slotPrefab, slotsParent);
         slot.InitSlotVisualisation(inventoryItem.GetSprite(), inventoryItem.GetName(), count);
         slot.AssignSlotButtonCallback(() => inventory.AssignItem(inventoryItem));
-        
+
         return slot;
     }
 

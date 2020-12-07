@@ -170,12 +170,6 @@
             <e p="ScrollUVWater.cs" t="Include" />
           </e>
         </e>
-        <e p="Height Mapper" t="Include">
-          <e p="Editor" t="Include">
-            <e p="HeightMapFromTexture.cs" t="Include" />
-            <e p="HeightMapper.cs" t="Include" />
-          </e>
-        </e>
         <e p="Scripts" t="Include">
           <e p="Enemies" t="Include">
             <e p="EnemyAI.cs" t="Include" />
