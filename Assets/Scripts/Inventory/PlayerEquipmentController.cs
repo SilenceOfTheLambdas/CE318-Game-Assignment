@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 
 /// <summary>
 ///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
@@ -6,9 +7,9 @@
 /// </summary>
 public class PlayerEquipmentController : MonoBehaviour
 {
-    [SerializeField] private Inventory        inventory;
-    [SerializeField] private Transform        inventoryUIParent;
-    [SerializeField] private PlayerController Player;
+    [SerializeField] private Inventory.Inventory inventory;
+    [SerializeField] private Transform           inventoryUIParent;
+    [SerializeField] private PlayerController    Player;
 
     [Header("Anchors")] [SerializeField] private Transform weaponAnchor;
 

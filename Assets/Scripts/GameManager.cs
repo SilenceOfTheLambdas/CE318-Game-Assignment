@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Player;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,10 +11,13 @@ public class GameManager : MonoBehaviour
 
     #region User Interface
 
-    [Header("Inventory")] [SerializeField] private bool            inventoryOpen;
-    [FormerlySerializedAs("DeathMessage")] public  TextMeshProUGUI deathMessage;
-    [FormerlySerializedAs("DeathBG")]      public  GameObject      deathBg;
-    [FormerlySerializedAs("InventoryUI")]  public  InventoryUI     inventoryUI;
+    [Header("Inventory")] 
+    [SerializeField] 
+    private bool        inventoryOpen;
+    public  InventoryUI inventoryUI;
+    
+    public  GameObject      deathBg;
+    public  TextMeshProUGUI deathMessage;
 
     #endregion
 
@@ -43,14 +45,17 @@ public class GameManager : MonoBehaviour
             // Open inventory when user presses 'tab'
             if (!inventoryOpen)
             {
-                inventoryUI.GetComponent<Canvas>().gameObject.SetActive(true);
-                PlayerEquipmentController.StartInventory();
+                Cursor.lockState = CursorLockMode.None;
                 inventoryOpen = true;
+                // Start Inventory System
+                inventoryUI.gameObject.SetActive(true);
+                PlayerEquipmentController.StartInventory();
             }
-            else if (inventoryOpen)
+            if (inventoryOpen)
             {
-                inventoryUI.GetComponent<Canvas>().gameObject.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
                 inventoryOpen = false;
+                inventoryUI.gameObject.SetActive(false);
             }
         }
     }

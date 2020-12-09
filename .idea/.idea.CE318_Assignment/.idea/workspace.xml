@@ -20,138 +20,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521969b7-13be-45d9-807f-97c1107a2361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/AK_Weapon_Slot.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/AK_Weapon_Slot.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/InventoryOpen.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/InventoryOpen.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Inventory.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Inventory.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 01.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 02.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 03.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 04.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 05.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 06.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 07.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 07.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 08.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 08.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 09.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 09.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 01.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 02.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 03.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 04.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 01.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 02.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 03.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 04.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 01.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 02.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 03.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 04.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 01.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 02.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 03.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 04.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 01.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 01.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 02.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 02.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 03.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 03.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 04.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 04.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 05.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 05.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 06.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 06.wav.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/Editor/SettingsPrompt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Editor/SettingsPrompt.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/AntialiasingModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/AntialiasingModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/BloomModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/BloomModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/ColorGradingModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/ColorGradingModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/DitheringModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/DitheringModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/FogModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/FogModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/GrainModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/GrainModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/MotionBlurModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/MotionBlurModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/UserLutModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/UserLutModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/VignetteModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Models/VignetteModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/HistogramMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/HistogramMonitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/ParadeMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/ParadeMonitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/WaveformMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Monitors/WaveformMonitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingBehaviourEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingBehaviourEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingInspector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingModelEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingModelEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PostProcessingMonitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/CurveEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/CurveEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/EditorGUIHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/EditorGUIHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/EditorResources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/EditorResources.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/FxStyles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/FxStyles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/ReflectionUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Editor/Utils/ReflectionUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/ACES.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/ACES.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/Bloom.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/Bloom.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/ColorGrading.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/ColorGrading.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/Common.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/Common.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/DepthOfField.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/DepthOfField.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/DiskKernels.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/DiskKernels.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/EyeHistogram.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/EyeHistogram.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/FXAA3.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/FXAA3.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/MotionBlur.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/MotionBlur.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/TAA.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/TAA.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/Tonemapping.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Resources/Shaders/Tonemapping.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/GetSetAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/GetSetAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/MinAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/MinAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/TrackballAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/TrackballAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/BloomComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/BloomComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/ColorGradingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/ColorGradingComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/DitheringComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/DitheringComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/FogComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/FogComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/FxaaComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/FxaaComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/GrainComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/GrainComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/MotionBlurComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/MotionBlurComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/TaaComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/TaaComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/UserLutComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/UserLutComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/VignetteComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Components/VignetteComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/AntialiasingModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/AntialiasingModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BloomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BloomModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ColorGradingModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ColorGradingModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DepthOfFieldModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DepthOfFieldModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DitheringModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/DitheringModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/EyeAdaptationModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/EyeAdaptationModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/FogModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/FogModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/GrainModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/GrainModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/MotionBlurModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/MotionBlurModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/UserLutModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/UserLutModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/VignetteModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Models/VignetteModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/PostProcessingProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/ColorGradingCurve.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/ColorGradingCurve.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/GraphicsUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/GraphicsUtils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/MaterialFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/MaterialFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/RenderTextureFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing/Runtime/Utils/RenderTextureFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/Script/FreeCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Script/FreeCam.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/Script/ScrollUVWater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/Script/ScrollUVWater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Height Mapper.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Height Mapper/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Height Mapper/Editor/HeightMapFromTexture.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Height Mapper/Editor/HeightMapFromTexture.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Height Mapper/Editor/HeightMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Height Mapper/Editor/HeightMapper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Assualt_rifle_slot.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Assualt_rifle_slot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Inventory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerInventory.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerInventory.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Properties.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +127,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -186,30 +142,35 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" />
         <option value="$PROJECT_DIR$/Assets/Textures/UIBGBlur.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1jh3kR91vn41taUGvd3DmEfnpwZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -260,6 +221,8 @@
       <workItem from="1605697759486" duration="3463000" />
       <workItem from="1606049332970" duration="482000" />
       <workItem from="1606049844936" duration="12118000" />
+      <workItem from="1607445514992" duration="11551000" />
+      <workItem from="1607498708168" duration="4515000" />
     </task>
     <servers />
   </component>
@@ -281,6 +244,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -292,17 +256,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607373840805" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605198369194">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1607498890493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605198369194" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607498890493" />
     <state x="-1181" y="364" key="cloudConfig.PluginsDialog" timestamp="1606049816884">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1181" y="364" key="cloudConfig.PluginsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606049816884" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607373842993">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607501786489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607373842993" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607447872283" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607501786489" />
   </component>
 </project>

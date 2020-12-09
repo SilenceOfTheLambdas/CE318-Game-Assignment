@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Player;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 public class InputManager : MonoBehaviour
@@ -35,19 +37,28 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // Update axis
-        xAxis = Input.GetAxis("Horizontal");
-        zAxis = Input.GetAxis("Vertical");
-
         if (Input.GetKeyDown(JumpKey) && PlayerController.MovementState != PlayerController.MovementStates.Crouching)
-            PlayerController.Jump();
-
-        PlayerController.Move(xAxis, zAxis);
+            PlayerController.Jump();   
 
         if (Input.GetKeyDown(CrouchKey)) PlayerController.Crouch();
 
         if (Input.GetKeyDown(ShootKey)) PlayerController.Shoot();
 
-        if (Input.GetKeyUp(ShootKey)) PlayerController.primaryWeapon.GetComponent<WeaponManager>().DisableGunAnimation();
+        if (Input.GetKeyUp(ShootKey))
+        {
+            PlayerController.primaryWeapon.GetComponent<WeaponManager>().DisableGunAnimation();
+        }
+        
+        // Player Movement
+        PlayerMovement();
+    }
+
+    private void PlayerMovement()
+    {
+        // Update axis
+        xAxis = Input.GetAxis("Horizontal");
+        zAxis = Input.GetAxis("Vertical");
+        
+        PlayerController.Move(xAxis, zAxis);
     }
 }

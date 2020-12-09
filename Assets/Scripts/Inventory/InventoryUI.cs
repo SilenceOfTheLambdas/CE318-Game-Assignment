@@ -13,13 +13,16 @@ public class InventoryUI : MonoBehaviour
     private readonly Dictionary<InventoryItem, InventorySlot> itemToSlotMap =
         new Dictionary<InventoryItem, InventorySlot>();
 
-    public void InitInventory(Inventory inventory)
+    private static readonly int InventoryOpen = Animator.StringToHash("inventoryOpen");
+
+    public void InitInventory(Inventory.Inventory inventory)
     {
+        GetComponent<Animator>().SetBool(InventoryOpen, true);
         var itemsMap = inventory.GetAllItemsMap();
         foreach (var kvp in itemsMap) CreateOrUpdateSlot(inventory, kvp.Key, kvp.Value);
     }
 
-    public void CreateOrUpdateSlot(Inventory inventory, InventoryItem inventoryItem, int count)
+    public void CreateOrUpdateSlot(Inventory.Inventory inventory, InventoryItem inventoryItem, int count)
     {
         if (!itemToSlotMap.ContainsKey(inventoryItem))
         {
@@ -32,7 +35,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    private InventorySlot CreateSlot(Inventory inventory, InventoryItem inventoryItem, int count)
+    private InventorySlot CreateSlot(Inventory.Inventory inventory, InventoryItem inventoryItem, int count)
     {
         var slot = Instantiate(slotPrefab, slotsParent);
         slot.InitSlotVisualisation(inventoryItem.GetSprite(), inventoryItem.GetName(), count);

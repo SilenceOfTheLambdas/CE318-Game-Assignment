@@ -1,168 +1,219 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace Player
 {
-    public enum MovementStates
+    public class PlayerController : MonoBehaviour
     {
-        Idle,
-        Walking,
-        Crouching,
-        Running
-    }
-
-    public static MovementStates MovementState = MovementStates.Idle;
-
-    public static           bool IsGrounded;
-    private static readonly int  IsRunning = Animator.StringToHash("isRunning");
-    private static readonly int  IsWalking = Animator.StringToHash("isWalking");
-
-    [Range(1, 20)] [Header("Movement")] public float moveSpeed = 8f;
-
-    public float defaultMoveSpeed;
-
-    [Range(1, 20)] public float runSpeed = 12f;
-
-    public float gravity             = -9.81f;
-    public float groundDistance      = 0.4f;
-    public float jumpHeight          = 3f;
-    public float crouchHeight        = 1f;
-    public float crouchMovementSpeed = 6f;
-
-    [Header("Equipped Weapons")] public GameObject primaryWeapon;
-
-    public GameObject secondaryWeapon;
-    public GameObject thirdWeapon;
-
-    [Header("References")] public CharacterController controller;
-
-    public Transform groundCheck;
-    public LayerMask groundMask;
-    public Transform topCheck;
-    public LayerMask topMask;
-    public Camera    _camera;
-
-    [SerializeField] private float health;
-
-    public  float    movementCounter;
-    public  bool     isDead;
-    private Vector3  _cameraOrigin;
-    private Vector3  _defaultCharacterCenter;
-    private float    _nextFire;
-    private Animator _playerAnimator;
-
-    // Private Variables
-    private Vector3 _velocity;
-
-    // List of player "States"; this controls the position of the arms etc. when a weapon is equipped
-    public Dictionary<string, GameObject> playerEquippedStates;
-
-    // Update is called once per frame
-    private void Start()
-    {
-        _playerAnimator = GetComponent<Animator>();
-        _cameraOrigin = _camera.transform.localPosition;
-        _defaultCharacterCenter = controller.center;
-        defaultMoveSpeed = moveSpeed;
-    }
-
-    private void Update()
-    {
-        IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (IsGrounded)
-            if (_velocity.y < 0)
-                _velocity.y = -2f;
-
-        _velocity.y += gravity * Time.deltaTime;
-
-        // Velocity calculation requires time(2)
-        controller.Move(_velocity * Time.deltaTime);
-
-        // If player stops crouching
-        if (Input.GetButtonUp("Crouch"))
-            if (!Physics.CheckSphere(topCheck.position, 0.5f, topMask))
-            {
-                controller.height = 2;
-                controller.center = _defaultCharacterCenter;
-                moveSpeed = 12f;
-                _camera.transform.localPosition = new Vector3(_camera.transform.localPosition.x,
-                    _cameraOrigin.y, _camera.transform.localPosition.z);
-                MovementState = MovementStates.Idle;
-            }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("bullet"))
+        public enum MovementStates
         {
-            if (health <= 0) isDead = true;
-
-            var bullet = other.gameObject;
-            health -= bullet.GetComponent<AmmunitionManager>().damage;
+            Idle,
+            Walking,
+            Crouching,
+            Running
         }
-    }
+    
+        public static           MovementStates MovementState = MovementStates.Idle;
+        private static readonly int            IsRunning     = Animator.StringToHash("isRunning");
+        private static readonly int            IsWalking     = Animator.StringToHash("isWalking");
+        public static           bool           IsGrounded;
+        
+        [Header("Statistics")]
+        [SerializeField] 
+        private float health;
 
-    public void Jump()
-    {
-        _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-    }
+        public bool isDead;
 
-    public void Move(float xAxis, float zAxis)
-    {
-        if (IsGrounded)
+        [Range(1, 20)] 
+        [Header("Movement")]
+        public float moveSpeed = 8f;
+
+        [HideInInspector] public float defaultMoveSpeed;
+        [Range(1, 20)]    public float runSpeed            = 12f;
+        public                   float gravity             = -9.81f;
+        public                   float groundDistance      = 0.4f;
+        public                   float jumpHeight          = 3f;
+        public                   float crouchHeight        = 1f;
+        public                   float crouchMovementSpeed = 6f;
+
+        private Footsteps _playerFootsteps;
+        private float     _sprintVolume       = 1f;
+        private float     _crouchVolume       = 0.1f;
+        private float     _walkVolumeMin      = 0.2f, _walkVolumeMax = 0.6f;
+        private float     _walkStepDistance   = 0.4f;
+        private float     _sprintStepDistance = 0.25f;
+        private float     _crouchStepDistance = 0.5f;
+
+        [Header("Equipped Weapons")]
+        public GameObject primaryWeapon;
+        public GameObject secondaryWeapon;
+        public GameObject thirdWeapon;
+
+        [Header("References")] public CharacterController controller;
+
+        public Transform groundCheck;
+        public LayerMask groundMask;
+        public Transform topCheck;
+        public LayerMask topMask;
+        public Camera    _camera;
+
+        [HideInInspector]
+        public  float    movementCounter;
+        private Vector3  _cameraOrigin;
+        private Vector3  _defaultCharacterCenter;
+        private float    _nextFire;
+        private Animator _playerAnimator;
+
+        // Private Variables
+        private Vector3 _velocity;
+
+        // List of player "States"; this controls the position of the arms etc. when a weapon is equipped
+        public Dictionary<string, GameObject> playerEquippedStates;
+
+        private void Awake()
         {
-            if (Input.GetButtonUp("Sprint"))
-            {
-                MovementState = MovementStates.Walking;
-                _playerAnimator.SetBool(IsWalking, true);
-                _playerAnimator.SetBool(IsRunning, false);
-                if (primaryWeapon != null)
-                    primaryWeapon.GetComponent<Animator>().SetBool(IsRunning, false);
-                moveSpeed = defaultMoveSpeed;
-            }
+            _playerFootsteps = GetComponentInChildren<Footsteps>();
+        }
+    
+        // Update is called once per frame
+        private void Start()
+        {
+            _playerAnimator = GetComponent<Animator>();
+            _cameraOrigin = _camera.transform.localPosition;
+            _defaultCharacterCenter = controller.center;
+            defaultMoveSpeed = moveSpeed;
+        
+            // setup default values
+            _playerFootsteps.volumeMin = _walkVolumeMin;
+            _playerFootsteps.volumeMax = _walkVolumeMax;
+            _playerFootsteps.stepDistance = _walkStepDistance;
+        }
 
-            if ((xAxis != 0 || zAxis != 0) && MovementState != MovementStates.Crouching &&
-                MovementState != MovementStates.Running)
+        private void FixedUpdate()
+        {
+            // Update footstep audio
+            switch (MovementState)
             {
-                MovementState = MovementStates.Walking;
-                _playerAnimator.SetBool(IsWalking, true);
-                if (primaryWeapon != null)
-                    primaryWeapon.GetComponent<Animator>().SetBool(IsRunning, false);
-                moveSpeed = defaultMoveSpeed;
-            }
-
-            if ((xAxis != 0 || zAxis != 0) && Input.GetButtonDown("Sprint") &&
-                MovementState != MovementStates.Crouching)
-            {
-                Debug.Log("Running...");
-                MovementState = MovementStates.Running;
-                moveSpeed = runSpeed;
-                if (primaryWeapon != null)
-                    primaryWeapon.GetComponent<Animator>().SetBool(IsRunning, true);
-                _playerAnimator.SetBool(IsRunning, true);
+                case MovementStates.Running:
+                    // Setup footstep sounds
+                    _playerFootsteps.stepDistance = _sprintStepDistance;
+                    _playerFootsteps.volumeMin = _sprintVolume;
+                    _playerFootsteps.volumeMax = _sprintVolume;
+                    // Setup animations
+                    if (primaryWeapon != null)
+                        primaryWeapon.GetComponent<Animator>().SetBool(IsRunning, true);
+                    _playerAnimator.SetBool(IsRunning, true);
+                    break;
+                case MovementStates.Walking:
+                    // Setup footstep sounds
+                    _playerFootsteps.stepDistance = _walkStepDistance;
+                    _playerFootsteps.volumeMin = _walkVolumeMin;
+                    _playerFootsteps.volumeMax = _walkVolumeMax;
+                    // Setup animations
+                    _playerAnimator.SetBool(IsWalking, true);
+                    _playerAnimator.SetBool(IsRunning, false);
+                    if (primaryWeapon != null)
+                        primaryWeapon.GetComponent<Animator>().SetBool(IsRunning, false);
+                    break;
+                case MovementStates.Crouching:
+                    // Setup footstep sounds
+                    _playerFootsteps.stepDistance = _crouchStepDistance;
+                    _playerFootsteps.volumeMin = _crouchVolume;
+                    _playerFootsteps.volumeMax = _crouchVolume;
+                    break;
             }
         }
 
-        var transform1 = transform;
-        var move       = transform1.right * xAxis + transform1.forward * zAxis;
+        private void Update()
+        {
+            IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        controller.Move(move * moveSpeed * Time.deltaTime);
-    }
+            if (IsGrounded)
+                if (_velocity.y < 0)
+                    _velocity.y = -2f;
 
-    public void Crouch()
-    {
-        controller.height = crouchHeight;
-        moveSpeed = crouchMovementSpeed;
-        MovementState = MovementStates.Crouching;
+            _velocity.y += gravity * Time.deltaTime;
 
-        _camera.transform.localPosition =
-            new Vector3(_camera.transform.localPosition.x, -0.3f, _camera.transform.localPosition.z);
-    }
+            // Velocity calculation requires time(2)
+            controller.Move(_velocity * Time.deltaTime);
 
-    public void Shoot()
-    {
-        if (primaryWeapon != null)
-            primaryWeapon.GetComponent<WeaponManager>().Shoot();
+            // If player stops crouching
+            if (Input.GetButtonUp("Crouch"))
+                if (!Physics.CheckSphere(topCheck.position, 0.5f, topMask))
+                {
+                    controller.height = 2;
+                    controller.center = _defaultCharacterCenter;
+                    moveSpeed = 12f;
+                    _camera.transform.localPosition = new Vector3(_camera.transform.localPosition.x,
+                        _cameraOrigin.y, _camera.transform.localPosition.z);
+                    MovementState = MovementStates.Idle;
+                }
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("bullet"))
+            {
+                if (health <= 0) isDead = true;
+
+                var bullet = other.gameObject;
+                health -= bullet.GetComponent<AmmunitionManager>().damage;
+            }
+        }
+
+        public void Jump()
+        {
+            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        public void Move(float xAxis, float zAxis)
+        {
+            if (IsGrounded)
+            {
+                // If our character is moving
+                if (xAxis == 0 && zAxis == 0) MovementState = MovementStates.Idle;
+
+                if (Input.GetButtonUp("Sprint"))
+                {
+                    MovementState = MovementStates.Walking;
+                    moveSpeed = defaultMoveSpeed;
+                }
+
+                // When the player is moving, and they are NOT crouching
+                if ((xAxis != 0 || zAxis != 0) && MovementState != MovementStates.Crouching && MovementState != MovementStates.Running)
+                {
+                    MovementState = MovementStates.Walking;
+                    moveSpeed = defaultMoveSpeed;
+                }
+            
+                if (Input.GetButtonDown("Sprint") && MovementState == MovementStates.Walking)
+                {
+                    MovementState = MovementStates.Running;
+                    moveSpeed = runSpeed;
+                }
+            }
+
+            var transform1 = transform;
+        
+            var move = transform1.right * xAxis + transform1.forward * zAxis;
+
+            controller.Move(move * (moveSpeed * Time.deltaTime));
+        }
+
+        public void Crouch()
+        {
+            controller.height = crouchHeight;
+            moveSpeed = crouchMovementSpeed;
+            MovementState = MovementStates.Crouching;
+
+            _camera.transform.localPosition =
+                new Vector3(_camera.transform.localPosition.x, -0.3f, _camera.transform.localPosition.z);
+        }
+
+        public void Shoot()
+        {
+            if (primaryWeapon != null)
+                primaryWeapon.GetComponent<WeaponManager>().Shoot();
+        }
     }
 }

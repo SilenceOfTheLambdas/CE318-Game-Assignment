@@ -1,79 +1,67 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
-///     Adjusted by 1806094
-/// </summary>
-[CreateAssetMenu(menuName = "Scriptable Objects/Inventory System/Inventory")]
-public class Inventory : ScriptableObject
+namespace Inventory
 {
-    [SerializeField] private List<InventoryItemWrapper> items = new List<InventoryItemWrapper>();
-    [SerializeField] private InventoryUI                inventoryUIPrefab;
-
-    private InventoryUI _inventoryUI;
-
-    private readonly Dictionary<InventoryItem, int> itemToCountMap = new Dictionary<InventoryItem, int>();
-    private          PlayerEquipmentController      playerEquipment;
-
-    private InventoryUI inventoryUI
+    /// <summary>
+    ///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
+    ///     Adjusted by 1806094
+    /// </summary>
+    public class Inventory : MonoBehaviour
     {
-        get
+        [SerializeField] private List<InventoryItemWrapper> items = new List<InventoryItemWrapper>();
+
+        private readonly Dictionary<InventoryItem, int> itemToCountMap = new Dictionary<InventoryItem, int>();
+        private          PlayerEquipmentController      playerEquipment;
+
+        public InventoryUI inventoryUI;
+
+        public void InitInventory(PlayerEquipmentController playerEquipmentController)
         {
-            if (!_inventoryUI)
-            {
-                _inventoryUI = Instantiate(inventoryUIPrefab, playerEquipment.GetUIParent());
-                GameManager.Instance.inventoryUI = _inventoryUI;
-            }
-            return _inventoryUI;
+            playerEquipment = playerEquipmentController;
+            foreach (var t in items) itemToCountMap.Add(t.GetItem(), t.GetItemCount());
         }
-    }
 
-    public void InitInventory(PlayerEquipmentController playerEquipmentController)
-    {
-        playerEquipment = playerEquipmentController;
-        foreach (var t in items) itemToCountMap.Add(t.GetItem(), t.GetItemCount());
-    }
-
-    public void OpenInventoryUI()
-    {
-        inventoryUI.gameObject.SetActive(true);
-        inventoryUI.InitInventory(this);
-    }
-
-    public void AssignItem(InventoryItem item)
-    {
-        item.AssignItemToPlayer(playerEquipment);
-    }
-
-    public Dictionary<InventoryItem, int> GetAllItemsMap()
-    {
-        return itemToCountMap;
-    }
-
-    public void AddItem(InventoryItem item, int count)
-    {
-        if (itemToCountMap.TryGetValue(item, out var currentItemCount))
-            itemToCountMap[item] = currentItemCount + count;
-        else
-            itemToCountMap.Add(item, count);
-
-        inventoryUI.CreateOrUpdateSlot(this, item, count);
-    }
-
-    public void RemoveItem(InventoryItem item, int count)
-    {
-        if (itemToCountMap.TryGetValue(item, out var currentItemCount))
+        public void OpenInventoryUI()
         {
-            itemToCountMap[item] = currentItemCount - count;
-            if (currentItemCount - count <= 0)
-                inventoryUI.DestroySlot(item);
+            inventoryUI.gameObject.SetActive(true);
+            inventoryUI.InitInventory(this);
+        }
+
+        public void AssignItem(InventoryItem item)
+        {
+            item.AssignItemToPlayer(playerEquipment);
+        }
+
+        public Dictionary<InventoryItem, int> GetAllItemsMap()
+        {
+            return itemToCountMap;
+        }
+
+        public void AddItem(InventoryItem item, int count)
+        {
+            if (itemToCountMap.TryGetValue(item, out var currentItemCount))
+                itemToCountMap[item] = currentItemCount + count;
             else
-                inventoryUI.UpdateSlot(item, currentItemCount - count);
+                itemToCountMap.Add(item, count);
+
+            inventoryUI.CreateOrUpdateSlot(this, item, count);
         }
-        else
+
+        public void RemoveItem(InventoryItem item, int count)
         {
-            Debug.Log($"Cannot remove {item}. This item is not in the inventory!");
+            if (itemToCountMap.TryGetValue(item, out var currentItemCount))
+            {
+                itemToCountMap[item] = currentItemCount - count;
+                if (currentItemCount - count <= 0)
+                    inventoryUI.DestroySlot(item);
+                else
+                    inventoryUI.UpdateSlot(item, currentItemCount - count);
+            }
+            else
+            {
+                Debug.Log($"Cannot remove {item}. This item is not in the inventory!");
+            }
         }
     }
 }

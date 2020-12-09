@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 
 /// <summary>
 ///     This class is responsible for managing weapon functionality.
