@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1606479664230262976}
   - component: {fileID: 1606479664237517571}
   - component: {fileID: 1606479664237517568}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WPN_AKM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606479664237517570}
-  m_LocalRotation: {x: 0.0003163691, y: -0.032956302, z: -0.009594003, w: 0.99941075}
+  m_LocalRotation: {x: 0.00031633818, y: -0.03295306, z: -0.009594004, w: 0.9994108}
   m_LocalPosition: {x: -0.0183, y: 0.112, z: 0.309}
   m_LocalScale: {x: 2.855157, y: 2.1146176, z: 2.1146178}
   m_Children:
@@ -39,7 +39,7 @@ Transform:
   - {fileID: 7470892907471136023}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.1}
+  m_LocalEulerAnglesHint: {x: 0, y: -3.7770002, z: -1.1}
 --- !u!95 &1606479664230262976
 Animator:
   serializedVersion: 3
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponFireState: 1
-  fireRate: 0.1
+  fireRate: 8
   bulletSpawnPoint: {fileID: 7470892907471136023}
   ammunitionManager: {fileID: 114216033368745670, guid: f4d2284700fce5a42abd7d520d0e25d5,
     type: 3}
@@ -132,7 +132,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.841
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 1606479664237479716}
   - component: {fileID: 1606479664240903938}
   - component: {fileID: 1606479664239773122}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WPN_AKM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 1606479664237479718}
   - component: {fileID: 1606479664240903940}
   - component: {fileID: 1606479664239773124}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WPN_AKM_bolt_carrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1606479664237479720}
   - component: {fileID: 1606479664240903942}
   - component: {fileID: 1606479664239773126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WPN_AKM_magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 1606479664237479722}
   - component: {fileID: 1606479664240903944}
   - component: {fileID: 1606479664239773128}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WPN_AKM_rear_sight_leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 1606479664237479724}
   - component: {fileID: 1606479664240903946}
   - component: {fileID: 1606479664239773130}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WPN_AKM_safetyswitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 1606479664237479726}
   - component: {fileID: 1606479664240903948}
   - component: {fileID: 1606479664239773132}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WPN_AKM_trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7470892907471136023}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,10 +666,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7470892907471136022}
-  m_LocalRotation: {x: -0.004907174, y: -0.0015612202, z: 0.0013578212, w: 0.9999858}
-  m_LocalPosition: {x: -0.0034001481, y: 0.016800014, z: 0.46279985}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0034, y: 0.0168, z: 0.4231}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1606479664237479714}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -0.56200004, y: -0.18, z: 0.156}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player
 {
@@ -36,18 +37,24 @@ namespace Player
         public                   float crouchHeight        = 1f;
         public                   float crouchMovementSpeed = 6f;
 
-        private Footsteps _playerFootsteps;
-        private float     _sprintVolume       = 1f;
-        private float     _crouchVolume       = 0.1f;
-        private float     _walkVolumeMin      = 0.2f, _walkVolumeMax = 0.6f;
-        private float     _walkStepDistance   = 0.4f;
-        private float     _sprintStepDistance = 0.25f;
-        private float     _crouchStepDistance = 0.5f;
+        #region Footsteps
+
+        private       Footsteps _playerFootsteps;
+        private const float     SprintVolume        = 1f;
+        private const float     CrouchVolume        = 0.1f;
+        private const float     WalkVolumeMin       = 0.2f;
+        private const float     WalkVolumeMax       = 0.6f;
+        private const float     WalkStepDistance    = 0.4f;
+        private const float     SprintStepDistance  = 0.25f;
+        private const float     CrouchStepDistance = 0.5f;
+
+        #endregion
 
         [Header("Equipped Weapons")]
         public GameObject primaryWeapon;
-        public GameObject secondaryWeapon;
-        public GameObject thirdWeapon;
+        public  GameObject secondaryWeapon;
+        public  GameObject thirdWeapon;
+        private bool       _isWeaponEquipped;
 
         [Header("References")] public CharacterController controller;
 
@@ -59,13 +66,15 @@ namespace Player
 
         [HideInInspector]
         public  float    movementCounter;
+        [FormerlySerializedAs("isPlayerADS")] [HideInInspector]
+        public bool isPlayerAds;
+        
+        // Private Variables
         private Vector3  _cameraOrigin;
         private Vector3  _defaultCharacterCenter;
         private float    _nextFire;
         private Animator _playerAnimator;
-
-        // Private Variables
-        private Vector3 _velocity;
+        private Vector3  _velocity;
 
         // List of player "States"; this controls the position of the arms etc. when a weapon is equipped
         public Dictionary<string, GameObject> playerEquippedStates;
@@ -84,9 +93,9 @@ namespace Player
             defaultMoveSpeed = moveSpeed;
         
             // setup default values
-            _playerFootsteps.volumeMin = _walkVolumeMin;
-            _playerFootsteps.volumeMax = _walkVolumeMax;
-            _playerFootsteps.stepDistance = _walkStepDistance;
+            _playerFootsteps.volumeMin = WalkVolumeMin;
+            _playerFootsteps.volumeMax = WalkVolumeMax;
+            _playerFootsteps.stepDistance = WalkStepDistance;
         }
 
         private void FixedUpdate()
@@ -96,9 +105,9 @@ namespace Player
             {
                 case MovementStates.Running:
                     // Setup footstep sounds
-                    _playerFootsteps.stepDistance = _sprintStepDistance;
-                    _playerFootsteps.volumeMin = _sprintVolume;
-                    _playerFootsteps.volumeMax = _sprintVolume;
+                    _playerFootsteps.stepDistance = SprintStepDistance;
+                    _playerFootsteps.volumeMin = SprintVolume;
+                    _playerFootsteps.volumeMax = SprintVolume;
                     // Setup animations
                     if (primaryWeapon != null)
                         primaryWeapon.GetComponent<Animator>().SetBool(IsRunning, true);
@@ -106,9 +115,9 @@ namespace Player
                     break;
                 case MovementStates.Walking:
                     // Setup footstep sounds
-                    _playerFootsteps.stepDistance = _walkStepDistance;
-                    _playerFootsteps.volumeMin = _walkVolumeMin;
-                    _playerFootsteps.volumeMax = _walkVolumeMax;
+                    _playerFootsteps.stepDistance = WalkStepDistance;
+                    _playerFootsteps.volumeMin = WalkVolumeMin;
+                    _playerFootsteps.volumeMax = WalkVolumeMax;
                     // Setup animations
                     _playerAnimator.SetBool(IsWalking, true);
                     _playerAnimator.SetBool(IsRunning, false);
@@ -117,11 +126,17 @@ namespace Player
                     break;
                 case MovementStates.Crouching:
                     // Setup footstep sounds
-                    _playerFootsteps.stepDistance = _crouchStepDistance;
-                    _playerFootsteps.volumeMin = _crouchVolume;
-                    _playerFootsteps.volumeMax = _crouchVolume;
+                    _playerFootsteps.stepDistance = CrouchStepDistance;
+                    _playerFootsteps.volumeMin = CrouchVolume;
+                    _playerFootsteps.volumeMax = CrouchVolume;
                     break;
             }
+            
+            // Check to see if player is aiming down sights, if so, reduce the mouse sensitivity
+            _camera.GetComponent<MouseLook>().mouseSensitivity = 
+                isPlayerAds
+                    ? _camera.GetComponent<MouseLook>().adsMouseSensitivity
+                    : _camera.GetComponent<MouseLook>().DefaultMouseSensitivity;
         }
 
         private void Update()
@@ -148,6 +163,9 @@ namespace Player
                         _cameraOrigin.y, _camera.transform.localPosition.z);
                     MovementState = MovementStates.Idle;
                 }
+            
+            // When weapon is equipped
+            
         }
 
         private void OnCollisionEnter(Collision other)

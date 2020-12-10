@@ -1,5 +1,7 @@
-﻿using Enemies;
+﻿using System;
+using Enemies;
 using UnityEngine;
+using UnityEngine.AI;
 
 /// <summary>
 ///     Original implementation adapted from https://forum.unity.com/threads/solved-random-wander-ai-using-navmesh.327950
@@ -34,13 +36,13 @@ public class EnemyController : MonoBehaviour
         if (hp <= 0) Die();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        // if a bullet collides with this enemy
         if (other.gameObject.CompareTag("bullet"))
         {
             var ammunitionManager = other.gameObject.GetComponent<AmmunitionManager>();
             hp -= ammunitionManager.damage;
+            Destroy(other.gameObject);
         }
     }
 
@@ -49,5 +51,6 @@ public class EnemyController : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.black;
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<EnemyAI>().enabled = false;
+        GetComponent<NavMeshAgent>().isStopped = true;
     }
 }

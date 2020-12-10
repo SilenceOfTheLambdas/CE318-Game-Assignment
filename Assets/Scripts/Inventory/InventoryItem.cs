@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Inventory;
+using UnityEngine;
 
 /// <summary>
 ///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk

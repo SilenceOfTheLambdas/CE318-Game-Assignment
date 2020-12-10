@@ -42,7 +42,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown(CrouchKey)) PlayerController.Crouch();
 
-        if (Input.GetKeyDown(ShootKey)) PlayerController.Shoot();
+        if (Input.GetMouseButton(0)) PlayerController.Shoot();
 
         if (Input.GetKeyUp(ShootKey))
         {

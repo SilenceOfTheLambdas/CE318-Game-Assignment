@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,93 +23,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521969b7-13be-45d9-807f-97c1107a2361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/InventoryOpen.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/InventoryOpen.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Inventory.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Inventory.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 01.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 02.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 03.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 05.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 06.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 07.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 07.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 08.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 08.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 09.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Dirt 09.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 01.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 02.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 03.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Grass 04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 01.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 02.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 03.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Ladder 04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 01.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 02.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 03.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Metal 04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 01.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 02.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 03.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Stone 04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 01.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 02.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 02.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 03.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 03.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 04.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 04.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 05.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 05.wav.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 06.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Footsteps/Footstep Wood 06.wav.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_ADS.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_ADS.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_equip.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_equip.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Lake_1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Lake_1.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Player_idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Player_idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Terrain.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/Terrain.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/WeaponADS.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Clips/WeaponADS.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/ADSController.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/ADSController.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/Idle.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Player/Idle.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_run_arms.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Clips/AKM_run_arms.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Controllers/Inventory.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Inventory.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Controllers/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Player.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/PostProcessing Profile/CamPost 0.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Inventory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Inventory/Inventory.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerInventory.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerInventory.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,23 +92,23 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHeadBob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" />
         <option value="$PROJECT_DIR$/Assets/Textures/UIBGBlur.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
       </list>
     </option>
   </component>
@@ -222,7 +173,8 @@
       <workItem from="1606049332970" duration="482000" />
       <workItem from="1606049844936" duration="12118000" />
       <workItem from="1607445514992" duration="11551000" />
-      <workItem from="1607498708168" duration="4515000" />
+      <workItem from="1607498708168" duration="16117000" />
+      <workItem from="1607595381262" duration="2323000" />
     </task>
     <servers />
   </component>
@@ -265,10 +217,11 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1181" y="364" key="cloudConfig.PluginsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606049816884" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607501786489">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607597657961">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607447872283" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607597657961" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607548706922" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607501786489" />
   </component>
 </project>

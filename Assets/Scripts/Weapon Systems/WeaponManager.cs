@@ -1,4 +1,5 @@
-﻿using Player;
+﻿using System;
+using Player;
 using UnityEngine;
 
 /// <summary>
@@ -26,6 +27,7 @@ public class WeaponManager : MonoBehaviour
     public                   AmmunitionManager ammunitionManager;
     private                  float             _nextFire;
     private static readonly  int               IsPressingFire = Animator.StringToHash("IsPressingFire");
+    private static readonly  int               AkmAds         = Animator.StringToHash("akmADS");
 
     public void Shoot()
     {
@@ -34,14 +36,17 @@ public class WeaponManager : MonoBehaviour
             case WeaponFireStates.Automatic:
                 if (Time.time > _nextFire && fireRate > 0)
                 {
-                    _nextFire = Time.time + fireRate;
+                    _nextFire = Time.time + 1f / fireRate;
 
-                    GetComponent<Animator>().SetBool("IsPressingFire", true);
+                    GetComponent<Animator>().SetBool(IsPressingFire, true);
 
                     var shot = Instantiate(ammunitionManager.gameObject, bulletSpawnPoint.position,
-                        ammunitionManager.gameObject.transform.localRotation);
+                        transform.rotation);
+                    shot.transform.LookAt(shot.transform.position + shot.GetComponent<Rigidbody>().velocity);
+                    
                     shot.GetComponent<Rigidbody>()
                         .AddForce(bulletSpawnPoint.transform.forward * ammunitionManager.speed);
+                    
                     GetComponent<AudioSource>().Play();
                 }
 
@@ -49,6 +54,27 @@ public class WeaponManager : MonoBehaviour
                     PlayerController.MovementState == PlayerController.MovementStates.Running &&
                     PlayerController.IsGrounded);
                 break;
+        }
+    }
+
+    private void Update()
+    {
+        AimDownSights();
+    }
+
+    public void AimDownSights()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            GameManager.Instance.ADSCamera.gameObject.SetActive(true);
+            GameManager.Instance.ADSCamera.GetComponent<Animator>().SetBool(AkmAds, true);
+            GameManager.Instance.PlayerController.isPlayerAds = true;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            GameManager.Instance.ADSCamera.GetComponent<Animator>().SetBool(AkmAds, false);
+            GameManager.Instance.PlayerController.isPlayerAds = false;
         }
     }
     

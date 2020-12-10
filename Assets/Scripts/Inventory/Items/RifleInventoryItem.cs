@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Inventory;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Inventory System/Items/Rifle Item")]
 public class RifleInventoryItem : InventoryItem

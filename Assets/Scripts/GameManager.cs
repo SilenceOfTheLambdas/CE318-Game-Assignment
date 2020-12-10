@@ -1,4 +1,5 @@
-﻿using Player;
+﻿using Inventory;
+using Player;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerEquipmentController PlayerEquipmentController;
     public                   PlayerController          PlayerController;
+    public                   Camera                    ADSCamera;
 
     #region User Interface
 

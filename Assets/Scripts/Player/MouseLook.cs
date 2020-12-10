@@ -1,33 +1,42 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class MouseLook : MonoBehaviour
+namespace Player
 {
-    [Header("Sensitivity")] public float mouseSensitivity = 100f;
-
-    public  Transform playerBody;
-    private float     xRotation;
-
-    // Start is called before the first frame update
-    private void Start()
+    public class MouseLook : MonoBehaviour
     {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+        [Header("Sensitivity")]
+        public float mouseSensitivity = 100f;
 
-    // Update is called once per frame
-    private void Update()
-    {
-        if (Cursor.lockState == CursorLockMode.Locked)
+        public float DefaultMouseSensitivity { get; private set; }
+
+        [Range(0f, 100f)]
+        public float adsMouseSensitivity;
+
+        public  Transform playerBody;
+        private float     _xRotation;
+
+        // Start is called before the first frame update
+        private void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            DefaultMouseSensitivity = mouseSensitivity;
+        }
 
-            var mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            var mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // Update is called once per frame
+        private void Update()
+        {
+            if (Cursor.lockState == CursorLockMode.Locked)
+            {
 
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                var mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                var mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            playerBody.Rotate(Vector3.up * mouseX);
+                _xRotation -= mouseY;
+                _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+
+                transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+                playerBody.Rotate(Vector3.up * mouseX);
+            }
         }
     }
 }
