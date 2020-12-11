@@ -1,41 +1,44 @@
-﻿using Inventory;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-/// <summary>
-///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
-/// </summary>
-public abstract class InventoryItem : ScriptableObject
+namespace Inventory
 {
-    [SerializeField] private GameObject itemPrefab;
-    [SerializeField] private Sprite     itemSprite;
-    [SerializeField] private string     itemName;
-    [SerializeField] private Vector3    itemLocalPosition;
-    [SerializeField] private Vector3    itemLocalRotation;
-
-    public Sprite GetSprite()
+    /// <summary>
+    ///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
+    /// </summary>
+    public abstract class InventoryItem : MonoBehaviour
     {
-        return itemSprite;
-    }
+        [SerializeField] public  GameObject itemPrefab;
+        [SerializeField] public  Sprite     itemSprite;
+        [SerializeField] public  string     itemName;
+        [SerializeField] private Vector3    itemLocalPosition;
+        [SerializeField] private Vector3    itemLocalRotation;
 
-    public string GetName()
-    {
-        return itemName;
-    }
+        public Sprite GetSprite()
+        {
+            return itemSprite;
+        }
 
-    public GameObject GetPrefab()
-    {
-        return itemPrefab;
-    }
+        public string GetName()
+        {
+            return itemName;
+        }
 
-    public Vector3 GetLocalPosition()
-    {
-        return itemLocalPosition;
-    }
+        public GameObject GetPrefab()
+        {
+            return itemPrefab;
+        }
 
-    public Quaternion GetLocalRotation()
-    {
-        return Quaternion.Euler(itemLocalRotation);
-    }
+        public Vector3 GetLocalPosition()
+        {
+            return itemLocalPosition;
+        }
 
-    public abstract void AssignItemToPlayer(PlayerEquipmentController playerEquipment);
+        public Quaternion GetLocalRotation()
+        {
+            return Quaternion.Euler(itemLocalRotation);
+        }
+
+        public abstract void AssignItemToPlayer(PlayerEquipmentController playerEquipment);
+    }
 }

@@ -1,11 +1,19 @@
-﻿using Inventory;
-using UnityEngine;
-
-[CreateAssetMenu(menuName = "Scriptable Objects/Inventory System/Items/Rifle Item")]
-public class RifleInventoryItem : InventoryItem
+﻿namespace Inventory.Items
 {
-    public override void AssignItemToPlayer(PlayerEquipmentController playerEquipment)
+    public class RifleInventoryItem : InventoryItem
     {
-        playerEquipment.AssignRifleItem(this);
+        public enum WeaponTypes
+        {
+            Primary,
+            Secondary,
+            Pistol
+        }
+
+        public WeaponTypes WeaponType;
+        
+        public override void AssignItemToPlayer(PlayerEquipmentController playerEquipment)
+        {
+            playerEquipment.AssignRifleItem(this);
+        }
     }
 }

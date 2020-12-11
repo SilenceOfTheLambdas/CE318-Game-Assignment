@@ -1,57 +1,60 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
-///     Adjusted by 1806094
-/// </summary>
-public class InventoryUI : MonoBehaviour
+namespace Inventory
 {
-    [SerializeField] private Transform     slotsParent;
-    [SerializeField] private InventorySlot slotPrefab;
-
-    private readonly Dictionary<InventoryItem, InventorySlot> itemToSlotMap =
-        new Dictionary<InventoryItem, InventorySlot>();
-
-    private static readonly int InventoryOpen = Animator.StringToHash("inventoryOpen");
-
-    public void InitInventory(Inventory.Inventory inventory)
+    /// <summary>
+    ///     Original script based on the work by "GameDevChef" https://www.youtube.com/watch?v=aS7OqRuwzlk
+    ///     Adjusted by 1806094
+    /// </summary>
+    public class InventoryUI : MonoBehaviour
     {
-        GetComponent<Animator>().SetBool(InventoryOpen, true);
-        var itemsMap = inventory.GetAllItemsMap();
-        foreach (var kvp in itemsMap) CreateOrUpdateSlot(inventory, kvp.Key, kvp.Value);
-    }
+        [SerializeField] private Transform     slotsParent;
+        [SerializeField] private InventorySlot slotPrefab;
 
-    public void CreateOrUpdateSlot(Inventory.Inventory inventory, InventoryItem inventoryItem, int count)
-    {
-        if (!itemToSlotMap.ContainsKey(inventoryItem))
+        public readonly Dictionary<InventoryItem, InventorySlot> itemToSlotMap =
+            new Dictionary<InventoryItem, InventorySlot>();
+
+        private static readonly int InventoryOpen = Animator.StringToHash("inventoryOpen");
+
+        public void InitInventory(Inventory inventory)
         {
-            var slot = CreateSlot(inventory, inventoryItem, count);
-            itemToSlotMap.Add(inventoryItem, slot);
+            GetComponent<Animator>().SetBool(InventoryOpen, true);
+            var itemsMap = inventory.GetAllItemsMap();
+            foreach (var kvp in itemsMap) CreateOrUpdateSlot(inventory, kvp.Key, kvp.Value);
         }
-        else
+
+        public void CreateOrUpdateSlot(Inventory inventory, InventoryItem inventoryItem, int count)
         {
-            UpdateSlot(inventoryItem, count);
+            if (!itemToSlotMap.ContainsKey(inventoryItem))
+            {
+                var slot = CreateSlot(inventory, inventoryItem, count);
+                itemToSlotMap.Add(inventoryItem, slot);
+            }
+            else
+            {
+                UpdateSlot(inventoryItem, count);
+            }
         }
-    }
 
-    private InventorySlot CreateSlot(Inventory.Inventory inventory, InventoryItem inventoryItem, int count)
-    {
-        var slot = Instantiate(slotPrefab, slotsParent);
-        slot.InitSlotVisualisation(inventoryItem.GetSprite(), inventoryItem.GetName(), count);
-        slot.AssignSlotButtonCallback(() => inventory.AssignItem(inventoryItem));
+        private InventorySlot CreateSlot(Inventory inventory, InventoryItem inventoryItem, int count)
+        {
+            var slot = Instantiate(slotPrefab, slotsParent);
+            slot.InitSlotVisualisation(inventoryItem.GetSprite(), inventoryItem.GetName(), count);
+            slot.AssignSlotButtonCallback(() => inventory.AssignItem(inventoryItem));
 
-        return slot;
-    }
+            return slot;
+        }
 
-    public void UpdateSlot(InventoryItem inventoryItem, int count)
-    {
-        itemToSlotMap[inventoryItem].UpdateSlotCount(count);
-    }
+        public void UpdateSlot(InventoryItem inventoryItem, int count)
+        {
+            itemToSlotMap[inventoryItem].UpdateSlotCount(count);
+        }
 
-    public void DestroySlot(InventoryItem item)
-    {
-        Destroy(itemToSlotMap[item].gameObject);
-        itemToSlotMap.Remove(item);
+        public void DestroySlot(InventoryItem item)
+        {
+            Destroy(itemToSlotMap[item].gameObject);
+            itemToSlotMap.Remove(item);
+        }
     }
 }

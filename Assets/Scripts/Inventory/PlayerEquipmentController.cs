@@ -1,4 +1,5 @@
-﻿using Player;
+﻿using Inventory.Items;
+using Player;
 using UnityEngine;
 
 namespace Inventory
@@ -38,8 +39,8 @@ namespace Inventory
         private static GameObject CreateNewItemInstance(InventoryItem item, Transform anchor)
         {
             var itemInstance = Instantiate(item.GetPrefab(), anchor);
-            itemInstance.transform.localPosition = item.GetLocalPosition();
-            itemInstance.transform.localRotation = item.GetLocalRotation();
+            itemInstance.transform.position = item.itemPrefab.transform.position;
+            itemInstance.transform.rotation = item.itemPrefab.transform.rotation;
             return itemInstance;
         }
 

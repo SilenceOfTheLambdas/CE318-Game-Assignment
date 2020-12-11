@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private PlayerEquipmentController PlayerEquipmentController;
+    public                   InventoryUI               InventoryUI;
     public                   PlayerController          PlayerController;
     public                   Camera                    ADSCamera;
 

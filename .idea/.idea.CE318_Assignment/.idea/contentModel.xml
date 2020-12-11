@@ -188,12 +188,17 @@
             <e p="Items" t="Include">
               <e p="RifleInventoryItem.cs" t="Include" />
             </e>
+            <e p="PickableItem.cs" t="Include" />
             <e p="PlayerEquipmentController.cs" t="Include" />
+            <e p="WeaponSlot.cs" t="Include" />
           </e>
+          <e p="ItemDragHandler.cs" t="Include" />
+          <e p="ItemDropHandler.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="HeadBob.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
+            <e p="PlayerPickup.cs" t="Include" />
           </e>
           <e p="Weapon Systems" t="Include">
             <e p="AmmunitionManager.cs" t="Include" />

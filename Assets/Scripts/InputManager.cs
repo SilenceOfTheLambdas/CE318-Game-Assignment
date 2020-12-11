@@ -2,10 +2,11 @@
 using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Weapon_Systems;
 
 public class InputManager : MonoBehaviour
 {
-    private static InputManager instance;
+    public static InputManager Instance { get; private set; }
 
     public KeyCode JumpKey, ShootKey, CrouchKey;
 
@@ -15,23 +16,15 @@ public class InputManager : MonoBehaviour
     private float zAxis;
 
     [Header("References")] public PlayerController PlayerController;
-
-    protected InputManager()
+    
+    private void Awake()
     {
-    }
-
-    public static InputManager Instance
-    {
-        get
+        if (Instance != null && Instance != this)
         {
-            if (instance == null)
-            {
-                DontDestroyOnLoad(instance);
-                instance = new InputManager();
-            }
-
-            return instance;
+            Destroy(gameObject);
         }
+        else
+            Instance = this;
     }
 
     // Update is called once per frame
