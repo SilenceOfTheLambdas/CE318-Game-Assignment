@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
-    private Vector3     _originalSlotPosition;
     private CanvasGroup _canvasGroup;
+    private Vector3     _originalSlotPosition;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         _canvasGroup.blocksRaycasts = false;
         _canvasGroup.alpha = 0.6f;
     }
-    
+
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
@@ -28,5 +28,4 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         _canvasGroup.blocksRaycasts = true;
         _canvasGroup.alpha = 1f;
     }
-
 }

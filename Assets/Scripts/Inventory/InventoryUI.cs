@@ -9,13 +9,12 @@ namespace Inventory
     /// </summary>
     public class InventoryUI : MonoBehaviour
     {
+        private static readonly  int           InventoryOpen = Animator.StringToHash("inventoryOpen");
         [SerializeField] private Transform     slotsParent;
         [SerializeField] private InventorySlot slotPrefab;
 
         public readonly Dictionary<InventoryItem, InventorySlot> itemToSlotMap =
             new Dictionary<InventoryItem, InventorySlot>();
-
-        private static readonly int InventoryOpen = Animator.StringToHash("inventoryOpen");
 
         public void InitInventory(Inventory inventory)
         {

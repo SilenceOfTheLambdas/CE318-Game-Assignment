@@ -2,7 +2,6 @@
 using Inventory;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngineInternal;
 
 public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
@@ -12,7 +11,6 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
     {
         foreach (var equipmentSlot in equipmentSlots)
         {
-            
             /*var ray = GameManager.Instance.PlayerController._camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hit, 1000))
             {
@@ -20,7 +18,6 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
                 Debug.Log("Hit an Item! " + item.itemName);
                 equipmentSlot.AssignItemToWeaponSlot(item, hit.transform.gameObject);
             }*/
-
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Inventory;
-using Inventory.Items;
+using TMPro;
 using UnityEngine;
 
 namespace Player
@@ -7,15 +7,11 @@ namespace Player
     public class PlayerPickup : MonoBehaviour
     {
         // Reference to the main camera
-        public Camera     Camera;
-        public float      PickUpRange;
-        public Sprite     test;
-        public GameObject itemPrefab;
-        public GameObject slotPrefab;
-
-        // The picked item
-        private PickableItem _pickedItem;
-
+        [SerializeField] private TextMeshProUGUI pickupText; // The text shown when hovering over an item
+        public                   Camera          Camera;
+        public                   float           PickUpRange;
+        public                   GameObject      slotPrefab;
+        
         private void Update()
         {
             if (Input.GetButtonDown("Fire1"))
@@ -24,34 +20,36 @@ namespace Player
                 if (Physics.Raycast(ray, out var hit, PickUpRange))
                 {
                     var pickable = hit.transform.GetComponent<PickableItem>();
-
                     if (pickable)
                     {
                         PickItem(pickable);
+                        Destroy(hit.transform.gameObject);
                     }
                 }
+            }
+
+            var hoverRay = Camera.ViewportPointToRay(Vector3.one * 0.5f);
+            if (!Physics.Raycast(hoverRay, out var hoverHit, PickUpRange)) return;
+            
+            if (hoverHit.transform.gameObject.GetComponent<PickableItem>() != null)
+            {
+                pickupText.gameObject.SetActive(true);
+            }
+            else
+            {
+                pickupText.gameObject.SetActive(false);
             }
         }
 
         private void PickItem(PickableItem item)
         {
-            _pickedItem = item;
-        
             // Disable rigidbody
-            item.Rb.isKinematic = true;
+            /*item.Rb.isKinematic = true;
             item.Rb.velocity = Vector3.zero;
-            item.Rb.angularVelocity = Vector3.zero;
+            item.Rb.angularVelocity = Vector3.zero;*/
 
-            var _item = item.GetComponent<RifleInventoryItem>();
-            _item.name = "AKM";
-            _item.itemSprite = test;
-            _item.itemPrefab = itemPrefab;
-            _item.WeaponType = RifleInventoryItem.WeaponTypes.Primary;
-            
-            GetComponent<Inventory.Inventory>().AddItem(_item, 1);
-            GetComponent<PlayerEquipmentController>().AssignRifleItem(_item);
-            
-            slotPrefab.GetComponent<InventorySlot>().SlotItem = _item;
+            GetComponent<Inventory.Inventory>().AddItem(item.itemType, 1);
+            slotPrefab.GetComponent<InventorySlot>().SlotItem = item.itemType;
         }
     }
 }

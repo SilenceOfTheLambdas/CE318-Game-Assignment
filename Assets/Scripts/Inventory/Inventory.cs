@@ -11,10 +11,10 @@ namespace Inventory
     {
         [SerializeField] private List<InventoryItemWrapper> items = new List<InventoryItemWrapper>();
 
+        public InventoryUI inventoryUI;
+
         private readonly Dictionary<InventoryItem, int> itemToCountMap = new Dictionary<InventoryItem, int>();
         private          PlayerEquipmentController      playerEquipment;
-
-        public InventoryUI inventoryUI;
 
         public void InitInventory(PlayerEquipmentController playerEquipmentController)
         {

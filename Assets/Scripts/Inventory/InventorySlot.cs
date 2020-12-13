@@ -11,11 +11,11 @@ namespace Inventory
     /// </summary>
     public class InventorySlot : MonoBehaviour
     {
-        public InventoryItem SlotItem { get; set; }
         [SerializeField] private Image           itemImage;
         [SerializeField] private TextMeshProUGUI itemNameText;
         [SerializeField] private TextMeshProUGUI itemCountText;
         [SerializeField] private Button          slotButton;
+        public InventoryItem SlotItem { get; set; }
 
         public void InitSlotVisualisation(Sprite itemSprite, string itemName, int itemCount)
         {

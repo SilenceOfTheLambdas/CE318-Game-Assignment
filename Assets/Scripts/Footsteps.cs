@@ -1,20 +1,19 @@
 ﻿using Player;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
 public class Footsteps : MonoBehaviour
 {
-
-    private                  AudioSource      _footstepSound;
-    [SerializeField] private AudioClip[]      footstepClips;
+    [SerializeField] private AudioClip[] footstepClips;
 
 
-    [HideInInspector]
-    public float volumeMin, volumeMax;
+    [HideInInspector] public float volumeMin, volumeMax;
 
-    private                  float _accumulatedDistance;
     [HideInInspector] public float stepDistance;
+
+    private float _accumulatedDistance;
+
+    private AudioSource _footstepSound;
 
     private void Awake()
     {
@@ -33,13 +32,13 @@ public class Footsteps : MonoBehaviour
             return;
 
         if (PlayerController.MovementState == PlayerController.MovementStates.Walking
-        || PlayerController.MovementState == PlayerController.MovementStates.Running
-        || PlayerController.MovementState == PlayerController.MovementStates.Crouching)
+            || PlayerController.MovementState == PlayerController.MovementStates.Running
+            || PlayerController.MovementState == PlayerController.MovementStates.Crouching)
         {
             _accumulatedDistance += Time.deltaTime;
 
             if (!(_accumulatedDistance > stepDistance)) return;
-            
+
             _footstepSound.volume = Random.Range(volumeMin, volumeMax);
             _footstepSound.clip = footstepClips[Random.Range(0, footstepClips.Length)];
             _footstepSound.Play();
@@ -50,6 +49,5 @@ public class Footsteps : MonoBehaviour
         {
             _accumulatedDistance = 0;
         }
-        
     }
 }

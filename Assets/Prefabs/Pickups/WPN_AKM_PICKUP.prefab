@@ -338,7 +338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226769819446589112}
-  m_LocalRotation: {x: -0.09224569, y: 0.09164787, z: -0.7033787, w: 0.6988204}
+  m_LocalRotation: {x: -0.09224606, y: 0.09164748, z: -0.7033816, w: 0.69881743}
   m_LocalPosition: {x: -12.671, y: -2.398, z: -6.128}
   m_LocalScale: {x: 2.855157, y: 2.1146176, z: 2.1146178}
   m_Children:
@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c62c7e76317c6841ad5ad298014d2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: {fileID: 526076836976569791}
 --- !u!114 &526076836976569791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,12 +547,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9958845f6c7b9d54aa3beb39d0d57ed5, type: 3}
   m_Name: AKM .762
   m_EditorClassIdentifier: 
+  ItemType: 1
   itemPrefab: {fileID: 1606479664237517570, guid: 611dca88506d1964ba9cfceb226ea3c8,
     type: 3}
   itemSprite: {fileID: 21300000, guid: da665d6a53bac0a4694014897f5724c3, type: 3}
   itemName: AKM .762 Rifle
-  itemLocalPosition: {x: 0, y: 0, z: 0}
-  itemLocalRotation: {x: 0, y: 0, z: 0}
+  itemLocalPosition: {x: -0.0183, y: 0.112, z: 0.309}
+  itemLocalRotation: {x: 0, y: -3.777, z: -1.1}
 --- !u!1 &1226769819446589116
 GameObject:
   m_ObjectHideFlags: 0

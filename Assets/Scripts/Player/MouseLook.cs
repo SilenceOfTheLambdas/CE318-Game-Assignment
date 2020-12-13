@@ -4,16 +4,14 @@ namespace Player
 {
     public class MouseLook : MonoBehaviour
     {
-        [Header("Sensitivity")]
-        public float mouseSensitivity = 100f;
+        [Header("Sensitivity")] public float mouseSensitivity = 100f;
 
-        public float DefaultMouseSensitivity { get; private set; }
-
-        [Range(0f, 100f)]
-        public float adsMouseSensitivity;
+        [Range(0f, 100f)] public float adsMouseSensitivity;
 
         public  Transform playerBody;
         private float     _xRotation;
+
+        public float DefaultMouseSensitivity { get; private set; }
 
         // Start is called before the first frame update
         private void Start()
@@ -27,7 +25,6 @@ namespace Player
         {
             if (Cursor.lockState == CursorLockMode.Locked)
             {
-
                 var mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
                 var mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 

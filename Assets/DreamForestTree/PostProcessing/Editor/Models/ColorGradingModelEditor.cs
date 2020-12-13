@@ -29,18 +29,18 @@ namespace UnityEditor.PostProcessing
             new GUIContent("Lum VS Sat")
         };
 
-        private static Material                              s_MaterialSpline;
-        private        BasicSettings                         m_Basic;
-        private        ChannelMixerSettings                  m_ChannelMixer;
-        private        ColorWheelsSettings                   m_ColorWheels;
-        private        Dictionary<SerializedProperty, Color> m_CurveDict;
+        private static   Material                              s_MaterialSpline;
+        private readonly Vector3[]                             m_CurveVertices = new Vector3[k_CurveResolution];
+        private readonly Vector3[]                             m_LineVertices  = new Vector3[2];
+        private readonly Vector3[]                             m_RectVertices  = new Vector3[4];
+        private          BasicSettings                         m_Basic;
+        private          ChannelMixerSettings                  m_ChannelMixer;
+        private          ColorWheelsSettings                   m_ColorWheels;
+        private          Dictionary<SerializedProperty, Color> m_CurveDict;
 
-        private          CurveEditor    m_CurveEditor;
-        private          CurvesSettings m_Curves;
-        private readonly Vector3[]      m_CurveVertices = new Vector3[k_CurveResolution];
-        private readonly Vector3[]      m_LineVertices  = new Vector3[2];
-        private          Rect           m_NeutralCurveRect;
-        private readonly Vector3[]      m_RectVertices = new Vector3[4];
+        private CurveEditor    m_CurveEditor;
+        private CurvesSettings m_Curves;
+        private Rect           m_NeutralCurveRect;
 
         private TonemappingSettings m_Tonemapping;
 

@@ -5,13 +5,13 @@ namespace UnityEngine.PostProcessing
     public sealed class
         ScreenSpaceReflectionComponent : PostProcessingComponentCommandBuffer<ScreenSpaceReflectionModel>
     {
-        private readonly int[] m_ReflectionTextures = new int[5];
-        private readonly bool  k_BilateralUpsample  = true;
+        private readonly bool k_BilateralUpsample = true;
 
         // Unexposed variables
-        private readonly bool k_HighlightSuppression   = false;
-        private readonly bool k_TraceBehindObjects     = true;
-        private readonly bool k_TreatBackfaceHitAsMiss = false;
+        private readonly bool  k_HighlightSuppression   = false;
+        private readonly bool  k_TraceBehindObjects     = true;
+        private readonly bool  k_TreatBackfaceHitAsMiss = false;
+        private readonly int[] m_ReflectionTextures     = new int[5];
 
         public override bool active =>
             model.enabled

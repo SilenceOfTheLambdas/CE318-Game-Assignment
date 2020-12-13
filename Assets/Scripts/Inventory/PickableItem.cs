@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-public class PickableItem : MonoBehaviour
+namespace Inventory
 {
-    public Rigidbody Rb { get; private set; }
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody))]
+    public class PickableItem : MonoBehaviour
     {
-        Rb = GetComponent<Rigidbody>();
+        public InventoryItem itemType;
+        public Rigidbody Rb { get; private set; }
+
+        private void Awake()
+        {
+            Rb = GetComponent<Rigidbody>();
+        }
     }
 }

@@ -11,13 +11,13 @@ namespace Enemies
     public class EnemyAI : MonoBehaviour
     {
         /// <summary>
-        /// What layer is the ground on?
+        ///     What layer is the ground on?
         /// </summary>
         [SerializeField] private LayerMask groundMask, playerMask;
 
+        [SerializeField] private PlayerController player;
+
         private NavMeshAgent _navMeshAgent;
-        [SerializeField]
-        private PlayerController player;
 
         private void Awake()
         {
@@ -38,37 +38,38 @@ namespace Enemies
             if (playerInAttackRange && playerInSightRange) AttackPlayer();
         }
 
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackRange);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, sightRange);
+        }
+
         private void Patrolling()
         {
             if (!_walkPointSet) SearchWalkPoint();
 
-            if (_walkPointSet)
-            {
-                _navMeshAgent.SetDestination(walkPoint);
-            }
+            if (_walkPointSet) _navMeshAgent.SetDestination(walkPoint);
 
             var distanceToWalkPoint = transform.position - walkPoint;
 
-            if (distanceToWalkPoint.magnitude < 2f)
-            {
-                _walkPointSet = false;
-            }
+            if (distanceToWalkPoint.magnitude < 2f) _walkPointSet = false;
         }
 
         /// <summary>
-        /// Search for a random area within the area specified by <value>walkPointRange</value>
+        ///     Search for a random area within the area specified by
+        ///     <value>walkPointRange</value>
         /// </summary>
         private void SearchWalkPoint()
         {
             var randomZ = Random.Range(-walkPointRange, walkPointRange);
             var randomX = Random.Range(-walkPointRange, walkPointRange);
 
-            walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-        
-            if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask))
-            {
-                _walkPointSet = true;
-            }
+            walkPoint = new Vector3(transform.position.x + randomX, transform.position.y,
+                transform.position.z + randomZ);
+
+            if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask)) _walkPointSet = true;
         }
 
         private void ChasePlayer()
@@ -86,7 +87,8 @@ namespace Enemies
             if (_alreadyAttacked) return;
             if (player.isDead) return;
             // Attack
-            var rb = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+            var rb = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity)
+                .GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 10000000f, ForceMode.Acceleration);
 
             _alreadyAttacked = true;
@@ -97,20 +99,13 @@ namespace Enemies
         {
             _alreadyAttacked = false;
         }
-    
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, attackRange);
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, sightRange);
-        }
 
         #region Patrolling
 
         public Vector3 walkPoint;
-        [SerializeField]
-        private bool _walkPointSet;
+
+        [SerializeField] private bool _walkPointSet;
+
         public float walkPointRange;
 
         #endregion

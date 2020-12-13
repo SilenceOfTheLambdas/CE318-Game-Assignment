@@ -46,10 +46,7 @@ namespace ILranch
             var ilranchlogo = AssetDatabase.LoadAssetAtPath<Texture2D>(
                 Path.GetDirectoryName(AssetDatabase.GetAssetPath(MonoScript.FromScriptableObject(this))) +
                 "/LogoDialog.png");
-            if (ilranchlogo != null)
-            {
-                GUI.DrawTexture(rect, ilranchlogo, ScaleMode.ScaleToFit);
-            }
+            if (ilranchlogo != null) GUI.DrawTexture(rect, ilranchlogo, ScaleMode.ScaleToFit);
 
             GUI.backgroundColor = Color.white;
             EditorGUILayout.HelpBox("Prompt for Beginners:", MessageType.Info, true);
@@ -65,13 +62,9 @@ namespace ILranch
             if (GUILayout.Button("current 'ColorSpace' is: " + SColorSpace()))
             {
                 if (PlayerSettings.colorSpace == ColorSpace.Linear)
-                {
                     PlayerSettings.colorSpace = ColorSpace.Gamma;
-                }
                 else
-                {
                     PlayerSettings.colorSpace = ColorSpace.Linear;
-                }
 
                 EditorUtility.DisplayDialog("Confirmation", "'ColorSpace' changed to " + PlayerSettings.colorSpace,
                     "Ok");
@@ -89,13 +82,9 @@ namespace ILranch
                 var names        = QualitySettings.names;
                 var currentlevel = QualitySettings.GetQualityLevel();
                 if (currentlevel < names.Length - 1)
-                {
                     QualitySettings.SetQualityLevel(names.Length - 1, true);
-                }
                 else
-                {
                     QualitySettings.SetQualityLevel(defaultqualitylevel, true);
-                }
 
                 EditorUtility.DisplayDialog("Confirmation", "'QualityLevel' changed to " + QualityLevel(), "Ok");
                 pressed2 = !pressed2;
@@ -107,36 +96,24 @@ namespace ILranch
             if (!pressed3)
             {
                 if (QualitySettings.antiAliasing == 0)
-                {
                     GUI.backgroundColor = Color.green;
-                }
                 else
-                {
                     GUI.backgroundColor = Color.yellow;
-                }
             }
             else
             {
                 if (QualitySettings.antiAliasing == 0)
-                {
                     GUI.backgroundColor = Color.green;
-                }
                 else
-                {
                     GUI.backgroundColor = Color.yellow;
-                }
             }
 
             if (GUILayout.Button("current 'AntiAliasing' is: " + AntiAlias()))
             {
                 if (QualitySettings.antiAliasing == 0)
-                {
                     QualitySettings.antiAliasing = 2;
-                }
                 else
-                {
                     QualitySettings.antiAliasing = 0;
-                }
 
                 EditorUtility.DisplayDialog("Confirmation", "'AntiAliasing' changed to " + AntiAlias(), "Ok");
                 pressed3 = !pressed3;
@@ -160,13 +137,9 @@ namespace ILranch
         private string AntiAlias()
         {
             if (QualitySettings.antiAliasing == 0)
-            {
                 valuename = "disabled";
-            }
             else
-            {
                 valuename = "2x (default)";
-            }
 
             return valuename;
         }
@@ -176,13 +149,9 @@ namespace ILranch
             var names        = QualitySettings.names;
             var currentlevel = QualitySettings.GetQualityLevel();
             if (currentlevel < names.Length - 1)
-            {
                 valuename = "Not a Maximum";
-            }
             else
-            {
                 valuename = "Maximum";
-            }
 
             return valuename;
         }
@@ -190,13 +159,9 @@ namespace ILranch
         private string SColorSpace()
         {
             if (PlayerSettings.colorSpace == ColorSpace.Linear)
-            {
                 valuename = "Linear";
-            }
             else
-            {
                 valuename = "Gamma";
-            }
 
             return valuename;
         }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Inventory
 {
@@ -8,11 +7,23 @@ namespace Inventory
     /// </summary>
     public abstract class InventoryItem : MonoBehaviour
     {
+        public enum ItemTypes
+        {
+            Pistol,
+            AssaultRifle,
+            Drink,
+            Food
+        }
+
+        public ItemTypes ItemType;
+
         [SerializeField] public  GameObject itemPrefab;
         [SerializeField] public  Sprite     itemSprite;
         [SerializeField] public  string     itemName;
         [SerializeField] private Vector3    itemLocalPosition;
-        [SerializeField] private Vector3    itemLocalRotation;
+
+        [SerializeField] private Vector3 itemLocalRotation;
+        // TODO Allow for different inventory item *types*
 
         public Sprite GetSprite()
         {

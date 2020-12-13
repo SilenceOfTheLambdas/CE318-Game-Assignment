@@ -5,31 +5,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-
     [SerializeField] private PlayerEquipmentController PlayerEquipmentController;
     public                   InventoryUI               InventoryUI;
     public                   PlayerController          PlayerController;
     public                   Camera                    ADSCamera;
-
-    #region User Interface
-
-    [Header("Inventory")] 
-    [SerializeField] 
-    private bool        inventoryOpen;
-    public  InventoryUI inventoryUI;
-    
-    public  GameObject      deathBg;
-    public  TextMeshProUGUI deathMessage;
-
-    #endregion
+    public static GameManager Instance { get; private set; }
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
-        {
             Destroy(gameObject);
-        }
         else
             Instance = this;
     }
@@ -54,6 +39,7 @@ public class GameManager : MonoBehaviour
                 inventoryUI.gameObject.SetActive(true);
                 PlayerEquipmentController.StartInventory();
             }
+
             if (inventoryOpen)
             {
                 Cursor.lockState = CursorLockMode.Locked;
@@ -62,4 +48,15 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    #region User Interface
+
+    [Header("Inventory")] [SerializeField] private bool inventoryOpen;
+
+    public InventoryUI inventoryUI;
+
+    public GameObject      deathBg;
+    public TextMeshProUGUI deathMessage;
+
+    #endregion
 }

@@ -6,10 +6,10 @@ namespace UnityEditor.PostProcessing
 {
     public class HistogramMonitor : PostProcessingMonitor
     {
-        private static readonly GUIContent    s_MonitorTitle = new GUIContent("Histogram");
-        private                 ComputeBuffer m_Buffer;
+        private static readonly GUIContent s_MonitorTitle = new GUIContent("Histogram");
 
         private readonly ComputeShader m_ComputeShader;
+        private          ComputeBuffer m_Buffer;
         private          RenderTexture m_HistogramTexture;
         private          Material      m_Material;
         private          Rect          m_MonitorAreaRect;

@@ -6,10 +6,10 @@ namespace UnityEditor.PostProcessing
 {
     public class WaveformMonitor : PostProcessingMonitor
     {
-        private static readonly GUIContent    s_MonitorTitle = new GUIContent("Waveform");
-        private                 ComputeBuffer m_Buffer;
+        private static readonly GUIContent s_MonitorTitle = new GUIContent("Waveform");
 
         private readonly ComputeShader m_ComputeShader;
+        private          ComputeBuffer m_Buffer;
         private          Material      m_Material;
         private          Rect          m_MonitorAreaRect;
         private          RenderTexture m_WaveformTexture;
