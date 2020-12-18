@@ -1,35 +1,37 @@
+using Enemies;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace AI.LeafNodes
+namespace AI.Nodes
 {
     public class ChaseNode : BTNode
     {
-        private Transform    target;
-        private NavMeshAgent agent;
+        private readonly Transform    _target;
+        private readonly NavMeshAgent _agent;
 
-        public ChaseNode(BehaviourTree t, Transform target, NavMeshAgent agent) : base(t)
+        public ChaseNode(Transform target, NavMeshAgent agent)
         {
-            this.target = target;
-            this.agent = agent;
+            _target = target;
+            _agent = agent;
         }
 
         public override Result Execute()
         {
-            var distance = Vector3.Distance(target.position, agent.transform.position);
+            var distance = Vector3.Distance(_target.position, _agent.transform.position);
+            
+            if (distance > 0.2f)
             {
-                if (distance > 0.2f)
-                {
-                    agent.isStopped = false;
-                    agent.SetDestination(target.position);
-                    return Result.Running;
-                }
-                else
-                {
-                    agent.isStopped = true;
-                    return Result.Success;
-                }
+                _agent.isStopped = false;
+                _agent.speed = _agent.gameObject.GetComponent<EnemyController>().runSpeed;
+                //_agent.gameObject.GetComponent<Animator>().speed *= _agent.gameObject.GetComponent<EnemyController>().runSpeed;
+                _agent.SetDestination(_target.position);
+                return Result.Running;
             }
+
+            _agent.isStopped = true;
+            _agent.speed = _agent.gameObject.GetComponent<EnemyController>().defaultMoveSpeed;
+            //_agent.gameObject.GetComponent<Animator>().speed *= _agent.gameObject.GetComponent<EnemyController>().defaultMoveSpeed;
+            return Result.Success;
         }
     }
 }

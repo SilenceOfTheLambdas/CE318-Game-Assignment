@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 33065013992664210}
   - component: {fileID: 23466419510729776}
   - component: {fileID: 2688944756171759887}
+  - component: {fileID: 114105944239602162}
   m_Layer: 0
   m_Name: RedWood 4
   m_TagString: Untagged
@@ -103,6 +104,19 @@ CapsuleCollider:
   m_Height: 48.06937
   m_Direction: 1
   m_Center: {x: -0.07514191, y: 21.17, z: 0}
+--- !u!114 &114105944239602162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970681966781816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37a9458ba00421f81e5ef57d42940a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialName: Trees
 --- !u!21 &21440639111565978
 Material:
   serializedVersion: 6

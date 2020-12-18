@@ -23,57 +23,98 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521969b7-13be-45d9-807f-97c1107a2361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTComposite.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTComposite.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTDecorator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTInverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTInverter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTRepeater.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTRepeater.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSelector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSelector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSequencer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSequencer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Cover.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Cover.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/GoToCoverNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/GoToCoverNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/HealthNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/HealthNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoverAvailableNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoverAvailableNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoveredNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoveredNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNPatrol.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNPatrol.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNRandomWalk.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNRandomWalk.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/RangeNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/RangeNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ShootNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ShootNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy_#1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy_#1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/bullet_impact_prototypwe.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/bullet_impact_prototypwe.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_dir.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_dir.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_light.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_light.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_shadowmask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_shadowmask.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BallisticData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BallisticData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraph.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraph.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraphView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraphView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/Resources/BehaviourGraph.uss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/Resources/BehaviourGraph.uss.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ItemSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ItemSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialDatabase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialDatabase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialHolder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialHolder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/Ballistics.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/Ballistics.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Player/Idle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Player/Idle.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pickups/WPN_AKM_PICKUP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pickups/WPN_AKM_PICKUP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTComposite.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTComposite.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTDecorator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTDecorator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTInverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTInverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTRepeater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTRepeater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTSequencer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSequencer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/GoToCoverNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/GoToCoverNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/HealthNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/HealthNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoverAvailableNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoverAvailableNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoveredNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoveredNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNPatrol.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNPatrol.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNRandomWalk.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNRandomWalk.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/RangeNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/RangeNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ShootNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ShootNode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Inventory/45 ACP SMITH AND WESSON_ICON.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/Inventory/45 ACP SMITH AND WESSON_ICON.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/WeaponSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/WeaponSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,78 +125,40 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ItemDragHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E1319B71-95C3-43E7-9B38-5CD3AA43F5DC/65/a3fc9843/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory/Items/PistolInventoryItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHeadBob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/WonderSpot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/AmmunitionManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/HeadBob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Textures/UIBGBlur.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItemWrapper.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Footsteps.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/MouseLook.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PickableItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerPickup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/ItemDropHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ItemDragHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/WeaponSlot.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventoryItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/PistolInventoryItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Items/RifleInventoryItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/PlayerEquipmentController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/PickableItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerPickup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BTDecorator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BTComposite.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BTSequencer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/LeafNodes/LNRandomWalk.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/LeafNodes/LNPatrol.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BTInverter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BTNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/RangeNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoveredNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ShootNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/CoverNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Cover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/GoToCoverNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoverAvailableNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BTRepeater.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/BTSelector.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/HealthNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Ballistics.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialDatabase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialHolder.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/Ballistics.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1jh3kR91vn41taUGvd3DmEfnpwZ" />
   <component name="ProjectLevelVcsManager">
@@ -172,16 +175,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.environmentSetup" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Test Build\CE318_Assignment.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\techd\Desktop\Test Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="532">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="532" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -190,7 +201,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -225,6 +236,13 @@
       <workItem from="1607876202845" duration="10284000" />
       <workItem from="1607898794318" duration="8608000" />
       <workItem from="1607936664482" duration="3204000" />
+      <workItem from="1607941001164" duration="25209000" />
+      <workItem from="1608031204932" duration="2684000" />
+      <workItem from="1608044764424" duration="1299000" />
+      <workItem from="1608227494884" duration="2949000" />
+      <workItem from="1608236363541" duration="141000" />
+      <workItem from="1608236529105" duration="1164000" />
+      <workItem from="1608289076609" duration="16167000" />
     </task>
     <servers />
   </component>
@@ -248,105 +266,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="703" y="341" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1607889237857">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="703" y="341" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607889237857" />
-    <state width="1877" height="329" key="GridCell.Tab.0.bottom" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.0.center" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.0.left" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.0.right" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.1.bottom" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.1.center" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.1.left" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.1.right" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.2.bottom" timestamp="1607879039840">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039840" />
-    <state width="1877" height="329" key="GridCell.Tab.2.center" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.2.left" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.2.right" timestamp="1607879039839">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039839" />
-    <state width="1877" height="329" key="GridCell.Tab.3.bottom" timestamp="1607879039840">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039840" />
-    <state width="1877" height="329" key="GridCell.Tab.3.center" timestamp="1607879039840">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.3.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039840" />
-    <state width="1877" height="329" key="GridCell.Tab.3.left" timestamp="1607879039840">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.3.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039840" />
-    <state width="1877" height="329" key="GridCell.Tab.3.right" timestamp="1607879039840">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="329" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607879039840" />
-    <state x="636" y="198" key="RiderGenerateDialog" timestamp="1607908023279">
-      <screen x="0" y="25" width="1920" height="983" />
-    </state>
-    <state x="636" y="198" key="RiderGenerateDialog/0.25.1920.983/-1920.25.1920.1055@0.25.1920.983" timestamp="1607908023279" />
-    <state x="461" y="181" key="SettingsEditor" timestamp="1607899810061">
-      <screen x="0" y="25" width="1920" height="983" />
-    </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607373840805" />
-    <state x="461" y="181" key="SettingsEditor/0.25.1920.983/-1920.25.1920.1055@0.25.1920.983" timestamp="1607899810061" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1607498890493">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605198369194" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607498890493" />
-    <state x="-1181" y="364" key="cloudConfig.PluginsDialog" timestamp="1606049816884">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1181" y="364" key="cloudConfig.PluginsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606049816884" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1607680905487">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607680905487" />
-    <state x="623" y="238" width="672" height="641" key="search.everywhere.popup" timestamp="1607939564348">
-      <screen x="0" y="25" width="1920" height="983" />
-    </state>
-    <state x="623" y="238" width="672" height="641" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1920.983@0.25.1920.983" timestamp="1607939564348" />
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607612378184" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607891382939" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607501786489" />
-    <state x="623" y="238" width="672" height="641" key="search.everywhere.popup/0.25.1920.983/-1920.25.1920.1055@0.25.1920.983" timestamp="1607908409637" />
   </component>
 </project>

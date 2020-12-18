@@ -1,8 +1,7 @@
 using Enemies;
-using UnityEngine;
 using UnityEngine.AI;
 
-namespace AI.LeafNodes
+namespace AI.Nodes
 {
     public class ShootNode : BTNode
     {
@@ -10,7 +9,7 @@ namespace AI.LeafNodes
         private readonly EnemyAI      _enemyAI;
         private          bool         _alreadyAttacked;
 
-        public ShootNode(BehaviourTree t, NavMeshAgent agent, EnemyAI enemyAI) : base(t)
+        public ShootNode(NavMeshAgent agent, EnemyAI enemyAI)
         {
             _agent = agent;
             _enemyAI = enemyAI;

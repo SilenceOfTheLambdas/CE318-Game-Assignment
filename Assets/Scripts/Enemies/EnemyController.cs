@@ -22,29 +22,26 @@ namespace Enemies
         //private Animator _animator;
         private static readonly int IsDead = Animator.StringToHash("isDead");
 
-        [Header("Enemy Stats")] [SerializeField]
+        [Header("Enemy Stats")] 
+        private float _currentHealth;
+
         public float startingHealth;
-        [SerializeField] public  float lowHealthThreshold;
-        [SerializeField] public  float healthRestoreRate;
-        [SerializeField] public  float chaseRange;
-        [SerializeField] public  float shootRange;
+        public float lowHealthThreshold;
+        public float healthRestoreRate;
+        public float chaseRange;
+        public float shootRange;
 
         public float CurrentHealth
         {
-            get => CurrentHealth;
-            set
-            {
-                if (value <= 0) throw new ArgumentOutOfRangeException(nameof(value));
-                CurrentHealth = Mathf.Clamp(value, 0, startingHealth);
-            }
+            get => _currentHealth;
+            private set => _currentHealth = Mathf.Clamp(value, 0, startingHealth);
         }
 
 
-        [Range(1, 20)] [Header("Movement")] public float moveSpeed = 8f;
-
-        public float defaultMoveSpeed;
-
+        [Range(1, 20)] [Header("Movement")] 
+        public float moveSpeed = 8f;
         [Range(1, 20)] public float runSpeed = 12f;
+        public                float defaultMoveSpeed;
 
 
         private void Start()
@@ -60,7 +57,7 @@ namespace Enemies
             CurrentHealth += Time.deltaTime * healthRestoreRate;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("bullet"))
             {

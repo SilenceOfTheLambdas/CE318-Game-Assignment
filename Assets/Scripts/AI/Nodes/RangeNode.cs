@@ -1,24 +1,24 @@
 using UnityEngine;
 
-namespace AI.LeafNodes
+namespace AI.Nodes
 {
     public class RangeNode : BTNode
     {
-        private float     range;
-        private Transform target;
-        private Transform origin;
+        private readonly float     _range;
+        private readonly Transform _target;
+        private readonly Transform _origin;
 
-        public RangeNode(BehaviourTree t, float range, Transform target, Transform origin) : base(t)
+        public RangeNode(float range, Transform target, Transform origin)
         {
-            this.range = range;
-            this.target = target;
-            this.origin = origin;
+            _range = range;
+            _target = target;
+            _origin = origin;
         }
 
         public override Result Execute()
         {
-            var distance = Vector3.Distance(target.position, origin.position);
-            return distance <= range ? Result.Success : Result.Failure;
+            var distance = Vector3.Distance(_target.position, _origin.position);
+            return distance <= _range ? Result.Success : Result.Failure;
         }
     }
 }

@@ -4,10 +4,11 @@ namespace AI
 {
     public class BTInverter : BTNode
     {
-        protected BTNode _node;
+        private readonly BTNode _node;
         
-        public BTInverter(BehaviourTree t) : base(t)
+        public BTInverter(BTNode node)
         {
+            _node = node;
         }
 
         public override Result Execute()

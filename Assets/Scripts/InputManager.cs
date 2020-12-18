@@ -5,7 +5,7 @@ using Weapon_Systems;
 
 public class InputManager : MonoBehaviour
 {
-    public KeyCode JumpKey, ShootKey, CrouchKey;
+    public KeyCode JumpKey, ShootKey, CrouchKey, PickupKey, PauseMenuKey;
 
     [SerializeField] private float xAxis;
 
@@ -21,6 +21,8 @@ public class InputManager : MonoBehaviour
             Destroy(gameObject);
         else
             Instance = this;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

@@ -5,39 +5,33 @@ namespace AI
     /// <summary>
     /// Similar to an AND gate, it will only run if all child nodes returned SUCCESS
     /// </summary>
-    public class BTSequencer : BTComposite
+    public class BTSequencer : BTNode
     {
-        private int _currentNode = 0;
+        private readonly List<BTNode> _children;
         
-        public BTSequencer(BehaviourTree t, IEnumerable<BTNode> children) : base(t, children)
+        public BTSequencer(IEnumerable<BTNode> children)
         {
+            _children = new List<BTNode>(children);
         }
 
         public override Result Execute()
         {
-            if (_currentNode < Children.Count)
+            var isAnyNodeRunning = false;
+            foreach (var node in _children)
             {
-                var result = Children[_currentNode].Execute();
-
-                switch (result)
+                switch (node.Execute())
                 {
                     case Result.Running:
-                        return Result.Running;
+                        isAnyNodeRunning = true;
+                        break;
+                    case Result.Success:
+                        break;
                     case Result.Failure:
-                        _currentNode = 0;
                         return Result.Failure;
-                    default:
-                    {
-                        _currentNode++;
-                        if (_currentNode < Children.Count)
-                            return Result.Running;
-                        _currentNode = 0;
-                        return Result.Success;
-                    }
                 }
             }
 
-            return Result.Success;
+            return isAnyNodeRunning ? Result.Running : Result.Success;
         }
     }
 }

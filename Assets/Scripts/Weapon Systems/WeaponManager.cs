@@ -29,14 +29,15 @@ namespace Weapon_Systems
         public float fireRate;
 
         [SerializeField] private Transform         bulletSpawnPoint;
+        [SerializeField] private GameObject        bulletPrefab;
         public                   AmmunitionManager ammunitionManager;
         private                  float             _nextFire;
 
         private void Update()
         {
-            if (GameManager.Instance.PlayerController.primaryWeapon != null
-                || GameManager.Instance.PlayerController.secondaryWeapon != null
-                || GameManager.Instance.PlayerController.thirdWeapon != null)
+            if (GameManager.Instance.playerController.primaryWeapon != null
+                || GameManager.Instance.playerController.secondaryWeapon != null
+                || GameManager.Instance.playerController.thirdWeapon != null)
             {
                 Shoot();
                 AimDownSights();   
@@ -55,12 +56,18 @@ namespace Weapon_Systems
 
                         GetComponent<Animator>().SetBool(IsPressingFire, true);
 
-                        var shot = Instantiate(ammunitionManager.gameObject, bulletSpawnPoint.position,
+                        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position,
+                            bulletSpawnPoint.rotation);
+
+                        var ballistics = bullet.GetComponent<Ballistics>();
+                        bullet.GetComponent<Rigidbody>().velocity =
+                            ballistics.muzzleVelocity * 0.3048f * bulletSpawnPoint.forward;
+                        /*var shot = Instantiate(ammunitionManager.gameObject, bulletSpawnPoint.position,
                             transform.rotation);
                         shot.transform.LookAt(shot.transform.position + shot.GetComponent<Rigidbody>().velocity);
 
                         shot.GetComponent<Rigidbody>()
-                            .AddForce(bulletSpawnPoint.transform.forward * ammunitionManager.speed);
+                            .AddForce(bulletSpawnPoint.transform.forward * ammunitionManager.speed);*/
 
                         GetComponent<AudioSource>().Play();
                     }
@@ -102,15 +109,15 @@ namespace Weapon_Systems
         {
             if (Input.GetMouseButton(1))
             {
-                GameManager.Instance.ADSCamera.gameObject.SetActive(true);
-                GameManager.Instance.ADSCamera.GetComponent<Animator>().SetBool(AkmAds, true);
-                GameManager.Instance.PlayerController.isPlayerAds = true;
+                GameManager.Instance.adsCamera.gameObject.SetActive(true);
+                GameManager.Instance.adsCamera.GetComponent<Animator>().SetBool(AkmAds, true);
+                GameManager.Instance.playerController.isPlayerAds = true;
             }
 
             if (Input.GetMouseButtonUp(1))
             {
-                GameManager.Instance.ADSCamera.GetComponent<Animator>().SetBool(AkmAds, false);
-                GameManager.Instance.PlayerController.isPlayerAds = false;
+                GameManager.Instance.adsCamera.GetComponent<Animator>().SetBool(AkmAds, false);
+                GameManager.Instance.playerController.isPlayerAds = false;
             }
         }
 

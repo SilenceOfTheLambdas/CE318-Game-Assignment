@@ -1,15 +1,15 @@
 using Enemies;
 using UnityEngine;
 
-namespace AI.LeafNodes
+namespace AI.Nodes
 {
     public class IsCoverAvailableNode : BTNode
     {
-        private Cover[]   _availableCovers;
-        private Transform _target;
-        private EnemyAI   _enemyAI;
+        private readonly Cover[]   _availableCovers;
+        private readonly Transform _target;
+        private readonly EnemyAI   _enemyAI;
 
-        public IsCoverAvailableNode(BehaviourTree t, Cover[] availableCovers, Transform target, EnemyAI enemyAI) : base(t)
+        public IsCoverAvailableNode(Cover[] availableCovers, Transform target, EnemyAI enemyAI)
         {
             _availableCovers = availableCovers;
             _target = target;
@@ -28,9 +28,9 @@ namespace AI.LeafNodes
             float     minAngle = 90;
             Transform bestSpot = null;
 
-            for (int i = 0; i < _availableCovers.Length; i++)
+            foreach (var t in _availableCovers)
             {
-                Transform bestSpotInCover = FindBestSpotInCover(_availableCovers[i], ref minAngle);
+                var bestSpotInCover = FindBestSpotInCover(t, ref minAngle);
                 if (bestSpotInCover != null)
                 {
                     bestSpot = bestSpotInCover;

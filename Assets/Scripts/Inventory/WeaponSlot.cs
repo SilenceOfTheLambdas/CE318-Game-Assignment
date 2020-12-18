@@ -32,12 +32,12 @@ namespace Inventory
                         switch (itemsToMap.Key.ItemType)
                         {
                             case InventoryItem.ItemTypes.Pistol:
-                                GameManager.Instance.PlayerController.gameObject
+                                GameManager.Instance.playerController.gameObject
                                     .GetComponent<PlayerEquipmentController>()
                                     .AssignPistolItem((PistolInventoryItem) itemsToMap.Key);
                                 break;
                             case InventoryItem.ItemTypes.AssaultRifle:
-                                GameManager.Instance.PlayerController.gameObject
+                                GameManager.Instance.playerController.gameObject
                                     .GetComponent<PlayerEquipmentController>()
                                     .AssignRifleItem((RifleInventoryItem) itemsToMap.Key);
                                 break;

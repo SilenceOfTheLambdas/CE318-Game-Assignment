@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1226769819447011984}
   - component: {fileID: 1226769819449911986}
   - component: {fileID: 1226769819448780914}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: WPN_AKM_rear_sight_leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1226769819447011986}
   - component: {fileID: 1226769819449911996}
   - component: {fileID: 1226769819448780924}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: WPN_AKM_magazine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1226769819447011988}
   - component: {fileID: 1226769819449911990}
   - component: {fileID: 1226769819448780918}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: WPN_AKM_trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 1226769819447011990}
   - component: {fileID: 1226769819449911984}
   - component: {fileID: 1226769819448780912}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: WPN_AKM_safetyswitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 526076836976569790}
   - component: {fileID: 526076836976569788}
   - component: {fileID: 526076836976569791}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: WPN_AKM_PICKUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 1226769819447011996}
   - component: {fileID: 1226769819449911998}
   - component: {fileID: 1226769819448780926}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: WPN_AKM_bolt_carrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 1226769819447011998}
   - component: {fileID: 1226769819449911992}
   - component: {fileID: 1226769819448780920}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: WPN_AKM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6980845077966997677}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

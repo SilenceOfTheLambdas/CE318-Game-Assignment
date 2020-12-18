@@ -1,15 +1,10 @@
-﻿namespace AI
+﻿using UnityEngine;
+
+namespace AI
 {
-    public class BTNode
+    public class BTNode : ScriptableObject
     {
         public enum Result { Running, Failure, Success }
-        
-        public BehaviourTree Tree { get; set; }
-
-        public BTNode(BehaviourTree t)
-        {
-            Tree = t;
-        }
 
         /// <summary>
         /// Executes a given task/node

@@ -2,15 +2,17 @@ using UnityEngine;
 
 namespace AI
 {
-    public class BTRepeater : BTDecorator
+    public class BTRepeater : BTNode
     {
-        public BTRepeater(BehaviourTree t, BTNode child) : base(t, child)
+        private readonly BTNode _child;
+        public BTRepeater(BTNode child)
         {
+            _child = child;
         }
 
         public override Result Execute()
         {
-            Debug.Log($"Child returned {Child.Execute()}");
+            Debug.Log($"Child returned {_child.Execute()}");
             return Result.Running;
         }
     }

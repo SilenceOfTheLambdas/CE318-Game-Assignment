@@ -1,4 +1,5 @@
-﻿using Inventory;
+﻿using System;
+using Inventory;
 using TMPro;
 using UnityEngine;
 
@@ -11,29 +12,30 @@ namespace Player
         public                   Camera          Camera;
         public                   float           PickUpRange;
         public                   GameObject      slotPrefab;
-        
+        public                   int             pickupLayerMask;
+
+        private void Start()
+        {
+            pickupLayerMask = LayerMask.GetMask("Pickup");
+        }
+
         private void Update()
         {
-            if (Input.GetButtonDown("Fire1"))
+
+            var ray = Camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            if (Physics.Raycast(ray, out var hit, PickUpRange, pickupLayerMask))
             {
-                var ray = Camera.ViewportPointToRay(Vector3.one * 0.5f);
-                if (Physics.Raycast(ray, out var hit, PickUpRange))
+                pickupText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(InputManager.Instance.PickupKey))
                 {
                     var pickable = hit.transform.GetComponent<PickableItem>();
                     if (pickable)
                     {
                         PickItem(pickable);
                         Destroy(hit.transform.gameObject);
+                        pickupText.gameObject.SetActive(false);
                     }
                 }
-            }
-
-            var hoverRay = Camera.ViewportPointToRay(Vector3.one * 0.5f);
-            if (!Physics.Raycast(hoverRay, out var hoverHit, PickUpRange)) return;
-            
-            if (hoverHit.transform.gameObject.GetComponent<PickableItem>() != null)
-            {
-                pickupText.gameObject.SetActive(true);
             }
             else
             {

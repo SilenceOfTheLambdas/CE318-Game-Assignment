@@ -9,7 +9,7 @@ namespace AI.Nodes
         private readonly NavMeshAgent _agent;
         private          EnemyAI      _enemyAI;
 
-        public GoToCoverNode(BehaviourTree t, EnemyAI enemyAI, NavMeshAgent agent) : base(t)
+        public GoToCoverNode(EnemyAI enemyAI, NavMeshAgent agent)
         {
             _agent = agent;
             _enemyAI = enemyAI;
@@ -17,7 +17,7 @@ namespace AI.Nodes
 
         public override Result Execute()
         {
-            Transform cover    = _enemyAI.GetBestCoverSpot();
+            var cover    = _enemyAI.GetBestCoverSpot();
             var       distance = Vector3.Distance(cover.position, _agent.transform.position);
             if (cover == null)
                 return Result.Failure;

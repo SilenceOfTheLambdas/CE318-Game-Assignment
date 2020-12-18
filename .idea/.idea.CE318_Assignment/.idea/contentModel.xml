@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+    <e p="C:\Users\techd\AppData\local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\techd\AppData\local\JetBrains\Rider2020.3\resharper-host\local\Transient\Rider\v203\SolutionCaches\_CE318_Assignment.2138571564.00" t="ExcludeRecursive" />
+    <e p="C:\Users\techd\Documents\Game Development\CE318_Assignment" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -170,9 +172,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="AI" t="Include">
-            <e p="BehaviourTree.cs" t="Include" />
-            <e p="BTComposite.cs" t="Include" />
-            <e p="BTDecorator.cs" t="Include" />
             <e p="BTInverter.cs" t="Include" />
             <e p="BTNode.cs" t="Include" />
             <e p="BTRepeater.cs" t="Include" />
@@ -185,10 +184,16 @@
               <e p="HealthNode.cs" t="Include" />
               <e p="IsCoverAvailableNode.cs" t="Include" />
               <e p="IsCoveredNode.cs" t="Include" />
-              <e p="LNPatrol.cs" t="Include" />
-              <e p="LNRandomWalk.cs" t="Include" />
               <e p="RangeNode.cs" t="Include" />
               <e p="ShootNode.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="BehaviourGraph.cs" t="Include" />
+            <e p="BehaviourGraphView.cs" t="Include" />
+            <e p="BehaviourNode.cs" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="BehaviourGraph.uss" t="Include" />
             </e>
           </e>
           <e p="Enemies" t="Include">
@@ -215,6 +220,8 @@
           </e>
           <e p="ItemDragHandler.cs" t="Include" />
           <e p="ItemDropHandler.cs" t="Include" />
+          <e p="ItemSpawner.cs" t="Include" />
+          <e p="PauseMenu.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="HeadBob.cs" t="Include" />
             <e p="MouseLook.cs" t="Include" />
@@ -223,6 +230,10 @@
           </e>
           <e p="Weapon Systems" t="Include">
             <e p="AmmunitionManager.cs" t="Include" />
+            <e p="BallisticMaterialDatabase.cs" t="Include" />
+            <e p="BallisticMaterialHolder.cs" t="Include" />
+            <e p="BallisticMaterialManager.cs" t="Include" />
+            <e p="Ballistics.cs" t="Include" />
             <e p="WeaponManager.cs" t="Include" />
           </e>
         </e>
@@ -261,9 +272,7 @@
       <e p="CE318_Assignment.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
-    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_CE318_Assignment.1010223906.00" t="ExcludeRecursive" />
   </component>
 </project>

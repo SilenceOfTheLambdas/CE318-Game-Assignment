@@ -1,23 +1,23 @@
 using UnityEngine;
 
-namespace AI.LeafNodes
+namespace AI.Nodes
 {
     public class IsCoveredNode : BTNode
     {
-        private Transform target;
-        private Transform origin;
+        private readonly Transform _target;
+        private readonly Transform _origin;
 
-        public IsCoveredNode(BehaviourTree t, Transform target, Transform origin) : base(t)
+        public IsCoveredNode(Transform target, Transform origin)
         {
-            this.target = target;
-            this.origin = origin;
+            _target = target;
+            _origin = origin;
         }
 
         public override Result Execute()
         {
-            if (Physics.Raycast(origin.position, target.position - origin.position, out var hit))
+            if (Physics.Raycast(_origin.position, _target.position - _origin.position, out var hit))
             {
-                if (hit.collider.transform != target)
+                if (hit.collider.transform != _target)
                 {
                     return Result.Success;
                 }

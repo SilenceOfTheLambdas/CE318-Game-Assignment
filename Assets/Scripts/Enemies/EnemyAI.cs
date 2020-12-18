@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using AI;
-using AI.LeafNodes;
 using AI.Nodes;
 using Player;
 using UnityEngine;
@@ -16,20 +16,20 @@ namespace Enemies
     /// </summary>
     public class EnemyAI : MonoBehaviour
     {
-        /// <summary>
-        ///     What layer is the ground on?
-        /// </summary>
-        [SerializeField] private LayerMask groundMask, playerMask;
-
         [SerializeField] private PlayerController player;
+        [SerializeField] private Animator         animator;
+        
+        // Movement
+        protected float Forward;
+        protected float Sideway;
         
         #region Patrolling
 
-        public Vector3 walkPoint;
-
-        [SerializeField] private bool _walkPointSet;
-
-        public float walkPointRange;
+        [SerializeField] private bool    walkPointSet;
+        public                   Vector3 walkPoint;
+        public                   float   walkPointRange;
+        private                  int     _groundMask;
+        private                  int     _playerMask;
 
         #endregion
 
@@ -44,20 +44,23 @@ namespace Enemies
 
         #region States
 
-        public float sightRange,         attackRange;
-        public bool  playerInSightRange, playerInAttackRange;
+        public float sightRange, attackRange;
 
         #endregion
 
+        public  Cover[]   availableCovers;
         private Transform _bestCoverSpot;
-        private Cover[]   _availableCovers;
         private BTNode    _rootNode;
 
-        private NavMeshAgent _navMeshAgent;
+        private                 NavMeshAgent _navMeshAgent;
+        private static readonly int          Forward1 = Animator.StringToHash("Forward");
+        private static readonly int          Sideway1 = Animator.StringToHash("Sideway");
 
         private void Awake()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
+            _groundMask = LayerMask.GetMask("Ground");
+            _playerMask = LayerMask.GetMask("playerMask");
         }
 
         private void Start()
@@ -65,51 +68,60 @@ namespace Enemies
             ConstructBehaviourTree();
         }
 
+        [SuppressMessage("ReSharper", "Unity.IncorrectScriptableObjectInstantiation")]
         private void ConstructBehaviourTree()
         {
-            var behaviourTree = gameObject.AddComponent<BehaviourTree>();
-            var coverAvailableNode = new IsCoverAvailableNode(behaviourTree, 
-                _availableCovers, player.transform, this);
-            var goToCoverNode = new GoToCoverNode(behaviourTree, this, _navMeshAgent);
-            var healthNode = new HealthNode(behaviourTree, GetComponent<EnemyController>(), 
+            // Nodes
+            var coverAvailableNode = new IsCoverAvailableNode(availableCovers, player.transform, this);
+            var goToCoverNode      = new GoToCoverNode(this, _navMeshAgent);
+            var healthNode         = new HealthNode(GetComponent<EnemyController>(), 
                 GetComponent<EnemyController>().lowHealthThreshold);
-            var isCoveredNode = new IsCoveredNode(behaviourTree, player.transform, transform);
-            var chaseNode = new ChaseNode(behaviourTree, player.transform, _navMeshAgent);
-            var chasingRangeNode = new RangeNode(behaviourTree, GetComponent<EnemyController>().chaseRange, 
-                player.transform, transform);
-            var shootingRangeNode = new RangeNode(behaviourTree, GetComponent<EnemyController>().shootRange, 
-                player.transform, transform);
-            var shootNode = new ShootNode(behaviourTree, _navMeshAgent, this);
-            
-            // Setting up the sequencer
-            var chaseSequence = new BTSequencer(behaviourTree, new List<BTNode> { chasingRangeNode, chaseNode});
-            var shootSequence = new BTSequencer(behaviourTree, new List<BTNode> { shootingRangeNode, shootNode});
-            
-            var goToCoverSequence = new BTSequencer(behaviourTree, new List<BTNode> { coverAvailableNode, goToCoverNode});
-            var findCoverSelector = new BTSelector(behaviourTree, new List<BTNode> { goToCoverSequence, chaseSequence });
-            var tryToTakeCoverSelector = new BTSelector(behaviourTree, new List<BTNode> { isCoveredNode, findCoverSelector });
-            var mainCoverSequence = new BTSequencer(behaviourTree, new List<BTNode> {  healthNode, tryToTakeCoverSelector });
-            
-            _rootNode = new BTSelector(behaviourTree, new List<BTNode> { mainCoverSequence, shootSequence, chaseSequence });
+            var isCoveredNode     = new IsCoveredNode(player.transform, transform);
+            var chaseNode         = new ChaseNode(player.transform, _navMeshAgent);
+            var chasingRangeNode  = new RangeNode(GetComponent<EnemyController>().chaseRange, player.transform, transform);
+            var shootingRangeNode = new RangeNode(GetComponent<EnemyController>().shootRange, player.transform, transform);
+            var shootNode         = new ShootNode(_navMeshAgent, this);
+
+            // Sequences
+            var chaseSequence          = new BTSequencer(new List<BTNode> { chasingRangeNode, chaseNode });
+            var shootSequence          = new BTSequencer(new List<BTNode> { shootingRangeNode, shootNode });
+            var goToCoverSequence      = new BTSequencer(new List<BTNode> { coverAvailableNode, goToCoverNode });
+            var findCoverSelector      = new BTSelector(new List<BTNode> { goToCoverSequence, chaseSequence });
+            var tryToTakeCoverSelector = new BTSelector(new List<BTNode> { isCoveredNode, findCoverSelector });
+            var mainCoverSequence      = new BTSequencer(new List<BTNode> { healthNode, tryToTakeCoverSelector });
+
+            _rootNode = new BTSelector(new List<BTNode> { mainCoverSequence, shootSequence, chaseSequence });
         }
 
         private void Update()
         {
-            /*// Check player sight and attack range
-            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
-            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
+            // Check player sight and attack range
+            var playerInSightRange = Physics.CheckSphere(transform.position, sightRange, _playerMask);
+            var playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, _playerMask);
 
             // If player is not within the enemies' attack or sight range
             if (!playerInSightRange && !playerInAttackRange) Patrolling();
-            // If the player is withing sight range, but not attack range
-            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-            // If the player is within the enemies' attack and sight range
-            if (playerInAttackRange && playerInSightRange) AttackPlayer();*/
 
-            if (_rootNode.Execute() == BTNode.Result.Failure)
+            var result = _rootNode.Execute();
+            /*if (result == BTNode.Result.Failure)
             {
                 GetComponent<EnemyController>().Die();
-            }
+            }*/
+        }
+
+        private void FixedUpdate()
+        {
+            var movementVector = Vector3.Normalize(_navMeshAgent.desiredVelocity);
+            // Update the movement variables
+            Forward = -movementVector.x;
+            Sideway = -movementVector.z;
+            UpdateAnimation();
+        }
+
+        private void UpdateAnimation()
+        {
+            animator.SetFloat(Forward1, Forward);
+            animator.SetFloat(Sideway1, Sideway);
         }
 
         private void OnDrawGizmosSelected()
@@ -120,21 +132,22 @@ namespace Enemies
             Gizmos.DrawWireSphere(transform.position, sightRange);
         }
 
-        /*private void Patrolling()
+        private void Patrolling()
         {
+            SearchWalkPoint();
 
-            if (_walkPointSet) _navMeshAgent.SetDestination(walkPoint);
+            if (walkPointSet) _navMeshAgent.SetDestination(walkPoint);
 
             var distanceToWalkPoint = transform.position - walkPoint;
 
-            if (distanceToWalkPoint.magnitude < 2f) _walkPointSet = false;
-        }*/
+            if (distanceToWalkPoint.magnitude < 2f) walkPointSet = false;
+        }
 
         /// <summary>
         ///     Search for a random area within the area specified by
         ///     <value>walkPointRange</value>
         /// </summary>
-        /*private void SearchWalkPoint()
+        private void SearchWalkPoint()
         {
             var randomZ = Random.Range(-walkPointRange, walkPointRange);
             var randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -142,8 +155,8 @@ namespace Enemies
             walkPoint = new Vector3(transform.position.x + randomX, transform.position.y,
                 transform.position.z + randomZ);
 
-            if (Physics.Raycast(walkPoint, -transform.up, 2f, groundMask)) _walkPointSet = true;
-        }*/
+            if (Physics.Raycast(walkPoint, -transform.up, 2f, _groundMask)) walkPointSet = true;
+        }
 
         private void ChasePlayer()
         {

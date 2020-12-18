@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerEquipmentController PlayerEquipmentController;
+    [SerializeField] private PlayerEquipmentController playerEquipmentController;
     public                   InventoryUI               InventoryUI;
-    public                   PlayerController          PlayerController;
-    public                   Camera                    ADSCamera;
+    public                   PauseMenu                 pauseMenuUI;
+    public                   PlayerController          playerController;
+    public                   Camera                    adsCamera;
+    private                  bool                      _pauseMenuOpen;
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -21,10 +23,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerController.isDead)
+        if (playerController.isDead)
         {
             deathMessage.text = "You Became Not Living.";
-            PlayerController.enabled = false;
+            playerController.enabled = false;
             deathBg.SetActive(true);
         }
 
@@ -34,17 +36,35 @@ public class GameManager : MonoBehaviour
             if (!inventoryOpen)
             {
                 Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 inventoryOpen = true;
                 // Start Inventory System
                 inventoryUI.gameObject.SetActive(true);
-                PlayerEquipmentController.StartInventory();
+                playerEquipmentController.StartInventory();
             }
 
             if (inventoryOpen)
             {
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 inventoryOpen = false;
                 inventoryUI.gameObject.SetActive(false);
+            }
+        }
+
+        if (Input.GetKeyDown(InputManager.Instance.PauseMenuKey))
+        {
+            if (!_pauseMenuOpen)
+            {
+                // Open pause menu
+                pauseMenuUI.OpenPauseMenu();
+                _pauseMenuOpen = true;
+            }
+
+            if (_pauseMenuOpen)
+            {
+                pauseMenuUI.ClosePauseMenu();
+                _pauseMenuOpen = false;
             }
         }
     }
