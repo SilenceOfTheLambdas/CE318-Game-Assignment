@@ -28,3 +28,8 @@ MonoBehaviour:
     density: 20
     rndSpread: 10
     rndSpreadRic: 40
+  - name: Human
+    yieldStrength: 55
+    density: 30
+    rndSpread: 0
+    rndSpreadRic: 0

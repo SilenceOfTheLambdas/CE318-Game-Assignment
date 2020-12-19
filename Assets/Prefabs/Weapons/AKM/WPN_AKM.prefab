@@ -71,9 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700f599c7d83a334d9fb2899d286cd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponFireState: 1
-  fireRate: 8
+  weaponFireState: 1
+  fireRate: 20
   bulletSpawnPoint: {fileID: 7470892907471136023}
+  bulletPrefab: {fileID: 949001619889580436, guid: f4d2284700fce5a42abd7d520d0e25d5,
+    type: 3}
   ammunitionManager: {fileID: 114216033368745670, guid: f4d2284700fce5a42abd7d520d0e25d5,
     type: 3}
 --- !u!82 &1606479664237517568
@@ -86,7 +88,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 062d2479a6e089f428613f4df8c5f361, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8cf1d0fc2b17ee74496b11508a2c63f8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -94,7 +96,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 223
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -132,7 +134,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0

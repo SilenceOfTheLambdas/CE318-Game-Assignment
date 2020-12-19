@@ -383,9 +383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700f599c7d83a334d9fb2899d286cd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponFireState: 1
+  weaponFireState: 0
   fireRate: 8
   bulletSpawnPoint: {fileID: 6980845077966997677}
+  bulletPrefab: {fileID: 0}
   ammunitionManager: {fileID: 114216033368745670, guid: f4d2284700fce5a42abd7d520d0e25d5,
     type: 3}
 --- !u!82 &1226769819446589114
@@ -395,12 +396,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226769819446589112}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 062d2479a6e089f428613f4df8c5f361, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fcad12bde20c1654cbfeb485f707ffc3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.855
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -444,7 +445,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -504,7 +505,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

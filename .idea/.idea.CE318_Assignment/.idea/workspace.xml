@@ -23,98 +23,201 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521969b7-13be-45d9-807f-97c1107a2361" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy_#1.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy_#1.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/bullet_impact_prototypwe.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/bullet_impact_prototypwe.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_dir.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_dir.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_light.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_light.exr.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_shadowmask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-2_comp_shadowmask.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BallisticData.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/BallisticData.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraph.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraph.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraphView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraphView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/Resources/BehaviourGraph.uss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/Resources/BehaviourGraph.uss.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ItemSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/ItemSpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialDatabase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialHolder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialHolder.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/Ballistics.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/Ballistics.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/AO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/AO.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Albedo].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Albedo].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Gloss].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Gloss].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Normal].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Normal].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Specular].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/Zed[Specular].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Albedo].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Albedo].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Gloss].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Gloss].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Norm].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Norm].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Specular].png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props[Specular].png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props_ao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/Textures/props_ao.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/drevo_1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/drevo_1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/material_2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/material_2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/okna_0.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/okna_0.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/props_3.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Materials/props_3.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Military_building.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/Military_building.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_drevo_0_1_0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_drevo_0_1_0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_dum_0_2_0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_dum_0_2_0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_okna_0_0_0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_okna_0_0_0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_props_0_3_0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/meshes/schody.001_props_0_3_0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_diffuse_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_diffuse_12.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_normal_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_normal_13.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_occlusion_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_occlusion_15.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_specularGlossiness_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/drevo_specularGlossiness_14.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_diffuse_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_diffuse_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_normal_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_normal_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_occlusion_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_occlusion_7.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_specularGlossiness_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/material_specularGlossiness_6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_diffuse_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_diffuse_0.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_normal_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_normal_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_occlusion_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_occlusion_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_specularGlossiness_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/okna_specularGlossiness_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_diffuse_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_diffuse_9.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_normal_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_normal_11.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_occlusion_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_occlusion_8.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_specularGlossiness_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Buildings/textures/props_specularGlossiness_10.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Enemies/Ch35_nonPBR@Death From The Front.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Enemies/Ch35_nonPBR@Death From The Front.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/762 NATO.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/762 NATO.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/NotInRangeNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/NotInRangeNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/WonderNode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/WonderNode.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/GLTFSerialization.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/GLTFSerialization.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/Ionic.Zip.Unity.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/Ionic.Zip.Unity.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/Newtonsoft.Json.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/Newtonsoft.Json.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/UnityGLTF.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Libraries/UnityGLTF.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Bold.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Light.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Regular.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Semibold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/OpenSans-Semibold.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/SketchfabGrey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/SketchfabGrey.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Black.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Bold.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Light.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Regular.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Semibold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Semibold.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/TitilliumWeb-Thin.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/defaultAvatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/defaultAvatar.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/defaultModel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/defaultModel.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/logo.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/logo.ico.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planBiz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planBiz.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planEnt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planEnt.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planPrem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planPrem.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planPro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Resources/planPro.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFBumpToNormal.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFBumpToNormal.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFColorSpace.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFColorSpace.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFFlipTexture.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFFlipTexture.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFLinear2sRGB.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFLinear2sRGB.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFPackOccMetalRough.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Dependencies/Shaders/GLTFPackOccMetalRough.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/AssetBrowser.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabBrowserWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabModelWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/AssetBrowser/SketchfabModelWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/Resizer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/Resizer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabApi.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabApi.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabExporter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabExporter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabImporter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabImporter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabImporterWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabImporterWindow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabLogger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabLogger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabPlugin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabPlugin.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sketchfab For Unity/Scripts/SketchfabUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot/Beefy-AR10-7.62x51-308-Close-Single-Gunshot-A-www.fesliyanstudios.com-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Gunshot/Beefy-AR10-7.62x51-308-Close-Single-Gunshot-A-www.fesliyanstudios.com-www.fesliyanstudios.com.mp3.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CE318_Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 4.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TreesModels/RedWood 5.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Controllers/Enemies.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Controllers/Enemies.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/DemoTerrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DreamForestTree/TerrainData/DemoTerrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy_#1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy_#1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pickups/WPN_AKM_PICKUP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pickups/WPN_AKM_PICKUP.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player_AKM_equipped.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/45acp.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AKM/WPN_AKM.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Other_props/Palets/Palet_v1/Palet_v1_set.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RPG_FPS_game_assets_industrial/Other_props/Palets/Palet_v1/Palet_v1_set.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-0_comp_shadowmask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_dir.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_light.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/Lightmap-1_comp_shadowmask.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTComposite.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTComposite.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTDecorator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTDecorator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTInverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTInverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTRepeater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTRepeater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BTSequencer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/BTSequencer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/BehaviourTree.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/GoToCoverNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/GoToCoverNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/HealthNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/HealthNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoverAvailableNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoverAvailableNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoveredNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/IsCoveredNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNPatrol.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNPatrol.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNRandomWalk.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/LNRandomWalk.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/RangeNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/RangeNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ShootNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ShootNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallisticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallisticData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraph.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraph.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraphView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourGraphView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourNode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BehaviourNode.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/Resources/BehaviourGraph.uss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/Resources/BehaviourGraph.uss.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory/WeaponSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory/WeaponSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerPickup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerPickup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,15 +252,19 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/InventorySlot.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Ballistics.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialDatabase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/BallisticMaterialHolder.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/ChaseNode.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/Ballistics.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Weapon Systems/WeaponManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/NotInRangeNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/DeathNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/AI/Nodes/WonderNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyAI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jh3kR91vn41taUGvd3DmEfnpwZ" />
@@ -187,10 +294,10 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="532">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="532" />
+      <option name="pid" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -242,7 +349,8 @@
       <workItem from="1608227494884" duration="2949000" />
       <workItem from="1608236363541" duration="141000" />
       <workItem from="1608236529105" duration="1164000" />
-      <workItem from="1608289076609" duration="16167000" />
+      <workItem from="1608289076609" duration="18315000" />
+      <workItem from="1608378198875" duration="10902000" />
     </task>
     <servers />
   </component>

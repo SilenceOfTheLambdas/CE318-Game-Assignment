@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Weapon_Systems;
 
 namespace Player
 {
@@ -34,8 +35,8 @@ namespace Player
         public                   float crouchHeight        = 1f;
         public                   float crouchMovementSpeed = 6f;
 
-        [Header("Equipped Weapons")] public GameObject primaryWeapon;
-
+        [Header("Equipped Weapons")] 
+        public GameObject primaryWeapon;
         public GameObject secondaryWeapon;
         public GameObject thirdWeapon;
 
@@ -97,6 +98,7 @@ namespace Player
 
             // If player stops crouching
             if (Input.GetButtonUp("Crouch"))
+            {
                 if (!Physics.CheckSphere(topCheck.position, 0.5f, topMask))
                 {
                     controller.height = 2;
@@ -105,7 +107,21 @@ namespace Player
                     _camera.transform.localPosition = new Vector3(_camera.transform.localPosition.x,
                         _cameraOrigin.y, _camera.transform.localPosition.z);
                     MovementState = MovementStates.Idle;
-                }
+                }   
+            }
+            
+            if (primaryWeapon != null
+                || secondaryWeapon != null
+                || thirdWeapon != null)
+            {
+                if (Input.GetMouseButton(0))
+                {
+                    primaryWeapon.GetComponent<WeaponManager>().Shoot();
+                    //primaryWeapon.GetComponent<WeaponManager>().PlayShotSound();
+                } else 
+                    primaryWeapon.GetComponent<WeaponManager>().StopShotSound();
+                primaryWeapon.GetComponent<WeaponManager>().AimDownSights();
+            }
         }
 
         private void FixedUpdate()
@@ -222,11 +238,5 @@ namespace Player
         private const float     CrouchStepDistance = 0.5f;
 
         #endregion
-
-        /*public void Shoot()
-        {
-            if (primaryWeapon != null)
-                primaryWeapon.GetComponent<WeaponManager>().Shoot();
-        }*/
     }
 }

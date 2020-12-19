@@ -2186,7 +2186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4740947533888901689}
-  bobbingAmount: 0.02
+  bobbingAmount: 0.03
 --- !u!1 &4740947533889000727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2203,7 @@ GameObject:
   - component: {fileID: 1177552144}
   - component: {fileID: 1298990506}
   - component: {fileID: 1828266008}
+  - component: {fileID: 1964782955}
   m_Layer: 10
   m_Name: Player_AKM_equipped
   m_TagString: Player
@@ -2562,9 +2563,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: {fileID: 0}
   Camera: {fileID: 4740947532585417454}
-  PickUpRange: 4
+  PickUpRange: 3
   slotPrefab: {fileID: 1963610911118830056, guid: 039cff4fd22165c4e9078198bb5441ca,
     type: 3}
+  pickupLayerMask: 0
+--- !u!114 &1964782955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740947533889000727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37a9458ba00421f81e5ef57d42940a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialName: Human
 --- !u!1 &4740947533889000729
 GameObject:
   m_ObjectHideFlags: 0

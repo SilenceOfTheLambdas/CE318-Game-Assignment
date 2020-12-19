@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 namespace Enemies
@@ -9,16 +8,6 @@ namespace Enemies
     /// </summary>
     public class EnemyController : MonoBehaviour
     {
-        public enum MovementStates
-        {
-            Idle,
-            Walking,
-            Crouching,
-            Running
-        }
-
-        public static MovementStates MovementState = MovementStates.Idle;
-
         //private Animator _animator;
         private static readonly int IsDead = Animator.StringToHash("isDead");
 
@@ -30,6 +19,7 @@ namespace Enemies
         public float healthRestoreRate;
         public float chaseRange;
         public float shootRange;
+        public float walkPointRange;
 
         public float CurrentHealth
         {
@@ -52,27 +42,32 @@ namespace Enemies
         // Update is called once per frame
         private void Update()
         {
-            if (startingHealth <= 0) Die();
+            if (CurrentHealth <= 0)
+            {
+                Die();
+            }
 
             CurrentHealth += Time.deltaTime * healthRestoreRate;
         }
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("bullet"))
-            {
-                var ammunitionManager = other.gameObject.GetComponent<AmmunitionManager>();
-                startingHealth -= ammunitionManager.damage;
-                Destroy(other.gameObject);
-            }
+            if (!other.gameObject.CompareTag("bullet")) return;
+            
+            var ammunitionManager = other.gameObject.GetComponent<AmmunitionManager>();
+            startingHealth -= ammunitionManager.damage;
+            Destroy(other.gameObject);
         }
 
-        public void Die()
+        private void Die()
         {
-            GetComponent<Renderer>().material.color = Color.black;
             GetComponent<CapsuleCollider>().enabled = false;
             GetComponent<EnemyAI>().enabled = false;
             GetComponent<NavMeshAgent>().isStopped = true;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Animator>().SetBool("isDead", true);
+            GetComponent<Animator>().SetFloat("Forward", 0.0f);
+            GetComponent<Animator>().SetFloat("Sideway", 0.0f);
         }
     }
 }

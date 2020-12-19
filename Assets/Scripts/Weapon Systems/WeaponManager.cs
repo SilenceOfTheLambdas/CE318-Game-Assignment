@@ -22,7 +22,7 @@ namespace Weapon_Systems
         /// <summary>
         ///     The fire mode of this weapon.
         /// </summary>
-        public WeaponFireStates WeaponFireState;
+        public WeaponFireStates weaponFireState;
 
         [Header("Weapon Stats")]
         // How fast the weapon shoots in seconds
@@ -39,73 +39,67 @@ namespace Weapon_Systems
                 || GameManager.Instance.playerController.secondaryWeapon != null
                 || GameManager.Instance.playerController.thirdWeapon != null)
             {
-                Shoot();
-                AimDownSights();   
-            }
-        }
-
-        private void Shoot()
-        {
-            if (WeaponFireState == WeaponFireStates.Single)
-            {
-                if (Input.GetButtonDown("Fire1"))
-                {
-                    if (Time.time > _nextFire && fireRate > 0)
-                    {
-                        _nextFire = Time.time + 1f / fireRate;
-
-                        GetComponent<Animator>().SetBool(IsPressingFire, true);
-
-                        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position,
-                            bulletSpawnPoint.rotation);
-
-                        var ballistics = bullet.GetComponent<Ballistics>();
-                        bullet.GetComponent<Rigidbody>().velocity =
-                            ballistics.muzzleVelocity * 0.3048f * bulletSpawnPoint.forward;
-                        /*var shot = Instantiate(ammunitionManager.gameObject, bulletSpawnPoint.position,
-                            transform.rotation);
-                        shot.transform.LookAt(shot.transform.position + shot.GetComponent<Rigidbody>().velocity);
-
-                        shot.GetComponent<Rigidbody>()
-                            .AddForce(bulletSpawnPoint.transform.forward * ammunitionManager.speed);*/
-
-                        GetComponent<AudioSource>().Play();
-                    }
-
-                    GetComponent<Animator>().SetBool(IsRunning,
-                        PlayerController.MovementState == PlayerController.MovementStates.Running &&
-                        PlayerController.IsGrounded);
-                }   
-            }
-
-            if (WeaponFireState == WeaponFireStates.Automatic)
-            {
                 if (Input.GetMouseButton(0))
-                {
-                    if (Time.time > _nextFire && fireRate > 0)
-                    {
-                        _nextFire = Time.time + 1f / fireRate;
-
-                        GetComponent<Animator>().SetBool(IsPressingFire, true);
-
-                        var shot = Instantiate(ammunitionManager.gameObject, bulletSpawnPoint.position,
-                            transform.rotation);
-                        shot.transform.LookAt(shot.transform.position + shot.GetComponent<Rigidbody>().velocity);
-
-                        shot.GetComponent<Rigidbody>()
-                            .AddForce(bulletSpawnPoint.transform.forward * ammunitionManager.speed);
-
-                        GetComponent<AudioSource>().Play();
-                    }
-
-                    GetComponent<Animator>().SetBool(IsRunning,
-                        PlayerController.MovementState == PlayerController.MovementStates.Running &&
-                        PlayerController.IsGrounded);
-                }
+                    Shoot();
+                AimDownSights();
             }
         }
 
-        private void AimDownSights()
+        public void Shoot()
+        {
+            if (weaponFireState == WeaponFireStates.Single)
+            {
+                if (Time.time > _nextFire && fireRate > 0)
+                {
+                    _nextFire = Time.time + 1f / fireRate;
+
+                    GetComponent<Animator>().SetBool(IsPressingFire, true);
+
+                    var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position,
+                        bulletSpawnPoint.rotation);
+
+                    var ballistics = bullet.GetComponent<Ballistics>();
+                    bullet.GetComponent<Rigidbody>().velocity =
+                        ballistics.muzzleVelocity * 0.3048f * bulletSpawnPoint.forward;
+
+                    PlayShotSound();
+                }
+
+                GetComponent<Animator>().SetBool(IsRunning,
+                    PlayerController.MovementState == PlayerController.MovementStates.Running &&
+                    PlayerController.IsGrounded);
+            }
+
+            if (weaponFireState == WeaponFireStates.Automatic)
+            {
+                if (Time.time > _nextFire && fireRate > 0)
+                {
+                    _nextFire = Time.time + 1f / fireRate;
+
+                    GetComponent<Animator>().SetBool(IsPressingFire, true);
+
+                    var shot = Instantiate(ammunitionManager.gameObject, bulletSpawnPoint.position,
+                        transform.rotation);
+                    shot.transform.LookAt(shot.transform.position + shot.GetComponent<Rigidbody>().velocity);
+
+                    shot.GetComponent<Rigidbody>()
+                        .AddForce(bulletSpawnPoint.transform.forward * ammunitionManager.speed);
+                    
+                    PlayShotSound();
+                }
+
+                GetComponent<Animator>().SetBool(IsRunning,
+                    PlayerController.MovementState == PlayerController.MovementStates.Running &&
+                    PlayerController.IsGrounded);
+            }
+        }
+
+        public void PlayShotSound()
+        {
+            GetComponent<AudioSource>().Play();
+        }
+
+        public void AimDownSights()
         {
             if (Input.GetMouseButton(1))
             {
@@ -124,6 +118,11 @@ namespace Weapon_Systems
         public void DisableGunAnimation()
         {
             GetComponent<Animator>().SetBool(IsPressingFire, false);
+        }
+
+        public void StopShotSound()
+        {
+            GetComponent<AudioSource>().Stop();
         }
     }
 }
